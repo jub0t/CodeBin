@@ -9,7 +9,7 @@ if (isset($_GET["name"])) {
             $CREATED = time();
             $NAME = strval(htmlentities($_GET["name"]));
             $MARK = strval(htmlentities($_GET["mark"]));
-            $CONTENT = strval(htmlentities($_GET["content"]));
+            $CONTENT = $_GET["content"];
             $QUERY = "INSERT INTO pastes(created, id, mark, name, content) VALUES('$CREATED', '$ID', '$MARK', '$NAME', '$CONTENT')";
             if (mysqli_query($SQL, $QUERY)) {
                 echo json_encode([

@@ -6,7 +6,7 @@
 $SQL = new mysqli("localhost", "root", "", "test");
 $SQL->query('CREATE TABLE `pastes` (
   `created` varchar(255) NOT NULL,
-  `id` varchar(255) NOT NULL,
+  `id` varchar(255) NOT NULL,s
   `name` tinytext NOT NULL,
   `content` text NOT NULL,
   `mark` tinytext NOT NULL
