@@ -7,15 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="./_styles/tailwinds.css">
     <link rel="stylesheet" href="./_styles/primary.css">
-    <title>PasteSite - Create New Paste</title>
     <link rel="icon" href="./_styles/favicon.png">
-    <script src="./_scripts/primary.js"></script>
+    <title>PasteSite - Create New Paste</title>
     <meta charset="UTF-8">
 </head>
-<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 
 <body class="bg-dark">
-    <div class="min-h-screen flex flex-row bg-gray-100 bg-dark-500">
+    <div class="flex flex-row">
         <div class="w-full flex flex-wrap justify-center">
             <div class="w-11/12 flex flex-wrap justify-center">
                 <form class="py-2 w-full mt-10" action="./new_paste.php">
@@ -58,9 +56,6 @@
                     <input name="name" type="text" class="normal-font bg-dark-400 w-full rounded-md px-4 py-3 mt-5 focus:outline-none text-gray-200" placeholder="ENTER PASTE TITLE">
                     <textarea id="content" name="content" placeholder="ENTER PASTE CONTENT" class="content mt-5 normal-font rounded-md resize-none w-full h-auto focus:outline-none bg-dark-400 py-4 px-4 text-gray-300 h-screen"></textarea>
                 </form>
-                <div class="w-full bg-dark-400 py-2 rounded-md mb-5">
-                    <a href="" target="_blank" class="text-xs text-gray-200 px-5">Click here to create your own paste bin website</a>
-                </div>
             </div>
         </div>
     </div>

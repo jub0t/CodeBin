@@ -16,7 +16,7 @@ if (isset($_GET["name"])) {
                     "Success" => true,
                     "Message" => "Successfuly created paste"
                 ]);
-                header("Location: ./paste?id=$ID");
+                header("Location: ./paste.php?id=$ID");
             } else {
                 echo json_encode([
                     "Success" => false,

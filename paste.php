@@ -33,11 +33,10 @@
     <title>PasteSite - Paste: <?php if (isset($_GET["id"])) {
                                     echo htmlentities($_GET["id"]);
                                 } ?></title>
-    <script src="./primary.js"></script>
     <meta charset="UTF-8">
 </head>
 
-<body style="background-color:#171a1f">
+<body class="bg-dark bg-dark-500" style="background-color: #171a1f;">
     <pre class="focus:outline-none line-numbers linkable-line-numbers" data-line="" data-src="plugins/line-highlight/prism-line-highlight.js" data-src-status="loaded" data-start="1" id="Line" style="counter-reset:linenumber 19" tabindex="0"><code class="focus:outline-none language-<?php if ($PASTE_FOUND) {
                                                                                                                                                                                                                                                                                                 echo $MARK;
                                                                                                                                                                                                                                                                                             } ?>"><?php if (isset($CONTENT)) {
