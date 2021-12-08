@@ -1,9 +1,12 @@
 # PasteSite
-A free open source paste website.
+Free and open source online paste website.
 
 ## Information
-**[Click to See Preview](https://paste.jubot.site/)**
+**For Live Preview Visit [https://paste.jubot.site/](https://paste.jubot.site/)**
+![Web Preview](https://i.gyazo.com/d17323b4acfeab55aef7e5687577e026.png)
+![Reponsive Design](https://i.gyazo.com/eaef5797d54768c29f85fca5992e4937.png)
 
-## Credit
-
-Rigby#6654 on Discord
+## `REQUIREMENTS:`
+ * `Apache`
+   * `PHP`
+ * `MySQLi Database`
