@@ -5,13 +5,13 @@ header("Content-type: application/json");
 if (isset($_GET["name"])) {
     if (isset($_GET["mark"])) {
         if (isset($_GET["content"])) {
-            $ID = uniqid();
+            $ID = toID(6);
             $CREATED = time();
-            $NAME = strval(htmlentities($_GET["name"]));
             $MARK = strval(htmlentities($_GET["mark"]));
-            $CONTENT = $_GET["content"];
-            $QUERY = "INSERT INTO pastes(created, id, mark, name, content) VALUES('$CREATED', '$ID', '$MARK', '$NAME', '$CONTENT')";
-            if (mysqli_query($SQL, $QUERY)) {
+            $CONTENT = $SQL->real_escape_string($_GET["content"]);
+            $NAME = $SQL->real_escape_string(strval(htmlentities($_GET["name"])));
+            $QUERY = $SQL->query("INSERT INTO pastes(created, id, mark, name, content) VALUES('$CREATED', '$ID', '$MARK', '$NAME', '$CONTENT')");
+            if ($QUERY == true) {
                 echo json_encode([
                     "Success" => true,
                     "Message" => "Successfuly created paste"
@@ -21,7 +21,6 @@ if (isset($_GET["name"])) {
                 echo json_encode([
                     "Success" => false,
                     "Message" => "Error occured while creating paste",
-                    "Query" => $QUERY,
 
                 ]);
             }
