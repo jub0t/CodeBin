@@ -32,9 +32,9 @@ if ($PASTE_FOUND == false) {
     <link rel="stylesheet" href="https://use.typekit.net/rcr1opg.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="./_styles/primary.css">
-    <script src="./_scripts/prism.js"></script>
-    <link rel="icon" href="./_styles/favicon.png">
     <title>PasteSite - <?php echo $NAME; ?></title>
+    <link rel="icon" href="./_styles/favicon.png">
+    <script src="./_scripts/prism.js"></script>
     <meta charset="UTF-8">
 </head>
 

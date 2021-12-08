@@ -25,6 +25,7 @@
                         <option value="csharp">C#</option>
                         <option value="cpp">C++</option>
                         <option value="css">CSS</option>
+                        <option value="ejs">Ejs</option>
                         <option value="sql">SQL</option>
                         <option value="xml">XML</option>
                         <option value="lua">Lua</option>
@@ -36,9 +37,11 @@
                         <option value="sass">Sass</option>
                         <option value="html">HTML</option>
                         <option value="dart">Dart</option>
+                        <option value="twig">Twig</option>
+                        <option value="nginx">Nginx</option>
                         <option value="perl">Perl</option>
                         <option value="ruby">Ruby</option>
-                        <option value="ruby">Ruby</option>
+                        <option value="toml">Toml</option>
                         <option value="rust">Rust</option>
                         <option value="yaml">Yaml</option>
                         <option value="java">Java</option>
@@ -58,12 +61,17 @@
                         <option value="typescript">Typecript</option>
                         <option value="chaiscript">ChaiScript</option>
                         <option value="js">Javascript</option>
+                        <option value="objectivec">Objective-C</option>
+                        <option value="as">Actionscript</option>
                         <option value="vb">Visual Basics</option>
                         <option value="dns-zone-file">DNS Zone File</option>
                     </select>
-                    <input required name="name" type="text" class="normal-font transition duration-500 focus:border-violet border-transparent border-2 bg-dark-400 w-full rounded-md px-4 py-3 mt-5 focus:outline-none text-gray-200" placeholder="ENTER PASTE TITLE">
+                    <input required autocomplete="off" name="name" type="text" class="normal-font transition duration-500 focus:border-violet border-transparent border-2 bg-dark-400 w-full rounded-md px-4 py-3 mt-5 focus:outline-none text-gray-200" placeholder="ENTER PASTE TITLE">
                     <textarea required id="content" name="content" placeholder="ENTER PASTE CONTENT" class=" transition duration-500 focus:border-violet border-transparent border-2 content mt-5 normal-font rounded-md resize-none w-full h-auto focus:outline-none bg-dark-400 py-4 px-4 text-gray-300 h-screen"></textarea>
                 </form>
+                <div class="flex flex-wrap justify-center w-11/12 bg-dark-400 py-2 rounded-md mb-5">
+                    <a href="https://github.com/jareer12/Pastesite" target="_blank" class="text-sm normal text-gray-200">Source Code on <span class="text-violet">Jareer12</span>/PasteSite</a>
+                </div>
             </div>
         </div>
     </div>
