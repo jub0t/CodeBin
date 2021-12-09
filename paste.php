@@ -39,11 +39,11 @@ if ($PASTE_FOUND == false) {
 </head>
 
 <body class="bg-dark bg-dark-500" style="background-color: #171a1f;">
-    <pre class="focus:outline-none line-numbers linkable-line-numbers" data-line="" data-src="plugins/line-highlight/prism-line-highlight.js" data-src-status="loaded" data-start="1" id="Line" style="counter-reset:linenumber 19" tabindex="0"><code class="focus:outline-none language-<?php if ($PASTE_FOUND) {
-                                                                                                                                                                                                                                                                                                echo $MARK;
-                                                                                                                                                                                                                                                                                            } ?>"><?php if (isset($CONTENT)) {
-                                                                                                                                                                                                                                                                                                        echo $CONTENT;
-                                                                                                                                                                                                                                                                                                    } ?></code></pre>
+    <pre class="focus:outline-none line-numbers linkable-line-numbers format" data-line="" data-src="plugins/line-highlight/prism-line-highlight.js" data-src-status="loaded" data-start="1" id="Line" style="counter-reset:linenumber 19" tabindex="0"><code class="focus:outline-none format language-<?php if ($PASTE_FOUND) {
+                                                                                                                                                                                                                                                                                                            echo $MARK;
+                                                                                                                                                                                                                                                                                                        } ?>"><?php if (isset($CONTENT)) {
+                                                                                                                                                                                                                                                                                                                    echo $CONTENT;
+                                                                                                                                                                                                                                                                                                                } ?></code></pre>
 </body>
 
 </html>

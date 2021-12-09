@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- Styles, Scripts & Metas -->
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.typekit.net/rcr1opg.css">
@@ -11,13 +13,43 @@
     <meta charset="UTF-8">
 </head>
 
+<?php
+require_once("./database.php");
+if (isset($_POST["name"])) {
+    if (isset($_POST["mark"])) {
+        if (isset($_POST["content"])) {
+            $ID = toID(6);
+            $CREATED = time();
+            $MARK = strval(htmlentities($_POST["mark"]));
+            $CONTENT = $SQL->real_escape_string($_POST["content"]);
+            $NAME = $SQL->real_escape_string(strval(htmlentities($_POST["name"])));
+            if (!isset($NAME)) {
+                $NAME = "Unnamed Paste";
+            }
+            $QUERY = $SQL->query("INSERT INTO pastes(created, id, mark, name, content) VALUES('$CREATED', '$ID', '$MARK', '$NAME', '$CONTENT')");
+            if ($QUERY == true) {
+                echo json_encode([
+                    "Success" => true,
+                    "Message" => "Successfuly created paste"
+                ]);
+                header("Location: ./paste.php?id=$ID");
+            } else {
+            }
+        }
+    }
+}
+
+?>
+
 <body class="slidein bg-dark">
     <div class="flex flex-row">
         <div class="w-full flex flex-wrap justify-center">
             <div class="w-11/12 flex flex-wrap justify-center">
-                <form class="py-2 w-full mt-10" action="./new_paste.php">
+                <!-- Basic Form, POST Method To Upload large Data -->
+                <form method="POST" action="" class="py-2 w-full mt-10" enctype="multipart/form-data">
                     <h1 class="w-full md:w-auto text-gray-200 text-xl text-opacity-80 float-right">CREATE NEW PASTE</h1>
-                    <button type="submit" class="w-full md:w-auto mt-5 md:mt-0 border-2 bg-violet hover:bg-dark-400 duration-500 transition border-violet px-8 text-gray-200 py-2 rounded-md">SAVE</button>
+                    <button name="submit" type="submit" formmethod="POST" class="w-full md:w-auto mt-5 md:mt-0 border-2 bg-violet hover:bg-dark-400 duration-500 transition border-violet px-8 text-gray-200 py-2 rounded-md">SAVE</button>
+                    <!-- Highlighting Languages Add More If Needed https://prismjs.com/download.html -->
                     <select required name="mark" class="w-full md:w-auto mt-5 md:mt-0 px-8 text-gray-200 py-3 border-r-4 border-dark-400 focus:outline-none rounded-md bg-dark-400">
                         <option value="none">None</option>
                         <option value="c">C</option>
@@ -66,12 +98,15 @@
                         <option value="vb">Visual Basics</option>
                         <option value="dns-zone-file">DNS Zone File</option>
                     </select>
+                    <!-- Source Code Link -->
+                    <div class="flex flex-wrap justify-center w-full bg-dark-400 py-2 rounded-md mt-5">
+                        <a href="https://github.com/jareer12/Pastesite" target="_blank" class="text-sm normal text-gray-200">Source Code on <span class="text-violet">Jareer12</span>/PasteSite</a>
+                    </div>
+                    <!-- Paste Name -->
                     <input required autocomplete="off" name="name" type="text" class="normal-font transition duration-500 focus:border-violet border-transparent border-2 bg-dark-400 w-full rounded-md px-4 py-3 mt-5 focus:outline-none text-gray-200" placeholder="ENTER PASTE TITLE">
-                    <textarea required id="content" name="content" placeholder="ENTER PASTE CONTENT" class=" transition duration-500 focus:border-violet border-transparent border-2 content mt-5 normal-font rounded-md resize-none w-full h-auto focus:outline-none bg-dark-400 py-4 px-4 text-gray-300 h-screen"></textarea>
+                    <!-- Paste Content -->
+                    <textarea required id="content" name="content" placeholder="ENTER PASTE CONTENT" class="flex lined transition duration-500 focus:border-violet border-transparent border-2 content mt-5 normal-font rounded-md resize-none w-full h-auto focus:outline-none bg-dark-400 py-4 px-4 text-gray-300 h-screen"></textarea>
                 </form>
-                <div class="flex flex-wrap justify-center w-11/12 bg-dark-400 py-2 rounded-md mb-5">
-                    <a href="https://github.com/jareer12/Pastesite" target="_blank" class="text-sm normal text-gray-200">Source Code on <span class="text-violet">Jareer12</span>/PasteSite</a>
-                </div>
             </div>
         </div>
     </div>
