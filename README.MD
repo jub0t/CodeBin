@@ -1,10 +1,6 @@
 # PasteSite
 
 A lightweight & Free and open source online paste website. Currently supporting syntax highlighting for over 40 languages, files and frameworks. Downdload, configure database and upload it to your hosting, and you're good to go.
-
-## ABOUT
-
-**LIVE at [https://paste.jubot.site/](https://paste.jubot.site/)**
 ![Web Preview](./DELETE%20ME/preview.png)
 
 ## REQUIREMENTS & USAGE
