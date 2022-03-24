@@ -5,7 +5,7 @@ A lightweight & Free and open source online paste website. Currently supporting 
 ## ABOUT
 
 **LIVE at [https://paste.jubot.site/](https://paste.jubot.site/)**
-![Web Preview](../DELETE ME/preview.png)
+![Web Preview](./DELETE ME/preview.png)
 
 ## REQUIREMENTS & USAGE
 
