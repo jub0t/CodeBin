@@ -2,6 +2,7 @@
 
 A lightweight & Free and open source online paste website. Currently supporting syntax highlighting for over 40 languages, files and frameworks. Downdload, configure database and upload it to your hosting, and you're good to go.
 ![Web Preview](./DELETE%20ME/preview.png)
+![Paste Preview](./DELETE%20ME/preview2.png)
 
 ## REQUIREMENTS & USAGE
 
