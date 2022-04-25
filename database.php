@@ -1,16 +1,18 @@
 <?php
-/* ***********************************************************************************************
-  Configure the credentials to your database.
-************************************************************************************************* */
+require_once "dotenv.php";
 
-$SQL = new mysqli("localhost", "root", "", "test");
+use DevCoder\DotEnv;
+
+(new DotEnv(__DIR__ . '/.env'))->load();
+
+$SQL = new mysqli(getenv('MYSQL_HOSTNAME'), getenv('MYSQL_USERNAME'), getenv('MYSQL_PASSWORD'), getenv('MYSQL_DATABASE'));
 $SQL->query('CREATE TABLE IF NOT EXISTS `pastes` (
   `created` varchar(255) NOT NULL,
   `id` varchar(255) PRIMARY KEY,
   `name` tinytext NOT NULL,
   `content` text NOT NULL,
   `mark` tinytext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;');
+)');
 
 function toID($length)
 {
