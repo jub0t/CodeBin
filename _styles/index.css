@@ -37,7 +37,11 @@ textarea::placeholder {
 }
 
 ::-webkit-scrollbar-thumb {
+<<<<<<< HEAD
   background: #252831;
+=======
+  background: var(--color);
+>>>>>>> f028157ba2aabb8678e430ebd763bbb3093eab2f
 }
 
 .slider {
