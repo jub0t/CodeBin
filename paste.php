@@ -29,9 +29,9 @@ if ($PASTE_FOUND == false) {
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://use.typekit.net/rcr1opg.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="./_styles/primary.css">
+    <link rel="stylesheet" href="./_styles/prism.css">
+    <link rel="stylesheet" href="./_styles/index.css">
     <title>PasteSite - <?php echo $NAME; ?></title>
     <link rel="icon" href="./_styles/favicon.png">
     <script src="./_scripts/prism.js"></script>
