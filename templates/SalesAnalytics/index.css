@@ -1,0 +1,18 @@
+.checkbox:checked {
+    /* Apply class right-0*/
+    right: 0;
+}
+
+.checkbox:checked+.toggle-label {
+    background-color: rgba(16, 185, 129, var(--tw-bg-opacity));
+}
+
+* {
+    outline: none !important;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+}
+
+.checkbox:checked+.check-icon {
+    display: flex;
+}

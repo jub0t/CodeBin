@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="./assets/css/index.css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+        <title>About Us</title>
+    </head>
+
+    <body class="f-f-p">
+        <!--Header Starts Here-->
+        <div class="mx-auto container relative">
+            <nav class="lg:hidden">
+                <div class="flex py-2 justify-between items-center px-4">
+                    <a href="./index.html">
+                        <div>
+                            <img src="./assets/images/logo.png" alt="" />
+                        </div>
+                    </a>
+                    <div class="visible flex items-center">
+                        <ul id="list" class="hidden p-2 border-r bg-white absolute rounded top-0 left-0 right-0 shadow mt-16 md:mt-16">
+                            <li class="flex cursor-pointer text-gray-600 text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
+                                <a href="./index.html">
+                                    <span class="ml-2 font-bold">Home</span>
+                                </a>
+                            </li>
+                            <li class="flex flex-col cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex justify-center" onclick="dropdownHandler(this)">
+                                <a href="./compaign_donations.html">
+                                    <span class="ml-2 font-bold">Donations</span>
+                                </a>
+                            </li>
+                            <li class="flex cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-2 hover:text-indigo-700 flex items-center focus:text-indigo-700 focus:outline-none">
+                                <a href="./events.html">
+                                    <span class="ml-2 font-bold">Events</span>
+                                </a>
+                            </li>
+                            <li class="flex flex-col cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex justify-center" onclick="dropdownHandler(this)">
+                                <a href="./blog.html">
+                                    <span class="ml-2 font-bold">Blog</span>
+                                </a>
+                            </li>
+                            <li class="flex flex-col cursor-pointer text-gray-600 text-sm leading-3 tracking-normal pt-2 pb-4 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex justify-center" onclick="dropdownHandler(this)">
+                                <a href="./aboutUs.html">
+                                    <span class="ml-2 font-bold">About Us</span>
+                                </a>
+                            </li>
+                            <input class="ml-2 mb-4 border-b border-gray-300 focus:outline-none w-1/3 text-gray-800 text-sm" placeholder="Search"/>
+                        </ul>
+                        <div class="xl:hidden">
+                            <svg id="open" onclick="MenuHandler(true)" aria-haspopup="true" aria-label="Main Menu" xmlns="http://www.w3.org/2000/svg" class="show-m-menu icon icon-tabler icon-tabler-menu" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z"></path>
+                                <line x1="4" y1="8" x2="20" y2="8"></line>
+                                <line x1="4" y1="16" x2="20" y2="16"></line>
+                            </svg>
+                            <div id="close" class="hidden close-m-menu" onclick="MenuHandler(false)">
+                                <svg aria-label="Close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <line x1="18" y1="6" x2="6" y2="18" />
+                                    <line x1="6" y1="6" x2="18" y2="18" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <div class="flex justify-center w-full">
+                <h1 class="hidden xl:block vote_text -mt-6">VOTE GELLER</h1>
+            </div>
+            <div class="xl:-mt-6">
+                <div class="container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
+                    <div>
+                        <img class="w-full h-full object-cover object-center" src="./assets/images/AboutUs(1).png" alt="" srcset="" />
+                    </div>
+                    <div class="bg-indigo-800 py-12 px-8">
+                        <div class="flex flex-col items-center">
+                            <h1 class="text-2xl text-white font-bold">Who We Are</h1>
+                            <p class="text-white text-center pt-4 text-sm">Lorem Ipsum. Proin gravida nibh vel velit amet auctor aliquet. Aenean sollicitudin, lorem quis bibendum nisi elit consequat ipsum, nec ipsu nec ipsu sagittis sebh id.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img class="w-full h-full object-cover" src="./assets/images/AboutUs(2).png" alt="" srcset="" />
+                    </div>
+                    <div>
+                        <img class="w-full h-full object-cover" src="./assets/images/AboutUs(3).png" alt="" srcset="" />
+                    </div>
+                    <div>
+                        <img class="w-full h-full object-cover" src="./assets/images/AboutUs(4).png" alt="" srcset="" />
+                    </div>
+                    <div>
+                        <img class="w-full h-full object-cover" src="./assets/images/AboutUs(5).png" alt="" srcset="" />
+                    </div>
+                </div>
+            </div>
+            <nav>
+                <div class="px-4 xl:px-0 hidden lg:flex items-center justify-between w-full py-5 border-b border-gray-200">
+                    <div class="flex items-center">
+                        <div>
+                            <img src="./assets/images/logo.png" alt="" />
+                        </div>
+                        <div class="flex items-center pl-6">
+                            <div class="text-sm font-medium cursor-pointer text-indigo-900"><a href="./index.html">Home</a></div>
+                            <div class="text-sm font-normal cursor-pointer text-indigo-900 pl-8"><a href="./compaign_donations.html">Donations</a></div>
+                            <div class="text-sm font-normal cursor-pointer text-indigo-900 pl-8"><a href="./events.html">Events</a></div>
+                            <div class="text-sm font-normal cursor-pointer text-indigo-900 pl-8"><a href="./blog.html">Blog</a></div>
+                            <div class="text-sm font-normal cursor-pointer text-red-600 pl-8"><a href="./aboutUs.html">About Us</a></div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-end w-1/5 xl:w-1/6">
+                        <div class="mr-8">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                                <circle cx="11.6667" cy="11.6667" r="8.16667" stroke="#3C366B" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M24.5 24.5L17.5 17.5" stroke="#3C366B" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div>
+                            <button class="py-3 px-4 bg-red-600 text-sm uppercase text-white focus:outline-none">Donate Now</button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <div class="px-6 xl:px-0 lg:w-2/3 w-full">
+                <div class="py-10">
+                    <h1 class="text-2xl lg:text-4xl font-bold text-indigo-900 tracking-normal lg:w-8/12 leading-relaxed">For Others, It’s Just Business. For Me, It’s Personal.</h1>
+                    <div class="py-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="2" viewBox="0 0 60 2" fill="none">
+                            <rect width="60" height="2" fill="#E53E3E" />
+                        </svg>
+                    </div>
+                    <p class="font-normal text-gray-700 leading-7 lg:w-8/12">Lorem Ipsum. Proin gravida nibh vel velit amet auctor aliquet. Aenean sollicitudin, lorem quis bibendum nisi elit consequat ipsum, nec ipsu sagittis sebh id elit. Duis sed odio sit amet nibh vulputatrsus a sit amet mauris morbi ipsum.</p>
+                    <p class="font-normal text-gray-700 leading-7 lg:w-8/12 mt-4">Duis sed odio sit amet nibh vulputatrsus a sit amet mauris morbi ipsum. bibendum nisi elit consequat ipsum, nec ipsu sagittis sebh id elit</p>
+                </div>
+            </div>
+            <div class="px-6 xl:px-0 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
+                <div class="">
+                    <div class="">
+                        <div class="relative team-custom-height">
+                            <img class="absolute object-cover object-center inset-0 w-full h-full" src="./assets/images/CEO.png" alt="CEO" />
+                        </div>
+                        <div class="bg-gray-200 py-6 px-8">
+                            <div>
+                                <h1 class="text-2xl text-gray-700"><span class="font-bold">Andres</span> Berlin</h1>
+                            </div>
+                            <h2 class="font-medium text-base text-gray-700 pt-3 uppercase">Chief Executive Officer</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="">
+                        <div class="relative team-custom-height">
+                            <img class="absolute object-cover object-center inset-0 w-full h-full" src="./assets/images/productHead.png" alt="productHead" />
+                        </div>
+                        <div class="bg-gray-200 py-6 px-8">
+                            <div>
+                                <h1 class="text-2xl text-gray-700"><span class="font-bold">Silene</span> Tokyo</h1>
+                            </div>
+                            <h2 class="font-medium text-base text-gray-700 pt-3 uppercase">Product Design Head</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="">
+                        <div class="relative team-custom-height">
+                            <img class="absolute object-cover object-center inset-0 w-full h-full" src="./assets/images/AboutUs(7).png" alt="productHead" />
+                        </div>
+                        <div class="bg-gray-200 py-6 px-8">
+                            <div>
+                                <h1 class="text-2xl text-gray-700"><span class="font-bold">Andres</span> Berlin</h1>
+                                <h2 class="font-medium text-base text-gray-700 pt-3 uppercase">Chief Executive Officer</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="">
+                        <div class="relative team-custom-height">
+                            <img class="absolute object-cover object-center inset-0 w-full h-full" src="./assets/images/ChiefOp.png" alt="CEO" />
+                        </div>
+                        <div class="bg-gray-200 py-6 px-8">
+                            <div>
+                                <h1 class="text-2xl text-gray-700"><span class="font-bold">Andres</span> Berlin</h1>
+                            </div>
+                            <h2 class="font-medium text-base text-gray-700 pt-3 uppercase">Chief Executive Officer</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="">
+                        <div class="relative team-custom-height">
+                            <img class="absolute object-cover object-center inset-0 w-full h-full" src="./assets/images/AboutUs(8).png" alt="productHead" />
+                        </div>
+                        <div class="bg-gray-200 py-6 px-8">
+                            <div>
+                                <h1 class="text-2xl text-gray-700"><span class="font-bold">Silene</span> Tokyo</h1>
+                            </div>
+                            <h2 class="font-medium text-base text-gray-700 pt-3 uppercase">Product Design Head</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="">
+                        <div class="relative team-custom-height">
+                            <img class="absolute object-cover object-center inset-0 w-full h-full" src="./assets/images/AboutUs(9).png" alt="productHead" />
+                        </div>
+                        <div class="bg-gray-200 py-6 px-8">
+                            <div>
+                                <h1 class="text-2xl text-gray-700"><span class="font-bold">Andres</span> Berlin</h1>
+                                <h2 class="font-medium text-base text-gray-700 pt-3 uppercase">Chief Executive Officer</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="">
+                        <div class="relative team-custom-height">
+                            <img class="absolute object-cover object-center inset-0 w-full h-full" src="./assets/images/AboutUs(10).png" alt="CEO" />
+                        </div>
+                        <div class="bg-gray-200 py-6 px-8">
+                            <div>
+                                <h1 class="text-2xl text-gray-700"><span class="font-bold">Andres</span> Berlin</h1>
+                            </div>
+                            <h2 class="font-medium text-base text-gray-700 pt-3 uppercase">Chief Executive Officer</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="">
+                        <div class="relative team-custom-height">
+                            <img class="absolute object-cover object-center inset-0 w-full h-full" src="./assets/images/AboutUs(11).png" alt="productHead" />
+                        </div>
+                        <div class="bg-gray-200 py-6 px-8">
+                            <div>
+                                <h1 class="text-2xl text-gray-700"><span class="font-bold">Silene</span> Tokyo</h1>
+                            </div>
+                            <h2 class="font-medium text-base text-gray-700 pt-3 uppercase">Product Design Head</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="">
+                        <div class="relative team-custom-height">
+                            <img class="absolute object-cover object-center inset-0 w-full h-full" src="./assets/images/AboutUs(12).png" alt="productHead" />
+                        </div>
+                        <div class="bg-gray-200 py-6 px-8">
+                            <div>
+                                <h1 class="text-2xl text-gray-700"><span class="font-bold">Andres</span> Berlin</h1>
+                                <h2 class="font-medium text-base text-gray-700 pt-3 uppercase">Chief Executive Officer</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Header Ends Here-->
+
+        <!--Donation section start here --->
+        <div class="px-6 mt-12 xl:px-0 inner_donation_page_linear_blue py-16">
+            <div class="mx-auto container">
+                <div class="xl:flex justify-between w-full items-center">
+                    <div class="flex flex-col text-white">
+                        <h1 class="text-2xl font-medium">Get Onboard Now</h1>
+                        <h2 class="text-sm italic pt-3">Latest updates for you</h2>
+                    </div>
+                    <div class="lg:flex lg:items-center">
+                        <input class="mt-4 xl:mt-0 h-12 bg-indigo-900 pl-4 placeholder-white text-white focus:outline-none text-lg mr-8" placeholder="Your Name" type="text" name="" id="" />
+
+                        <input class="mt-4 xl:mt-0 h-12 bg-indigo-900 pl-4 placeholder-white text-white focus:outline-none text-lg mr-8" placeholder="Email" type="email" name="" id="" />
+                        <input class="mt-4 xl:mt-0 h-12 w-32 bg-indigo-900 pl-4 placeholder-white text-white focus:outline-none text-lg mr-8" placeholder="Zip Code" type="text" name="" id="" />
+                        <button class="mt-4 xl:mt-0 py-3 px-4 bg-red-600 text-sm uppercase text-white focus:outline-none">JOIN US TODAY</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Donation now ends start here --->
+
+        <!--Footer section start here --->
+        <div class="bg-gray-900 px-6 xl:px-0 py-16">
+            <div class="mx-auto container">
+                <div class="container pt-6 mx-auto">
+                    <div class="flex flex-wrap xl:-mx-6">
+                        <div class="lg:w-2/5 w-full pb-6 text-white xl:px-6">
+                            <h1 class="text-3xl font-bold">About Us</h1>
+                            <p class="py-4 text-sm leading-7">Lorem Ipsum. Proin gravida nibh vel velit amet auctor aliquet. Aenean sollicitudin, lorem quis bibendum nisi elit consequat ipsum, nec ipsu sagittis sebh id elit. Duis sed odio sit amet nibh vulputatrsus a sit amet mauris morbi ipsum.</p>
+                            <p class="text-sm">Call us at <span class="text-red-600">0035 244 58 265</span></p>
+                            <p class="pt-8 text-sm">Visit us at 546A Manhattan, New York, NY 87463</p>
+                            <div class="pt-12">
+                                <p class="text-xl font-bold tracking-wider">Links</p>
+                                <div class="pt-5">
+                                    <div class="flex items-center">
+                                        <div class="w-2 h-2 rounded-full bg-red-600 mr-2"></div>
+                                        <p class="text-sm text-white font-medium cursor-pointer">Partnerships</p>
+                                    </div>
+                                    <div class="flex items-center py-5">
+                                        <div class="w-2 h-2 rounded-full bg-red-600 mr-2"></div>
+                                        <p class="text-sm text-white font-medium cursor-pointer">Linkages</p>
+                                    </div>
+                                    <div class="flex items-center pb-5">
+                                        <div class="w-2 h-2 rounded-full bg-red-600 mr-2"></div>
+                                        <p class="text-sm text-white font-medium cursor-pointer">News</p>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="w-2 h-2 rounded-full bg-red-600 mr-2"></div>
+                                        <p class="text-sm text-white font-medium cursor-pointer">Events</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:w-3/5 w-full text-white xl:px-6">
+                            <h1 class="text-3xl font-bold">Instagram</h1>
+                            <h2 class="text-sm italic py-4">Follow Jessica’s campaign on Instagram</h2>
+                            <div class="mt-8">
+                                <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
+                                    <div class="relative">
+                                        <img class="object-cover object-center w-full h-44" src="./assets/images/americanflag.png" alt="americanflag" />
+                                    </div>
+                                    <div class="relative">
+                                        <img class="object-cover object-center w-full h-44" src="./assets/images/badges.png" alt="badges" />
+                                    </div>
+                                    <div class="relative">
+                                        <img class="object-cover object-center w-full h-44" src="./assets/images/compaign.png" alt="compaign" />
+                                    </div>
+                                    <div class="relative">
+                                        <img class="object-cover object-center w-full h-44" src="./assets/images/votingDay.png" alt="voting Day" />
+                                    </div>
+                                    <div class="relative">
+                                        <img class="object-cover object-center w-full h-44" src="./assets/images/worker.png" alt="worker" />
+                                    </div>
+                                    <div class="relative">
+                                        <img class="object-cover object-center w-full h-44" src="./assets/images/poster.png" alt="poster" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Footer section ends here --->
+        <script src="./assets/js/script.js"></script>
+    </body>
+</html>

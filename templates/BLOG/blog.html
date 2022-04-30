@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Blog | Details</title>
+        <link href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&display=swap" rel="stylesheet" />
+        <link href="./assets/css/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Nav starts here -->
+        <div class="py-4 md:py-10">
+            <header class="mx-auto container px-4 xl:px-0">
+                <div class="flex items-center justify-between">
+                    <a href="/">
+                        <img class="w-40" src="./assets/images/logo.png" alt="logo"/>
+                    </a>
+                    <div>
+                        <div onclick="toggleMenu(true)" class="sm:block md:hidden lg:hidden text-gray-500 hover:text-gray-700 focus:text-gray-700 focus:outline-none">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" />
+                                <line x1="4" y1="6" x2="20" y2="6" />
+                                <line x1="4" y1="12" x2="20" y2="12" />
+                                <line x1="4" y1="18" x2="20" y2="18" />
+                            </svg>
+                        </div>
+                        <div id="menu" class="md:block lg:block hidden">
+                            <div onclick="toggleMenu(false)" class="block md:hidden lg:hidden text-gray-500 hover:text-gray-700 focus:text-gray-700 fixed focus:outline-none z-30 top-0 pt-4">
+                                <svg aria-haspopup="true" aria-label="Main Menu" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <line x1="18" y1="6" x2="6" y2="18" />
+                                    <line x1="6" y1="6" x2="18" y2="18" />
+                                </svg>
+                            </div>
+                            <ul class="flex md:flex text-3xl md:text-base bg-white lg:text-base lg:flex flex-col md:flex-row lg:flex-row justify-center items-center fixed md:relative lg:relative top-0 bottom-0 left-0 right-0 z-20">
+                                <li class="md:mr-8 lg:mr-10 flex items-center">
+                                    <a class="hover:text-gray-800 text-gray-600 text-sm pt-10 md:pt-0" href="./about.html">About</a>
+                                </li>
+                                <li class="md:mr-8 lg:mr-10 flex items-center">
+                                    <a class="hover:text-gray-800 text-gray-600 text-sm pt-10 md:pt-0" href="/">Explore</a>
+                                </li>
+                                <li class="md:mr-8 lg:mr-10 flex items-center">
+                                    <a class="hover:text-gray-800 text-gray-600 text-sm pt-10 md:pt-0" href="javascript: void(0)">Opinion</a>
+                                </li>
+                                <li class="md:mr-8 lg:mr-10 flex items-center">
+                                    <a class="hover:text-gray-800 text-gray-600 text-sm pt-10 md:pt-0" href="javascript: void(0)">Business</a>
+                                </li>
+                                <li class="md:mr-8 lg:mr-10 flex items-center">
+                                    <a class=" text-yellow-500  text-sm pt-10 md:pt-0" href="javascript: void(0)">Technology</a>
+                                </li>
+                                <li class="md:mr-8 lg:mr-10 flex items-center">
+                                    <a class="text-gray-600 hover:text-gray-800 text-sm pt-10 md:pt-0" href="javascript: void(0)">Lifestyle</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <!-- Nav ends here -->
+
+        <section class="container mx-auto px-4 xl:px-0 py-6 sm:py-12">
+            <div>
+                <p class="mb-4 mb-3 text-red-500 text-lg">Technology</p>
+                <h1 class="text-5xl text-gray-800 font-medium mb-8">User Experience design in the modern day and age: 10 lessons from N/N group</h1>
+                <p class="text-gray-700 text-2xl mb-8">20th September 2020</p>
+                <div class="flex items-center justify-between mb-10">
+                    <p class="text-gray-600 text-xl">#lifestyle &nbsp; #productivity &nbsp; #rest &nbsp; #sleep</p>
+                    <div class="text-gray-600 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z"></path>
+                            <path d="M12 20l-7 -7a4 4 0 0 1 6.5 -6a.9 .9 0 0 0 1 0a4 4 0 0 1 6.5 6l-7 7"></path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 icon icon-tabler icon-tabler-bookmark" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z"></path>
+                            <path d="M9 4h6a2 2 0 0 1 2 2v14l-5-3l-5 3v-14a2 2 0 0 1 2 -2"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="h-96 w-full relative border-b border-gray-300 mb-12">
+                    <img src="./assets/images/36.png" alt="" class="h-full w-full object-cover overflow-hidden shadow" />
+                </div>
+                <div class="flex justify-center">
+                    <div class="w-full sm:w-2/3 leading-9">
+                        <p class="mb-16 text-gray-800 text-xl">Cards are box containers that hold pieces of information. Recently this simple UI component became an essential part of the web and mobile design — every second app or website available on the market today uses cards. Cards make both content and features more discoverable, and they look good on any screen size — from the large TV screen to the small screen of a mobile device. In this article, we will review the concept of cards and share some practical tips for designers.</p>
+                        <h4 class="mb-6 text-2xl text-gray-800 font-bold">UI cards, the best thing ever?</h4>
+                        <p class="mb-5 text-gray-800 text-xl">Cards are box containers that hold pieces of information. Recently this simple UI component became an essential part of the web and mobile design — every second app or website available on the market today uses cards. Cards make both content and features more discoverable, and they look good on any screen size — from the large TV screen to the small screen of a mobile device. In this article, we will review the concept of cards and share some practical tips for designers.</p>
+                        <div class="mb-10">
+                            <div class="h-64 w-full relative">
+                                <img src="./assets/images/37.png" alt="" class="h-full w-full object-cover overflow-hidden shadow" />
+                            </div>
+                            <p class="text-gray-600 text-sm mt-4 w-full text-center">source: www.pexels.com</p>
+                        </div>
+                        <h4 class="mb-8 text-2xl text-gray-800 font-bold">UI cards, the best thing ever?</h4>
+                        <h5 class="mb-4 text-xl text-gray-800 font-bold">Use simple typography</h5>
+                        <ul class="mb-10">
+                            <li class="text-gray-800 mb-4 flex items-start">
+                                <div class="w-2 h-2 bg-gray-600 rounded-full mr-2 flex-shrink-0 mt-2"></div>
+                                <p><span class="italic">Efficient.</span> Avoid overloading cards with extraneous information or actions. Each card should contain only essential information and actions.</p>
+                            </li>
+                            <li class="text-gray-800 mb-4 flex items-start">
+                                <div class="w-2 h-2 bg-gray-600 rounded-full mr-2 flex-shrink-0 mt-2"></div>
+                                <p><span class="italic">Efficient.</span> Avoid overloading cards with extraneous information or actions. Each card should contain only essential information and actions.</p>
+                            </li>
+                            <li class="text-gray-800 flex items-start">
+                                <div class="w-2 h-2 bg-gray-600 rounded-full mr-2 flex-shrink-0 mt-2"></div>
+                                <p><span class="italic">Efficient.</span> Avoid overloading cards with extraneous information or actions. Each card should contain only essential information and actions.</p>
+                            </li>
+                        </ul>
+                        <div class="flex mb-8">
+                            <div class="w-full sm:w-1/2 pb-3 sm:pb-0 sm:pr-3">
+                                <div class="h-72 w-full relative">
+                                    <img src="./assets/images/38.png" alt="" class="h-full w-full object-cover overflow-hidden shadow rounded" />
+                                </div>
+                                <p class="text-gray-600 text-sm mt-4 w-full text-center">source: www.pexels.com</p>
+                            </div>
+                            <div class="w-full sm:w-1/2 pt-3 sm:pt-0 sm:pl-3">
+                                <div class="h-72 w-full relative">
+                                    <img src="./assets/images/39.png" alt="" class="h-full w-full object-cover overflow-hidden shadow rounded" />
+                                </div>
+                                <p class="text-gray-600 text-sm mt-4 w-full text-center">source: www.pexels.com</p>
+                            </div>
+                        </div>
+                        <p class="mb-10 text-gray-800 text-xl">Cards are box containers that hold pieces of information. Recently this simple UI component became an essential part of the web and mobile design — every second app or website available on the market today uses cards. Cards make both content and features more discoverable, and they look good on any screen size — from the large TV screen to the small screen of a mobile device. In this article, we will review the concept of cards and share some practical tips for designers.</p>
+                        <p class="italic text-gray-800 font-semibold text-xl mb-16">Crux of it is that cards are a great way to carry information, but with care</p>
+                        <div class="mb-10 sm:mb-20">
+                            <hr class="mb-6 border-t border-gray-300" />
+                            <div class="flex items-center justify-between">
+                                <a href="./comments.html">
+                                <div class="text-gray-600 flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message-circle" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" />
+                                        <path d="M3 20l1.3 -3.9a9 8 0 1 1 3.4 2.9l-4.7 1" />
+                                        <line x1="12" y1="12" x2="12" y2="12.01" />
+                                        <line x1="8" y1="12" x2="8" y2="12.01" />
+                                        <line x1="16" y1="12" x2="16" y2="12.01" />
+                                    </svg>
+                                    <p class="text-lg ml-4">3 Comments</p>
+                                </div>
+                            </a>
+                                <div class="text-gray-600 flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z"></path>
+                                        <path d="M12 20l-7 -7a4 4 0 0 1 6.5 -6a.9 .9 0 0 0 1 0a4 4 0 0 1 6.5 6l-7 7"></path>
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 icon icon-tabler icon-tabler-bookmark" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z"></path>
+                                        <path d="M9 4h6a2 2 0 0 1 2 2v14l-5-3l-5 3v-14a2 2 0 0 1 2 -2"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <hr class="mt-6 border-t border-gray-300" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Similar posts start -->
+        <section class="bg-gray-100 pt-4">
+            <div class="mx-auto container py-6 sm:py-12 px-4 xl:px-0">
+                <h3 class="text-2xl text-gray-900 mb-8">Similar posts</h3>
+                <div class="container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-16">
+                    <div>
+                        <div class="h-56 w-full relative border-b border-gray-300">
+                            <img src="./assets/images/40.png" alt="" class="h-full w-full object-cover overflow-hidden shadow" />
+                        </div>
+                        <p class="mt-4 mb-3 text-teal-500 text-sm">Travel</p>
+                        <h4 class="text-2xl text-gray-800">How to get a good nights sleep according to science</h4>
+                        <div class="flex items-center justify-between mt-4 mb-5">
+                            <p class="text-gray-600 text-sm">20th September 2020</p>
+                            <div class="text-gray-600 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M12 20l-7 -7a4 4 0 0 1 6.5 -6a.9 .9 0 0 0 1 0a4 4 0 0 1 6.5 6l-7 7" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 icon icon-tabler icon-tabler-bookmark" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M9 4h6a2 2 0 0 1 2 2v14l-5-3l-5 3v-14a2 2 0 0 1 2 -2" />
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="mb-5 text-gray-600 text-sm">Duis congue mattis odio, a posuere urna feugiat id. Praesent id est tellus. Sed mollis ex at dapibus hendrerit. Curabitur efficitur nulla at finibus suscipit duis efficitur .</p>
+                        <p class="text-gray-600 text-sm">#lifestyle &nbsp; #productivity &nbsp; #rest &nbsp; #sleep</p>
+                    </div>
+                    <div>
+                        <div class="h-56 w-full relative border-b border-gray-300">
+                            <img src="./assets/images/41.png" alt="" class="h-full w-full object-cover overflow-hidden shadow" />
+                        </div>
+                        <p class="mt-4 mb-3 text-teal-500 text-sm">Travel</p>
+                        <h4 class="text-2xl text-gray-800">How to get a good nights sleep according to science</h4>
+                        <div class="flex items-center justify-between mt-4 mb-5">
+                            <p class="text-gray-600 text-sm">20th September 2020</p>
+                            <div class="text-gray-600 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M12 20l-7 -7a4 4 0 0 1 6.5 -6a.9 .9 0 0 0 1 0a4 4 0 0 1 6.5 6l-7 7" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 icon icon-tabler icon-tabler-bookmark" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M9 4h6a2 2 0 0 1 2 2v14l-5-3l-5 3v-14a2 2 0 0 1 2 -2" />
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="mb-5 text-gray-600 text-sm">Duis congue mattis odio, a posuere urna feugiat id. Praesent id est tellus. Sed mollis ex at dapibus hendrerit. Curabitur efficitur nulla at finibus suscipit duis efficitur .</p>
+                        <p class="text-gray-600 text-sm">#lifestyle &nbsp; #productivity &nbsp; #rest &nbsp; #sleep</p>
+                    </div>
+                    <div>
+                        <div class="h-56 w-full relative border-b border-gray-300">
+                            <img src="./assets/images/16.png" alt="" class="h-full w-full object-cover overflow-hidden shadow" />
+                        </div>
+                        <p class="mt-4 mb-3 text-teal-500 text-sm">Travel</p>
+                        <h4 class="text-2xl text-gray-800">How to get a good nights sleep according to science</h4>
+                        <div class="flex items-center justify-between mt-4 mb-5">
+                            <p class="text-gray-600 text-sm">20th September 2020</p>
+                            <div class="text-gray-600 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M12 20l-7 -7a4 4 0 0 1 6.5 -6a.9 .9 0 0 0 1 0a4 4 0 0 1 6.5 6l-7 7" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 icon icon-tabler icon-tabler-bookmark" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M9 4h6a2 2 0 0 1 2 2v14l-5-3l-5 3v-14a2 2 0 0 1 2 -2" />
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="mb-5 text-gray-600 text-sm">Duis congue mattis odio, a posuere urna feugiat id. Praesent id est tellus. Sed mollis ex at dapibus hendrerit. Curabitur efficitur nulla at finibus suscipit duis efficitur .</p>
+                        <p class="text-gray-600 text-sm">#lifestyle &nbsp; #productivity &nbsp; #rest &nbsp; #sleep</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Similar posts end -->
+
+        <script src="./assets/scripts/script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Foodies Restaurant Website</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+        <link href="./assets/css/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation -->
+        <div class="mx-auto container">
+            <!-- Desktop -->
+            <nav>
+                <div class="lg:flex hidden items-center justify-between py-12">
+                    <a href="./home.html">
+                        <img loading="lazy" src="https://cdn.tuk.dev/assets/templates/foodies/foodies.png" class="w-44" alt="logo" />
+                    </a>
+                    <ul class="flex leading-loose">
+                        <a href="./home.html">
+                            <li class="text-2xl leading-8 mr-10 text-color-black flex flex-col items-end justify-end font-normal cursor-pointer text-hover">Home</li>
+                        </a>
+
+                        <a href="./foodies-menu.html">
+                            <li class="text-2xl leading-8 mr-10 text-color-black flex flex-col items-end justify-end font-normal cursor-pointer text-hover">Menu</li>
+                        </a>
+                        <a href="#">
+                            <li class="text-2xl leading-8 mr-10 text-color-black flex flex-col items-end justify-end font-normal cursor-pointer text-hover">About</li>
+                        </a>
+                        <a href="./contact.html">
+                            <li class="text-2xl leading-8 mr-10 text-color-orange relative font-normal cursor-pointer text-hover">
+                                Contact
+                                <hr class="border-4 border-color-orange bg-color-orange w-10 absolute right-0" />
+                            </li>
+                        </a>
+                        <a href="#">
+                            <li class="text-2xl leading-8 text-color-black flex flex-col items-end justify-end font-normal cursor-pointer text-hover">Reservation</li>
+                        </a>
+                    </ul>
+                </div>
+            </nav>
+            <!-- Desktop -->
+            <!-- Mobile -->
+            <nav class="lg:hidden z-40 relative">
+                <div class="flex py-4 justify-between items-center px-4">
+                    <div>
+                        <img loading="lazy" src="https://cdn.tuk.dev/assets/templates/foodies/foodies.png" alt="logo" class="w-24" />
+                    </div>
+                    <div class="visible flex items-center">
+                        <ul id="list" class="hidden p-2 border-r bg-white absolute rounded top-0 left-0 right-0 shadow mt-12 md:mt-16">
+                            <li class="flex cursor-pointer text-hover text-gray-600 text-sm leading-3 tracking-normal mt-2 py-2">
+                                <a href="./home.html">
+                                    <span class="ml-2 font-bold">Home</span>
+                                </a>
+                            </li>
+                            <li class="flex flex-col cursor-pointer text-hover text-gray-600 text-sm leading-3 tracking-normal py-2 flex justify-center" onclick="dropdownHandler(this)">
+                                <a href="./foodies-menu.html">
+                                    <span class="ml-2 font-bold">Menu</span>
+                                </a>
+                            </li>
+                            <li class="flex cursor-pointer text-hover text-gray-600 text-sm leading-3 tracking-normal py-2 hover:text-indigo-700 flex items-center focus:text-indigo-700 focus:outline-none">
+                                <a href="#">
+                                    <span class="ml-2 font-bold">About</span>
+                                </a>
+                            </li>
+                            <li class="flex flex-col cursor-pointer text-hover text-gray-600 text-sm leading-3 tracking-normal py-2 flex justify-center" onclick="dropdownHandler(this)">
+                                <a href="./contact.html">
+                                    <span class="ml-2 font-bold">Contact</span>
+                                </a>
+                            </li>
+                            <li class="flex flex-col cursor-pointer text-hover text-gray-600 text-sm leading-3 tracking-normal pt-2 pb-4 flex justify-center" onclick="dropdownHandler(this)">
+                                <a href="#">
+                                    <span class="ml-2 font-bold">Reservation</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="xl:hidden">
+                            <svg id="open" onclick="MenuHandler(true)" aria-haspopup="true" aria-label="Main Menu" xmlns="http://www.w3.org/2000/svg" class="show-m-menu icon icon-tabler icon-tabler-menu" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z"></path>
+                                <line x1="4" y1="8" x2="20" y2="8"></line>
+                                <line x1="4" y1="16" x2="20" y2="16"></line>
+                            </svg>
+                            <div id="close" class="hidden close-m-menu" onclick="MenuHandler(false)">
+                                <svg aria-label="Close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <line x1="18" y1="6" x2="6" y2="18" />
+                                    <line x1="6" y1="6" x2="18" y2="18" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- Mobile -->
+        </div>
+        <!-- Navigation -->
+
+        <!-- section1 -->
+        <div class="mx-auto container lg:mt-32 lg:px-52 px-4 mt-16">
+            <div class="flex items-center justify-center">
+                <hr class="w-2.5 h-16 bg-color-orange" />
+                <h1 class="text-3xl font-bold text-color-black pl-7">Locations</h1>
+            </div>
+            <div class="lg:mt-16 mt-8 lg:flex items-end">
+                <div class="lg:w-1/2 lg:border-r border-black lg:pr-24 lg:pb-24">
+                    <img loading="lazy" src="https://cdn.tuk.dev/assets/templates/foodies/cafe.png" class="w-full h-full" />
+                </div>
+                <div class="lg:w-1/2">
+                    <div class="lg:pb-24 lg:pl-24 lg:pt-0 pt-8">
+                        <div>
+                            <p class="text-2xl font-semibold">New Jersey, USA</p>
+                            <p class="text-lg pt-5">2464 Royal Ln. Mesa, New Jersey 45463</p>
+                            <p class="text-lg pt-1">(316) 555-0116</p>
+                            <p class="text-lg pt-1">New Jersey</p>
+                        </div>
+
+                        <div class="lg:pt-24 pt-8">
+                            <p class="text-2xl font-semibold">New Jersey, USA</p>
+                            <p class="text-lg pt-5">2464 Royal Ln. Mesa, New Jersey 45463</p>
+                            <p class="text-lg pt-1">(316) 555-0116</p>
+                            <p class="text-lg pt-1">New Jersey</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:flex items-center justify-center w-full">
+                <div class="lg:w-2/5 lg:border-t lg:border-r border-black">
+                    <div class="lg:pr-24 lg:pt-24 pt-8 lg:pb-24">
+                        <p class="text-2xl font-semibold">SanFrancisco, USA</p>
+                        <p class="text-lg pt-5">2464 Royal Ln. Mesa, New Jersey 45463</p>
+                        <p class="text-lg pt-1">(316) 555-0116</p>
+                        <p class="text-lg pt-1">New Jersey</p>
+                    </div>
+                </div>
+                <div class="lg:w-2/5 lg:border-t border-black">
+                    <div class="lg:pl-24 lg:pt-24 pt-8 lg:pb-24">
+                        <div>
+                            <p class="text-2xl font-semibold">SanFrancisco, USA</p>
+                            <p class="text-lg pt-5">2464 Royal Ln. Mesa, New Jersey 45463</p>
+                            <p class="text-lg pt-1">(316) 555-0116</p>
+                            <p class="text-lg pt-1">New Jersey</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- section1 -->
+
+        <!-- Footer -->
+        <div class="bg-color-black py-16 flex flex-col items-center justify-center mt-48 f-f-l">
+            <div class="w-44">
+                <img loading="lazy" src="https://cdn.tuk.dev/assets/templates/foodies/foodies.png" />
+            </div>
+            <div class="flex items-center py-12">
+                <a class="cursor-pointer" href="#"
+                    ><svg xmlns="http://www.w3.org/2000/svg" width="13" height="20" viewBox="0 0 13 20" fill="none">
+                        <path d="M1 8V12H4V19H8V12H11L12 8H8V6C8 5.73478 8.10536 5.48043 8.29289 5.29289C8.48043 5.10536 8.73478 5 9 5H12V1H9C7.67392 1 6.40215 1.52678 5.46447 2.46447C4.52678 3.40215 4 4.67392 4 6V8H1Z" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </a>
+                <a class="cursor-pointer" href="#">
+                    <div class="px-9">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="18" viewBox="0 0 22 18" fill="none">
+                            <path d="M21 1.01001C20 1.50001 19.02 1.69901 18 2.00001C16.879 0.735013 15.217 0.665013 13.62 1.26301C12.023 1.86101 10.977 3.32301 11 5.00001V6.00001C7.755 6.08301 4.865 4.60501 3 2.00001C3 2.00001 -1.182 9.43301 7 13C5.128 14.247 3.261 15.088 1 15C4.308 16.803 7.913 17.423 11.034 16.517C14.614 15.477 17.556 12.794 18.685 8.77501C19.0218 7.55268 19.189 6.28987 19.182 5.02201C19.18 4.77301 20.692 2.25001 21 1.00901V1.01001Z" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </a>
+                <a class="cursor-pointer" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="22" height="22" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <rect x="4" y="4" width="16" height="16" rx="4" />
+                        <circle cx="12" cy="12" r="3" />
+                        <line x1="16.5" y1="7.5" x2="16.5" y2="7.501" />
+                    </svg>
+                </a>
+            </div>
+            <div>
+                <ul class="flex">
+                    <a href="home.html">
+                        <li class="lg:text-lg text-sm text-sm leading-5 lg:mr-10 mr-2 text-white flex flex-col items-end justify-end font-normal cursor-pointer text-hover">Home</li>
+                    </a>
+                    <a href="./foodies-menu.html">
+                        <li class="lg:text-lg text-sm text-sm leading-5 lg:mr-10 mr-2 text-white relative font-normal cursor-pointer text-hover">Menu</li>
+                    </a>
+                    <a href="#">
+                        <li class="lg:text-lg text-sm text-sm leading-5 lg:mr-10 mr-2 text-white flex flex-col items-end justify-end font-normal cursor-pointer text-hover">About</li>
+                    </a>
+                    <a href="./contact.html">
+                        <li class="lg:text-lg text-sm text-sm leading-5 lg:mr-10 mr-2 text-white flex flex-col items-end justify-end font-normal cursor-pointer text-hover">Contact</li>
+                    </a>
+                    <a href="#">
+                        <li class="lg:text-lg text-sm text-sm leading-5 text-white flex flex-col items-end justify-end font-normal cursor-pointer text-hover">Reservation</li>
+                    </a>
+                </ul>
+            </div>
+            <div class="pt-16 flex lg:items-start items-center">
+                <img loading="lazy" src="https://cdn.tuk.dev/assets/templates/foodies/tm.png" class="pr-4" />
+                <p class="lg:text-base text-xs text-white leading-5">2021 Foodies, All rights reserved</p>
+            </div>
+        </div>
+        <!-- Footer -->
+        <script src="./assets/js/script.js"></script>
+    </body>
+</html>

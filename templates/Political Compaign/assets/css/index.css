@@ -1,0 +1,99 @@
+.f-f-p {
+    font-family: "Poppins", sans-serif !important;
+}
+.f-f-m-w {
+    font-family: "Merriweather", serif !important;
+}
+.vote_text {
+    font-size: 80px;
+    letter-spacing: 54.6px;
+    color: #f7fafc;
+    font-weight: 700;
+    top: -13px;
+    z-index: 0;
+}
+.vote_text_mobile {
+    font-size: 40px;
+    letter-spacing: 10px;
+    color: #f7fafc;
+    font-weight: 700;
+    z-index: 0;
+}
+.custom-height {
+    min-height: 240px;
+}
+.custom-height_sea {
+    min-height: 200px;
+}
+.donation-background {
+    background: linear-gradient(315deg, #9b2c2c 0%, #c53030 54.78%, #e53e3e 100%);
+}
+.inner_donation_page_linear_blue {
+    background: linear-gradient(180deg, #4c51bf 0%, #434190 100%);
+}
+.inner_donation_page_linear_red {
+    background: linear-gradient(180deg, #c53030 0%, #9b2c2c 100%);
+}
+
+.team-custom-height {
+    min-height: 390px;
+}
+.event-custom-height {
+    min-height: 390px;
+}
+
+.custom-height-badges-inner {
+    min-height: 504px;
+}
+.top-100 {
+    animation: slideDown 0.5s ease-in-out;
+}
+@keyframes slideDown {
+    0% {
+        top: -50%;
+    }
+    100% {
+        top: 0;
+    }
+}
+* {
+    outline: none !important;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+}
+/* Slider css below */
+.slider {
+    width: 100%;
+    height: 600px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+.slide-ana {
+    height: 100%;
+}
+.slide-ana > div {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: all 1s;
+}
+@media (min-width: 320px) and (max-width: 1023px) {
+    .slider .left {
+        margin-left: 40% !important;
+    }
+    .slider .right {
+        margin-left: 50% !important;
+    }
+    .slider {
+        height: 650px;
+    }
+}
+.border-custom-trans {
+    border-bottom: 3px solid transparent;
+}
+@media (min-width: 320px) and (max-width: 1279px) {
+    .empty {
+        display: none;
+    }
+}

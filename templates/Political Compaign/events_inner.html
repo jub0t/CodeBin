@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="./assets/css/index.css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+        <title>Events Inner</title>
+    </head>
+
+    <body class="f-f-p">
+        <!--Header Starts Here-->
+        <div class="mx-auto container relative">
+            <nav class="lg:hidden">
+                <div class="flex py-2 justify-between items-center px-4">
+                    <a href="./index.html">
+                        <div>
+                            <img src="./assets/images/logo.png" alt="" />
+                        </div>
+                    </a>
+                    <div class="visible flex items-center">
+                        <ul id="list" class="z-40 hidden p-2 border-r bg-white absolute rounded top-0 left-0 right-0 shadow mt-16 md:mt-16">
+                            <li class="flex cursor-pointer text-gray-600 text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
+                                <a href="./index.html">
+                                    <span class="ml-2 font-bold">Home</span>
+                                </a>
+                            </li>
+                            <li class="flex flex-col cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex justify-center" onclick="dropdownHandler(this)">
+                                <a href="./compaign_donations.html">
+                                    <span class="ml-2 font-bold">Donations</span>
+                                </a>
+                            </li>
+                            <li class="flex cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-2 hover:text-indigo-700 flex items-center focus:text-indigo-700 focus:outline-none">
+                                <a href="./events.html">
+                                    <span class="ml-2 font-bold">Events</span>
+                                </a>
+                            </li>
+                            <li class="flex flex-col cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex justify-center" onclick="dropdownHandler(this)">
+                                <a href="./blog.html">
+                                    <span class="ml-2 font-bold">Blog</span>
+                                </a>
+                            </li>
+                            <li class="flex flex-col cursor-pointer text-gray-600 text-sm leading-3 tracking-normal pt-2 pb-4 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex justify-center" onclick="dropdownHandler(this)">
+                                <a href="./aboutUs.html">
+                                    <span class="ml-2 font-bold">About Us</span>
+                                </a>
+                            </li>
+                            <input class="ml-2 mb-4 border-b border-gray-300 focus:outline-none w-1/3 text-gray-800 text-sm" placeholder="Search"/>
+                        </ul>
+                        <div class="xl:hidden">
+                            <svg id="open" onclick="MenuHandler(true)" aria-haspopup="true" aria-label="Main Menu" xmlns="http://www.w3.org/2000/svg" class="show-m-menu icon icon-tabler icon-tabler-menu" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z"></path>
+                                <line x1="4" y1="8" x2="20" y2="8"></line>
+                                <line x1="4" y1="16" x2="20" y2="16"></line>
+                            </svg>
+                            <div id="close" class="hidden close-m-menu" onclick="MenuHandler(false)">
+                                <svg aria-label="Close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <line x1="18" y1="6" x2="6" y2="18" />
+                                    <line x1="6" y1="6" x2="18" y2="18" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <div class="flex justify-center w-full">
+                <h1 class="hidden xl:block vote_text -mt-6">VOTE GELLER</h1>
+            </div>
+            <div class="lg:flex w-full xl:-mt-6">
+                <div class="lg:w-3/5 w-full relative">
+                    <img class="xl:absolute h-full w-full object-cover object-center" src="./assets/images/vote-casting.png" alt="electionDay" />
+                </div>
+                <div class="lg:w-2/5 w-full bg-indigo-800 py-20 px-6 sm:px-10 lg:py-44 lg:px-10 text-white">
+                    <div class="hidden xl:block absolute top-0 -ml-14 mt-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="270" height="178" viewBox="0 0 270 178" fill="none">
+                            <path
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M64 176C86.9136 176 103.309 168.162 113.185 152.486C123.062 136.81 128 115.196 128 87.6437C128 60.2501 123.062 38.7944 113.185 23.2767C103.309 7.75888 86.9136 0 64 0C41.0864 0 24.6914 7.75888 14.8148 23.2767C4.93827 38.7944 0 60.2501 0 87.6437C0 115.196 4.93827 136.81 14.8148 152.486C24.6914 168.162 41.0864 176 64 176ZM64.5 145C55.5909 145 48.8295 142.511 44.2159 137.534C39.6023 132.557 36.5795 126 35.1477 117.863C33.7159 109.726 33 99.6528 33 87.6445C33 75.9522 33.7557 66.1164 35.267 58.1372C36.7784 50.158 39.8011 43.6403 44.3352 38.5842C48.8693 33.5281 55.5909 31 64.5 31C73.4091 31 80.1307 33.5281 84.6648 38.5842C89.1989 43.6403 92.2216 50.158 93.733 58.1372C95.2443 66.1164 96 75.9522 96 87.6445C96 99.6528 95.2841 109.726 93.8523 117.863C92.4205 126 89.3977 132.557 84.7841 137.534C80.1705 142.511 73.4091 145 64.5 145ZM244.406 171.719C235.993 175.906 225.889 178 214.095 178C196.325 178 181.857 173.497 170.692 164.49C159.526 155.483 153.629 142.21 153 124.671H185.081C185.395 132.414 188.029 138.616 192.983 143.277C197.936 147.938 204.738 150.269 213.387 150.269C221.407 150.269 227.58 148.017 231.904 143.514C236.229 139.011 238.391 133.204 238.391 126.093C238.391 116.613 235.403 109.818 229.427 105.71C223.452 101.601 214.173 99.5473 201.593 99.5473H194.752V72.2903H201.593C223.923 72.2903 235.089 64.7847 235.089 49.7736C235.089 42.9791 233.084 37.6858 229.074 33.8935C225.064 30.1012 219.284 28.2051 211.736 28.2051C204.345 28.2051 198.644 30.2197 194.634 34.249C190.624 38.2783 188.304 43.3742 187.675 49.5366H155.359C156.145 33.7355 161.689 21.5291 171.989 12.9174C182.289 4.30581 195.853 0 212.679 0C224.159 0 233.988 2.01465 242.165 6.04394C250.343 10.0732 256.515 15.5246 260.682 22.3981C264.85 29.2716 266.933 37.0537 266.933 45.7443C266.933 55.6991 264.378 64.1132 259.267 70.9867C254.156 77.8602 248.062 82.482 240.986 84.8522V85.8003C250.107 88.6445 257.223 93.7008 262.334 100.969C267.445 108.238 270 117.561 270 128.937C270 138.418 267.838 146.872 263.513 154.298C259.189 161.725 252.82 167.532 244.406 171.719Z"
+                                fill="#3C366B"
+                            />
+                        </svg>
+                    </div>
+                    <div class="flex items-center w-full justify-between">
+                        <div class="flex flex-col items-center">
+                            <div class="px-4 border-r border-indigo-900">
+                                <h1 class="text-3xl xl:text-5xl leading-10 pb-3 tracking-wider font-semibold">03</h1>
+                            </div>
+                            <div>
+                                <p class="text-base tracking-wide">Months</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <div class="px-4 border-r border-indigo-900">
+                                <h1 class="text-3xl xl:text-5xl leading-10 pb-3 tracking-wider font-semibold">02</h1>
+                            </div>
+                            <div>
+                                <p class="text-base tracking-wide">Weeks</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <div class="px-4 border-r border-indigo-900">
+                                <h1 class="text-3xl xl:text-5xl leading-10 pb-3 tracking-wider font-semibold">28</h1>
+                            </div>
+                            <div>
+                                <p class="text-base tracking-wide">Days</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <div class="px-4">
+                                <h1 class="text-3xl xl:text-5xl leading-10 pb-3 tracking-wider font-semibold">03</h1>
+                            </div>
+                            <div>
+                                <p class="text-base tracking-wide">Months</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Header ends Here-->
+
+        <!--Economic Revamp section starts here-->
+        <div class="mx-auto px-6 xl:px-0 container my-12">
+            <div class="flex flex-wrap">
+                <div class="lg:w-3/5 w-full">
+                    <div class="pb-10">
+                        <div class="pb-8">
+                            <h1 class="text-2xl lg:text-3xl text-indigo-900 font-semibold lg:w-8/12 tracking-normal">Economic Revamp in the state of California, 2020</h1>
+                        </div>
+                        <div class="lg:flex justify-between w-full items-center pb-6">
+                            <div class="flex items-center text-gray-600 text-sm">
+                                <div class="flex items-center lg:pr-10">
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                            <circle cx="9" cy="9" r="7.5" stroke="#718096" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M9 4.8335V9.00016L11.5 11.5002" stroke="#718096" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <p class="pl-1">4:00pm to 6:00pm</p>
+                                </div>
+                                <div class="flex items-center pl-2">
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" viewBox="0 0 16 18" fill="none">
+                                            <circle cx="8" cy="8.1665" r="2.5" stroke="#718096" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7141 12.8806L9.17831 16.4164C8.86602 16.729 8.44227 16.9047 8.0004 16.9047C7.55852 16.9047 7.13478 16.729 6.82248 16.4164L3.28581 12.8806C0.682416 10.2771 0.682489 6.05602 3.28597 3.45258C5.88946 0.84914 10.1105 0.84914 12.714 3.45258C15.3175 6.05602 15.3175 10.2771 12.7141 12.8806Z" stroke="#718096" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <p class="pl-1">Manhattan, NY</p>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-sm text-red-600 font-medium pt-4 lg:pt-0">Tuesday, 12th August, 2020</p>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-gray-700 leading-7">Lorem Ipsum. Proin gravida nibh vel velit amet auctor aliquet. Aenean sollicitudin, lorem quis bibendum nisi elit consequat ipsum, nec ipsu sagittis sebh id elit. Duis sed odio sit amet nibh vulputatrsus a sit amet mauris morbi ipsum. Aenean sollicitudin, lorem quis bibendum nisi elit consequat ipsum, nec ipsu sagittis sebh id elit. Duis sed odio sit amet nibh vulputatrsus a sit amet mauris morbi ipsum.</p>
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-9/12">
+                        <h1 class="text-lg text-indigo-900 font-semibold tracking-wide">Timeline</h1>
+                        <div class="pt-6 w-full justify-between flex">
+                            <div class="flex flex-col items-center pt-2 sm:pt-8 lg:pt-2 pr-2 lg:pr-0">
+                                <div class="mt-8">
+                                    <h1 class="text-indigo-900 text-xs">9:00am - 10:00 am</h1>
+                                    <h2 class="lg:w-11/12 text-sm md:text-base text-gray-700 pt-1">Avoid overloading cards with extraneous information or actions.</h2>
+                                </div>
+                                <div class="pt-8 sm:pt-16 mt-10 lg:pt-8">
+                                    <h1 class="text-indigo-900 text-xs">9:00am - 10:00 am</h1>
+                                    <h2 class="lg:w-11/12 text-sm md:text-base text-gray-700 pt-1">Avoid overloading cards with extraneous information or actions.</h2>
+                                </div>
+                            </div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="119" height="385" viewBox="0 0 119 385" fill="none">
+                                    <circle cx="4" cy="74" r="4" fill="#EDF2F7" />
+                                    <circle cx="115" cy="143" r="4" fill="#EDF2F7" />
+                                    <circle cx="7" cy="240" r="4" fill="#EDF2F7" />
+                                    <circle cx="114" cy="310" r="4" fill="#EDF2F7" />
+                                    <rect x="59" width="2" height="385" fill="#EDF2F7" />
+                                    <rect x="4" y="73" width="55" height="2" fill="#EDF2F7" />
+                                    <rect x="60" y="143" width="55" height="2" fill="#EDF2F7" />
+                                    <rect x="4" y="239" width="55" height="2" fill="#EDF2F7" />
+                                    <rect x="60" y="309" width="55" height="2" fill="#EDF2F7" />
+                                </svg>
+                            </div>
+                            <div class="flex flex-col items-center pt-10 sm:pt-28 lg:pt-14 pl-2 lg:pl-7">
+                                <div class="mt-10">
+                                    <h1 class="text-indigo-900 text-xs">9:00am - 10:00 am</h1>
+                                    <h2 class="lg:w-11/12 text-sm md:text-base text-gray-700 pt-1">Avoid overloading cards with extraneous information or actions.</h2>
+                                </div>
+                                <div class="pt-10 mt-10 lg:pt-11">
+                                    <h1 class="text-indigo-900 text-xs">9:00am - 10:00 am</h1>
+                                    <h2 class="lg:w-11/12 text-sm md:text-base text-gray-700 pt-1">Avoid overloading cards with extraneous information or actions.</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-2/5 w-full pt-10 lg:pt-0 lg:pl-10 xl:pl-20">
+                    <div class="w-full flex justify-center lg:justify-end">
+                        <div class="donation-background flex xl:w-11/12 justify-center items-center py-4">
+                            <div class="items-center w-full">
+                                <div class="pt-12">
+                                    <div class="flex items-center flex-col text-white">
+                                        <h1 class="uppercase text-4xl font-semibold">DONATE</h1>
+                                        <div class="flex items-center">
+                                            <div>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="30" viewBox="0 0 25 24" fill="none">
+                                                    <path d="M25 9.16672L15.9161 8.57113L12.495 0L9.07397 8.57113L0 9.16672L6.95967 15.0601L4.67588 24L12.495 19.071L20.3142 24L18.0304 15.0601L25 9.16672Z" fill="white"></path>
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="30" viewBox="0 0 25 24" fill="none">
+                                                    <path d="M25 9.16672L15.9161 8.57113L12.495 0L9.07397 8.57113L0 9.16672L6.95967 15.0601L4.67588 24L12.495 19.071L20.3142 24L18.0304 15.0601L25 9.16672Z" fill="white"></path>
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="30" viewBox="0 0 25 24" fill="none">
+                                                    <path d="M25 9.16672L15.9161 8.57113L12.495 0L9.07397 8.57113L0 9.16672L6.95967 15.0601L4.67588 24L12.495 19.071L20.3142 24L18.0304 15.0601L25 9.16672Z" fill="white"></path>
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="30" viewBox="0 0 25 24" fill="none">
+                                                    <path d="M25 9.16672L15.9161 8.57113L12.495 0L9.07397 8.57113L0 9.16672L6.95967 15.0601L4.67588 24L12.495 19.071L20.3142 24L18.0304 15.0601L25 9.16672Z" fill="white"></path>
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="30" viewBox="0 0 25 24" fill="none">
+                                                    <path d="M25 9.16672L15.9161 8.57113L12.495 0L9.07397 8.57113L0 9.16672L6.95967 15.0601L4.67588 24L12.495 19.071L20.3142 24L18.0304 15.0601L25 9.16672Z" fill="white"></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="px-6 lg:px-12 py-12 w-full">
+                                    <form action="w-full">
+                                        <div class="flex flex-col items-center w-full">
+                                            <input class="mb-5 h-12 bg-white w-full pl-6 placeholder-gray-700 text-gray-700 focus:outline-none text-lg" placeholder="Email" type="text" name="" id="" />
+                                            <input class="mb-5 h-12 bg-white w-full pl-6 placeholder-gray-700 text-gray-700 focus:outline-none text-lg mt-3" placeholder="Zip Code" type="email" name="" id="" />
+                                            <button class="w-full py-3 px-4 bg-red-900 text-base uppercase text-white mt-3 focus:outline-none">DONATE</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-12 lg:mt-24 bg-gray-100">
+            <div class="mx-auto container px-6 xl:px-0 py-12">
+                <div class="">
+                    <div class="flex flex-wrap lg:items-center">
+                        <div class="md:w-3/5 w-full pb-6 md:pb-0 md:pr-6">
+                            <h1 class="text-lg text-indigo-900 font-semibold tracking-wide">Event Venue</h1>
+                            <p class="text-sm text-gray-700 leading-7 pt-3">Lorem Ipsum. Proin gravida nibh vel velit amet auctor aliquet. Aenean sollicitudin, lorem quis bibendum nisi elit consequat ipsum, nec ipsu sagittis sebh id elit. Duis sed odio sit amet nibh vulputatrsus a sit amet mauris morbi ipsum. Aenean sollicitudin, lorem quis bibendum nisi elit consequat ipsum, nec ipsu sagittis sebh id elit. Duis sed odio sit amet nibh vulputatrsus a sit amet mauris morbi ipsum.</p>
+                            <div class="lg:flex justify-between items-end w-full pt-4">
+                                <div class="flex">
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                            <circle cx="16" cy="14.667" r="4" stroke="#718096" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M23.5427 22.2089L17.8854 27.8663C17.3857 28.3664 16.7077 28.6475 16.0007 28.6475C15.2937 28.6475 14.6157 28.3664 14.116 27.8663L8.45737 22.2089C4.29194 18.0433 4.29206 11.2896 8.45763 7.12413C12.6232 2.95862 19.3769 2.95862 23.5424 7.12413C27.708 11.2896 27.7081 18.0433 23.5427 22.2089Z" stroke="#718096" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <div class="text-sm text-gray-700 tracking-wide pl-2">
+                                        <p>The Beanery street</p>
+                                        <p>400 SW 2nd St</p>
+                                        <p>Las Vegas, OR 97330 United States</p>
+                                    </div>
+                                </div>
+                                <div class="pt-4 lg:pt-0">
+                                    <p class="text-sm text-red-600 font-medium cursor-pointer underline">View on Google Maps</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:w-2/5 w-full">
+                            <div class="w-full flex justify-end">
+                                <img class="h-full" src="./assets/images/eventsInner.png" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Economic Revamp section ends here-->
+
+        <!--Footer section starts  here --->
+        <div class="bg-gray-900 px-6 xl:px-0 py-16">
+            <div class="mx-auto container">
+                <div class="pb-14 xl:pb-28">
+                    <div class="pb-11">
+                        <h1 class="text-2xl text-white">Event Gallery</h1>
+                        <div class="pt-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="2" viewBox="0 0 60 2" fill="none">
+                                <rect width="60" height="2" fill="#E53E3E" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="pb-7 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 pt-6 gap-8">
+                        <img class="w-full" src="./assets/images/eventsInnerFooterGrid(1).png" alt="raileyDinner" />
+                        <img class="w-full" src="./assets/images/eventsInnerFooterGrid(2).png" alt="people" />
+                        <img class="w-full" src="./assets/images/eventsInnerFooterGrid(3).png" alt="badge" />
+                        <img class="w-full" src="./assets/images/eventsInnerFooterGrid(4).png" alt="railey" />
+                        <img class="w-full" src="./assets/images/eventsInnerFooterGrid(5).png" alt="dinner" />
+                        <img class="w-full" src="./assets/images/eventsInnerFooterGrid(6).png" alt="post Card" />
+                        <img class="w-full" src="./assets/images/eventsInnerFooterGrid(7).png" alt="free Election" />
+                        <img class="w-full" src="./assets/images/eventsInnerFooterGrid(8).png" alt="badges" />
+                        <img class="w-full" src="./assets/images/eventsInnerFooterGrid(9).png" alt="Card" />
+                    </div>
+                </div>
+
+                <div class="">
+                    <div class="flex flex-wrap xl:-mx-6">
+                        <div class="lg:w-2/5 w-full pb-6 text-white xl:px-6">
+                            <h1 class="text-3xl font-bold">About Us</h1>
+                            <p class="py-4 text-sm leading-7">Lorem Ipsum. Proin gravida nibh vel velit amet auctor aliquet. Aenean sollicitudin, lorem quis bibendum nisi elit consequat ipsum, nec ipsu sagittis sebh id elit. Duis sed odio sit amet nibh vulputatrsus a sit amet mauris morbi ipsum.</p>
+                            <p class="text-sm">Call us at <span class="text-red-600">0035 244 58 265</span></p>
+                            <p class="pt-8 text-sm">Visit us at 546A Manhattan, New York, NY 87463</p>
+                            <div class="pt-12">
+                                <p class="text-xl font-bold tracking-wider">Links</p>
+                                <div class="pt-5">
+                                    <div class="flex items-center">
+                                        <div class="w-2 h-2 rounded-full bg-red-600 mr-2"></div>
+                                        <p class="text-sm text-white font-medium cursor-pointer">Partnerships</p>
+                                    </div>
+                                    <div class="flex items-center py-5">
+                                        <div class="w-2 h-2 rounded-full bg-red-600 mr-2"></div>
+                                        <p class="text-sm text-white font-medium cursor-pointer">Linkages</p>
+                                    </div>
+                                    <div class="flex items-center pb-5">
+                                        <div class="w-2 h-2 rounded-full bg-red-600 mr-2"></div>
+                                        <p class="text-sm text-white font-medium cursor-pointer">News</p>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="w-2 h-2 rounded-full bg-red-600 mr-2"></div>
+                                        <p class="text-sm text-white font-medium cursor-pointer">Events</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:w-3/5 w-full text-white xl:px-6">
+                            <h1 class="text-3xl font-bold">Instagram</h1>
+                            <h2 class="text-sm italic py-4">Follow Jessica’s campaign on Instagram</h2>
+                            <div class="mt-8">
+                                <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
+                                    <div class="relative">
+                                        <img class="object-cover object-center w-full h-44" src="./assets/images/americanflag.png" alt="americanflag" />
+                                    </div>
+                                    <div class="relative">
+                                        <img class="object-cover object-center w-full h-44" src="./assets/images/badges.png" alt="badges" />
+                                    </div>
+                                    <div class="relative">
+                                        <img class="object-cover object-center w-full h-44" src="./assets/images/compaign.png" alt="compaign" />
+                                    </div>
+                                    <div class="relative">
+                                        <img class="object-cover object-center w-full h-44" src="./assets/images/votingDay.png" alt="voting Day" />
+                                    </div>
+                                    <div class="relative">
+                                        <img class="object-cover object-center w-full h-44" src="./assets/images/worker.png" alt="worker" />
+                                    </div>
+                                    <div class="relative">
+                                        <img class="object-cover object-center w-full h-44" src="./assets/images/poster.png" alt="poster" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Footer section ends here --->
+        <script src="./assets/js/script.js"></script>
+    </body>
+</html>

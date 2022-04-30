@@ -1,0 +1,102 @@
+.f-f-i {
+    font-family: "Inter", sans-serif;
+}
+.f-f-p {
+    font-family: "Poppins", sans-serif;
+}
+.custom-height {
+    height: 1177px;
+}
+.border-custom {
+    border-bottom: 3px solid #237ac2;
+}
+.text-colo-para {
+    color: #4a5568;
+}
+.bg-background-blue {
+    background-color: #237ac2;
+}
+.text-color-heading {
+    color: #052e47;
+}
+.custom-button-border {
+    border: 2px solid #052e47;
+}
+.vl {
+    border-left: 2px solid rgba(209, 213, 219);
+    height: 138px;
+}
+.bg-blue {
+    background: #4299e1;
+}
+.bg-gray {
+    background: #cbd5e0;
+}
+.bg-gray-light {
+    background: #f6f6f6;
+}
+.bg-blue-dark {
+    background: #052e47;
+}
+.text-blue-light {
+    color: #4299e1;
+}
+.custom-border-blue {
+    border-bottom: 20px solid #052e47;
+}
+.top-100 {
+    animation: slideDown 0.5s ease-in-out;
+}
+@keyframes slideDown {
+    0% {
+        top: -50%;
+    }
+    100% {
+        top: 0;
+    }
+}
+* {
+    outline: none !important;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+}
+html,
+body {
+    scroll-behavior: smooth;
+}
+/* Slider css below */
+.slider {
+    width: 100%;
+    height: 600px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+.slide-ana {
+    height: 100%;
+}
+.slide-ana > div {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: all 1s;
+}
+@media (min-width: 320px) and (max-width: 1023px) {
+    .slider .left {
+        margin-left: 40% !important;
+    }
+    .slider .right {
+        margin-left: 50% !important;
+    }
+    .slider {
+        height: 650px;
+    }
+}
+.border-custom-trans {
+    border-bottom: 3px solid transparent;
+}
+@media (min-width: 320px) and (max-width: 1279px) {
+    .empty {
+        display: none;
+    }
+}

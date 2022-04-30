@@ -1,0 +1,1836 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Inbox</title>
+        <link href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet" />
+        <link href="./assets/css/style.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div class="flex flex-no-wrap">
+            <div onclick="openSidebar(false)" class="flex items-center justify-center rounded-r-md bg-gray-800 text-gray-300 ml-0 z-10 cursor-pointer absolute inset-0 mt-10 m-auto w-8 h-8">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" />
+                    <polyline points="9 6 15 12 9 18" />
+                </svg>
+            </div>
+            <div id="sidebar" class="overflow-y-scroll lg:overflow-y-auto fixed lg:sticky h-screen lg:h-auto z-40 top-0 bg-gray-900 pt-10 w-64 lg:w-72">
+                <div class="px-8">
+                    <div class="flex items-center justify-between">
+                        <div class="w-32">
+                            <img class="w-full" src="https://cdn.tuk.dev/assets/components/todos/logo.png" alt="quicklist logo" />
+                        </div>
+                        <div onclick="openSidebar(true)" class="text-gray-700 ml-8 cursor-pointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" />
+                                <polyline points="15 6 9 12 15 18" />
+                            </svg>
+                        </div>
+                    </div>
+                    <ul class="my-10 flex flex-wrap">
+                        <li class="w-1/2 flex justify-start mb-6">
+                            <a href="./kanban.html" class="bg-transparentrounded-md text-gray-600 flex flex-col justify-center items-center w-20 h-20 p-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-layout-kanban" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <line x1="4" y1="4" x2="10" y2="4" />
+                                    <line x1="14" y1="4" x2="20" y2="4" />
+                                    <rect x="4" y="8" width="6" height="12" rx="2" />
+                                    <rect x="14" y="8" width="6" height="6" rx="2" />
+                                </svg>
+                                <p class="mt-1 uppercase font-semibold text-xs">kanban</p>
+                            </a>
+                        </li>
+                        <li class="w-1/2 flex justify-end mb-6">
+                            <a href="./inbox.html" class="bg-gray-700 rounded-md text-gray-300 flex flex-col justify-center items-center w-20 h-20 p-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-inbox" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <rect x="4" y="4" width="16" height="16" rx="2" />
+                                    <path d="M4 13h3l3 3h4l3 -3h3" />
+                                </svg>
+                                <p class="mt-1 uppercase font-semibold text-xs">inbox</p>
+                            </a>
+                        </li>
+                        <li class="w-1/2 flex justify-start mb-6">
+                            <a href="./notebook.html" class="rounded-md bg-transparent text-gray-600 flex flex-col justify-center items-center w-20 h-20 p-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-notebook" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M6 4h11a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-11a1 1 0 0 1 -1 -1v-14a1 1 0 0 1 1 -1m3 0v18" />
+                                    <line x1="13" y1="8" x2="15" y2="8" />
+                                    <line x1="13" y1="12" x2="15" y2="12" />
+                                </svg>
+                                <p class="mt-1 uppercase font-semibold text-xs">notebook</p>
+                            </a>
+                        </li>
+                        <li class="w-1/2 flex justify-end mb-6">
+                            <a href="./calendar_month_view.html" class="rounded-md bg-transparent text-gray-600 flex flex-col justify-center items-center w-20 h-20 p-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-event" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <rect x="4" y="5" width="16" height="16" rx="2" />
+                                    <line x1="16" y1="3" x2="16" y2="7" />
+                                    <line x1="8" y1="3" x2="8" y2="7" />
+                                    <line x1="4" y1="11" x2="20" y2="11" />
+                                    <rect x="8" y="15" width="2" height="2" />
+                                </svg>
+                                <p class="mt-1 uppercase font-semibold text-xs">calendar</p>
+                            </a>
+                        </li>
+                        <li class="w-1/2 flex justify-start">
+                            <a href="./important.html" class="rounded-md bg-transparent text-gray-600 flex flex-col justify-center items-center w-20 h-20 p-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-star" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M12 17.75l-6.172 3.245 1.179-6.873-4.993-4.867 6.9-1.002L12 2l3.086 6.253 6.9 1.002-4.993 4.867 1.179 6.873z" />
+                                </svg>
+                                <p class="mt-1 uppercase font-semibold text-xs">important</p>
+                            </a>
+                        </li>
+                        <li class="w-1/2 flex justify-end">
+                            <a href="./projects.html" class="rounded-md bg-transparent text-gray-600 flex flex-col justify-center items-center w-20 h-20 p-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-stack" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <polyline points="12 4 4 8 12 12 20 8 12 4" />
+                                    <polyline points="4 12 12 16 20 12" />
+                                    <polyline points="4 16 12 20 20 16" />
+                                </svg>
+                                <p class="mt-1 uppercase font-semibold text-xs">projects</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="flex items-center justify-between text-gray-600">
+                        <h4 class="uppercase font-semibold">List</h4>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="cursor-pointer icon icon-tabler icon-tabler-plus" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" />
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg>
+                    </div>
+                    <ul class="text-gray-600 mt-8">
+                        <li class="mb-5">Grocery Items</li>
+                        <li class="mb-5">Family</li>
+                        <li>Friends</li>
+                    </ul>
+                    <div class="my-20">
+                        <div class="flex items-center justify-between text-gray-600">
+                            <h4 class="uppercase font-semibold">Labels</h4>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="cursor-pointer icon icon-tabler icon-tabler-plus" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" />
+                                <line x1="12" y1="5" x2="12" y2="19" />
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                            </svg>
+                        </div>
+                        <ul class="text-gray-600 mt-8">
+                            <li class="mb-5 flex items-center">
+                                <span class="mr-2 w-2 h-2 rounded-full bg-indigo-600"></span>
+                                Work Related
+                            </li>
+                            <li class="mb-5 flex items-center">
+                                <span class="mr-2 w-2 h-2 rounded-full bg-yellow-600"></span>
+                                Family
+                            </li>
+                            <li class="mb-5 flex items-center">
+                                <span class="mr-2 w-2 h-2 rounded-full bg-green-500"></span>
+                                Friends
+                            </li>
+                            <li class="mb-5 flex items-center">
+                                <span class="mr-2 w-2 h-2 rounded-full bg-purple-600"></span>
+                                Grocery
+                            </li>
+                            <li class="mb-5 flex items-center">
+                                <span class="mr-2 w-2 h-2 rounded-full bg-blue-600"></span>
+                                Utilities
+                            </li>
+                            <li class="mb-5 flex items-center">
+                                <span class="mr-2 w-2 h-2 rounded-full bg-pink-600"></span>
+                                Rental
+                            </li>
+                            <li class="mb-5 flex items-center">
+                                <span class="mr-2 w-2 h-2 rounded-full bg-red-600"></span>
+                                Maintenance
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="px-8 py-4 w-full border-t border-gray-800 flex items-center text-gray-600 uppercase text-xs">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="cursor-pointer icon icon-tabler icon-tabler-trash" width="18" height="18" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" />
+                        <line x1="4" y1="7" x2="20" y2="7" />
+                        <line x1="10" y1="11" x2="10" y2="17" />
+                        <line x1="14" y1="11" x2="14" y2="17" />
+                        <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                        <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                    </svg>
+                    <p class="cursor-pointer pl-2">trash</p>
+                </div>
+            </div>
+            <div class="py-8 px-10 md:px-12 w-full">
+                <div class="flex w-full justify-between items-center mb-6 md:mb-12">
+                    <div class="rounded relative w-full w-8/12 md:w-1/3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="text-gray-500 absolute ml-4 inset-0 m-auto icon icon-tabler icon-tabler-search" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z"></path>
+                            <circle cx="10" cy="10" r="7"></circle>
+                            <line x1="21" y1="21" x2="15" y2="15"></line>
+                        </svg>
+                        <input class="border border-gray-100 focus:outline-none focus:border-brand rounded-full w-full text-sm bg-gray-100 text-gray-500 pl-12 sm:pl-10 md:pl-12 py-3 pr-4" type="text" placeholder="Search" />
+                    </div>
+                    <div class="flex items-center ml-6 md:ml-0">
+                        <div class="mr-2 md:mr-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                                <path d="M11.6667 5.83333C11.6667 4.54467 12.7113 3.5 14 3.5C15.2887 3.5 16.3333 4.54467 16.3333 5.83333C19.0635 7.12431 20.8584 9.81662 21 12.8333V16.3333C21.178 17.8043 22.044 19.1032 23.3333 19.8333H4.66666C5.95596 19.1032 6.82195 17.8043 7 16.3333V12.8333C7.14159 9.81662 8.93647 7.12431 11.6667 5.83333" stroke="#718096" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M10.5 19.8333V21C10.5 22.933 12.067 24.5 14 24.5C15.933 24.5 17.5 22.933 17.5 21V19.8333" stroke="#718096" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <img class="" src="https://cdn.tuk.dev/assets/components/todos/profile.png" alt="profile" srcset="" />
+                    </div>
+                </div>
+                <div class="flex items-center justify-between mb-10">
+                    <h1 class="text-5xl font-bold text-gray-900">Inbox</h1>
+                    <div onclick="Popup(true)" class="cursor-pointer w-10 h-10 bg-gray-900 text-white rounded-full flex justify-center items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" />
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg>
+                    </div>
+                    <div id="popup" class="fixed overflow-y-scroll hidden inset-0 z-50">
+                        <div onclick="Popup(false)" class="absolute inset-0 bg-gray-900 bg-opacity-75 z-0"></div>
+                        <div class="flex w-full justify-end w-full">
+                            <div class="bg-white w-full md:w-11/12 xl:w-2/5 pt-12 px-12 min-h-screen z-50">
+                                <div class="container flex flex-col w-full h-full justify-between">
+                                    <div>
+                                        <div class="flex w-full justify-between items-center">
+                                            <h2 class="text-4xl font-bold text-dark">Compose Task</h2>
+                                            <div onclick="Popup(false)" class="block lg:hidden ml-5">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#718096" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z"></path>
+                                                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                                                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col items-start md:flex-row w-full md:items-center py-1 bg-custom-gray-1 mt-12">
+                                            <div class="relative">
+                                                <select class="focus:outline-none md:border-r border-gray-300 bg-transparent text-xs appearance-none cursor-pointer text-sm py-3 pl-4 pr-12 text-gray-700">
+                                                    <option>Paragraph</option>
+                                                </select>
+                                                <div class="w-4 h-4 absolute m-auto inset-0 mr-4 pointer-events-none cursor-pointer">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path stroke="none" d="M0 0h24v24H0z" />
+                                                        <polyline points="6 9 12 15 18 9" />
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-center">
+                                                <div class="w-10 h-10 cursor-pointer px-2 bg-custom-gray-2 ml-2 flex items-center justify-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="14" viewBox="0 0 13 14" fill="none">
+                                                        <path
+                                                            fill-rule="evenodd"
+                                                            clip-rule="evenodd"
+                                                            d="M6.67444 13.5329H2.5547C1.96017 13.5329 1.5355 13.4041 1.28164 13.1455C1.02684 12.887 0.899902 12.4754 0.899902 11.9107V2.08832C0.899902 1.51245 1.03057 1.09712 1.29097 0.84512C1.55137 0.59312 1.9723 0.466187 2.5547 0.466187H6.9227C7.5667 0.466187 8.12484 0.504453 8.59617 0.58192C9.06844 0.659387 9.49217 0.807787 9.8655 1.02805C10.1838 1.21192 10.4666 1.44525 10.7111 1.72805C11.2 2.2863 11.4682 3.00387 11.4652 3.74592C11.4652 5.05352 10.7914 6.01019 9.4427 6.61592C11.2132 7.16285 12.0999 8.22685 12.0999 9.80885C12.1163 11.2331 11.2693 12.5257 9.95697 13.0793C9.50206 13.2568 9.0262 13.375 8.5411 13.4311C8.00817 13.4993 7.38564 13.5338 6.67444 13.5338V13.5329ZM6.4719 7.73032H3.6999V11.5449H6.5643C8.4095 11.5449 9.33163 10.9009 9.33163 9.61099C9.33163 8.95112 9.0927 8.47232 8.61483 8.17646C8.13697 7.87872 7.42297 7.73032 6.4719 7.73032V7.73032ZM3.6999 2.45419V5.83192H6.13217C6.81257 5.83192 7.33803 5.76939 7.7095 5.64525C8.07381 5.52517 8.37793 5.2695 8.55883 4.93125C8.71283 4.68205 8.78937 4.40299 8.78937 4.09405C8.78937 3.43419 8.5467 2.99645 8.06323 2.77899C7.57883 2.56245 6.84057 2.45419 5.84657 2.45419H3.6999V2.45419Z"
+                                                            fill="black"
+                                                        />
+                                                        <mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="13" height="14">
+                                                            <path
+                                                                fill-rule="evenodd"
+                                                                clip-rule="evenodd"
+                                                                d="M6.67444 13.5329H2.5547C1.96017 13.5329 1.5355 13.4041 1.28164 13.1455C1.02684 12.887 0.899902 12.4754 0.899902 11.9107V2.08832C0.899902 1.51245 1.03057 1.09712 1.29097 0.84512C1.55137 0.59312 1.9723 0.466187 2.5547 0.466187H6.9227C7.5667 0.466187 8.12484 0.504453 8.59617 0.58192C9.06844 0.659387 9.49217 0.807787 9.8655 1.02805C10.1838 1.21192 10.4666 1.44525 10.7111 1.72805C11.2 2.2863 11.4682 3.00387 11.4652 3.74592C11.4652 5.05352 10.7914 6.01019 9.4427 6.61592C11.2132 7.16285 12.0999 8.22685 12.0999 9.80885C12.1163 11.2331 11.2693 12.5257 9.95697 13.0793C9.50206 13.2568 9.0262 13.375 8.5411 13.4311C8.00817 13.4993 7.38564 13.5338 6.67444 13.5338V13.5329ZM6.4719 7.73032H3.6999V11.5449H6.5643C8.4095 11.5449 9.33163 10.9009 9.33163 9.61099C9.33163 8.95112 9.0927 8.47232 8.61483 8.17646C8.13697 7.87872 7.42297 7.73032 6.4719 7.73032V7.73032ZM3.6999 2.45419V5.83192H6.13217C6.81257 5.83192 7.33803 5.76939 7.7095 5.64525C8.07381 5.52517 8.37793 5.2695 8.55883 4.93125C8.71283 4.68205 8.78937 4.40299 8.78937 4.09405C8.78937 3.43419 8.5467 2.99645 8.06323 2.77899C7.57883 2.56245 6.84057 2.45419 5.84657 2.45419H3.6999V2.45419Z"
+                                                                fill="white"
+                                                            />
+                                                        </mask>
+                                                        <g mask="url(#mask0)">
+                                                            <rect x="-2.83337" y="-2.33337" width="18.6667" height="18.6667" fill="#333333" />
+                                                        </g>
+                                                    </svg>
+                                                </div>
+                                                <div class="w-10 h-10 cursor-pointer bg-transparent flex items-center justify-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="20" viewBox="0 0 19 20" fill="none">
+                                                        <path
+                                                            fill-rule="evenodd"
+                                                            clip-rule="evenodd"
+                                                            d="M9.11354 14.3241L9.13314 14.3279C9.09954 14.6405 9.22181 14.9392 9.49994 15.2257C9.57647 15.3032 9.66141 15.3657 9.75567 15.4133H11.1314C11.4407 15.4133 11.6914 15.6641 11.6914 15.9733C11.6914 16.2826 11.4407 16.5333 11.1314 16.5333H5.11701C4.80773 16.5333 4.55701 16.2826 4.55701 15.9733C4.55701 15.6641 4.80773 15.4133 5.11701 15.4133H6.19034C6.63274 15.348 6.94541 15.2435 7.12834 15.1016C7.27487 14.9877 7.39994 14.8029 7.50541 14.5444L9.76034 5.63107C9.78767 5.3492 9.69208 5.06924 9.49807 4.86294C9.38474 4.73906 9.24324 4.6443 9.08554 4.58667H7.77327C7.46399 4.58667 7.21327 4.33595 7.21327 4.02667C7.21327 3.7174 7.46399 3.46667 7.77327 3.46667H13.7867C14.096 3.46667 14.3467 3.7174 14.3467 4.02667C14.3467 4.33595 14.096 4.58667 13.7867 4.58667H12.6714C12.3205 4.63894 12.0647 4.73134 11.9033 4.86294C11.7026 5.02627 11.5085 5.27267 11.3218 5.60027L9.11354 14.3241Z"
+                                                            fill="#333333"
+                                                        />
+                                                        <mask id="mask1" mask-type="alpha" maskUnits="userSpaceOnUse" x="4" y="3" width="11" height="14">
+                                                            <path
+                                                                fill-rule="evenodd"
+                                                                clip-rule="evenodd"
+                                                                d="M9.11354 14.3241L9.13314 14.3279C9.09954 14.6405 9.22181 14.9392 9.49994 15.2257C9.57647 15.3032 9.66141 15.3657 9.75567 15.4133H11.1314C11.4407 15.4133 11.6914 15.6641 11.6914 15.9733C11.6914 16.2826 11.4407 16.5333 11.1314 16.5333H5.11701C4.80773 16.5333 4.55701 16.2826 4.55701 15.9733C4.55701 15.6641 4.80773 15.4133 5.11701 15.4133H6.19034C6.63274 15.348 6.94541 15.2435 7.12834 15.1016C7.27487 14.9877 7.39994 14.8029 7.50541 14.5444L9.76034 5.63107C9.78767 5.3492 9.69208 5.06924 9.49807 4.86294C9.38474 4.73906 9.24324 4.6443 9.08554 4.58667H7.77327C7.46399 4.58667 7.21327 4.33595 7.21327 4.02667C7.21327 3.7174 7.46399 3.46667 7.77327 3.46667H13.7867C14.096 3.46667 14.3467 3.7174 14.3467 4.02667C14.3467 4.33595 14.096 4.58667 13.7867 4.58667H12.6714C12.3205 4.63894 12.0647 4.73134 11.9033 4.86294C11.7026 5.02627 11.5085 5.27267 11.3218 5.60027L9.11354 14.3241Z"
+                                                                fill="white"
+                                                            />
+                                                        </mask>
+                                                        <g mask="url(#mask1)">
+                                                            <rect x="0.166626" y="0.666626" width="18.6667" height="18.6667" fill="#333333" />
+                                                        </g>
+                                                    </svg>
+                                                </div>
+                                                <div class="w-10 h-10 cursor-pointer bg-transparent flex items-center justify-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
+                                                        <path
+                                                            fill-rule="evenodd"
+                                                            clip-rule="evenodd"
+                                                            d="M15.5051 18.6666L16.4301 17.345C16.5734 17.1401 16.8153 17.0272 17.0644 17.049C17.3135 17.0707 17.5322 17.2237 17.6379 17.4503C17.7437 17.6769 17.7205 17.9428 17.5771 18.1477L16.5057 19.6783C16.4518 19.7554 16.3829 19.8208 16.3031 19.8706C14.6306 21.6199 11.9317 21.8864 9.94937 20.4981C7.96703 19.1098 7.29487 16.4823 8.367 14.3126C8.38567 14.2239 8.423 14.1362 8.479 14.0569L9.54953 12.5271C9.68919 12.3131 9.93439 12.1922 10.1892 12.2117C10.444 12.2312 10.6679 12.3881 10.7734 12.6208C10.8788 12.8536 10.849 13.1254 10.6957 13.3298L9.77073 14.6533L9.77633 14.6561C8.80981 16.2334 9.23769 18.2905 10.753 19.3517C12.2684 20.4128 14.3478 20.1114 15.4995 18.6638L15.5051 18.6675V18.6666ZM20.6329 13.6873C20.6131 13.7792 20.575 13.8662 20.5209 13.943L19.4503 15.4727C19.3107 15.6868 19.0655 15.8077 18.8107 15.7881C18.5559 15.7686 18.3319 15.6118 18.2265 15.379C18.121 15.1462 18.1508 14.8745 18.3042 14.6701L19.1069 13.5221C20.1991 11.9387 19.8089 9.77054 18.233 8.66739C16.6572 7.56424 14.4864 7.93957 13.3725 9.5078L12.5698 10.6549C12.3481 10.9716 11.9117 11.0487 11.5949 10.8271C11.2782 10.6054 11.2011 10.1689 11.4227 9.8522L12.4942 8.32153C12.5481 8.24445 12.617 8.17906 12.6967 8.12926C14.3692 6.38001 17.0682 6.11347 19.0505 7.50178C21.0328 8.8901 21.705 11.5176 20.6329 13.6873ZM16.3741 11.3241C16.5262 11.4306 16.6298 11.5932 16.662 11.7761C16.6943 11.9591 16.6524 12.1473 16.5458 12.2994L13.6011 16.5041C13.4578 16.709 13.2159 16.8218 12.9668 16.8001C12.7177 16.7784 12.499 16.6254 12.3933 16.3988C12.2875 16.1721 12.3107 15.9063 12.4541 15.7014L15.3987 11.4958C15.5053 11.3436 15.6679 11.24 15.8508 11.2078C16.0337 11.1756 16.222 11.2174 16.3741 11.3241Z"
+                                                            fill="black"
+                                                        />
+                                                        <mask id="mask2" mask-type="alpha" maskUnits="userSpaceOnUse" x="7" y="6" width="15" height="16">
+                                                            <path
+                                                                fill-rule="evenodd"
+                                                                clip-rule="evenodd"
+                                                                d="M15.5051 18.6666L16.4301 17.345C16.5734 17.1401 16.8153 17.0272 17.0644 17.049C17.3135 17.0707 17.5322 17.2237 17.6379 17.4503C17.7437 17.6769 17.7205 17.9428 17.5771 18.1477L16.5057 19.6783C16.4518 19.7554 16.3829 19.8208 16.3031 19.8706C14.6306 21.6199 11.9317 21.8864 9.94937 20.4981C7.96703 19.1098 7.29487 16.4823 8.367 14.3126C8.38567 14.2239 8.423 14.1362 8.479 14.0569L9.54953 12.5271C9.68919 12.3131 9.93439 12.1922 10.1892 12.2117C10.444 12.2312 10.6679 12.3881 10.7734 12.6208C10.8788 12.8536 10.849 13.1254 10.6957 13.3298L9.77073 14.6533L9.77633 14.6561C8.80981 16.2334 9.23769 18.2905 10.753 19.3517C12.2684 20.4128 14.3478 20.1114 15.4995 18.6638L15.5051 18.6675V18.6666ZM20.6329 13.6873C20.6131 13.7792 20.575 13.8662 20.5209 13.943L19.4503 15.4727C19.3107 15.6868 19.0655 15.8077 18.8107 15.7881C18.5559 15.7686 18.3319 15.6118 18.2265 15.379C18.121 15.1462 18.1508 14.8745 18.3042 14.6701L19.1069 13.5221C20.1991 11.9387 19.8089 9.77054 18.233 8.66739C16.6572 7.56424 14.4864 7.93957 13.3725 9.5078L12.5698 10.6549C12.3481 10.9716 11.9117 11.0487 11.5949 10.8271C11.2782 10.6054 11.2011 10.1689 11.4227 9.8522L12.4942 8.32153C12.5481 8.24445 12.617 8.17906 12.6967 8.12926C14.3692 6.38001 17.0682 6.11347 19.0505 7.50178C21.0328 8.8901 21.705 11.5176 20.6329 13.6873ZM16.3741 11.3241C16.5262 11.4306 16.6298 11.5932 16.662 11.7761C16.6943 11.9591 16.6524 12.1473 16.5458 12.2994L13.6011 16.5041C13.4578 16.709 13.2159 16.8218 12.9668 16.8001C12.7177 16.7784 12.499 16.6254 12.3933 16.3988C12.2875 16.1721 12.3107 15.9063 12.4541 15.7014L15.3987 11.4958C15.5053 11.3436 15.6679 11.24 15.8508 11.2078C16.0337 11.1756 16.222 11.2174 16.3741 11.3241Z"
+                                                                fill="white"
+                                                            />
+                                                        </mask>
+                                                        <g mask="url(#mask2)">
+                                                            <rect x="5.16663" y="4.66663" width="18.6667" height="18.6667" fill="#333333" />
+                                                        </g>
+                                                    </svg>
+                                                </div>
+                                                <div class="w-10 h-10 cursor-pointer bg-transparent flex items-center justify-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
+                                                        <path
+                                                            fill-rule="evenodd"
+                                                            clip-rule="evenodd"
+                                                            d="M12.1667 9.56668C12.1667 9.95308 12.4803 10.2667 12.8667 10.2667H21.7333C22.1199 10.2667 22.4333 9.95328 22.4333 9.56668C22.4333 9.18008 22.1199 8.86668 21.7333 8.86668H12.8667C12.4801 8.86668 12.1667 9.18008 12.1667 9.56668ZM6.56665 9.56668C6.56665 8.66508 7.29185 7.93335 8.19998 7.93335C9.10158 7.93335 9.83332 8.65855 9.83332 9.56668C9.83332 10.4683 9.10812 11.2 8.19998 11.2C7.29838 11.2 6.56665 10.4748 6.56665 9.56668ZM12.1667 17.9667C12.1667 18.3531 12.4803 18.6667 12.8667 18.6667H21.7333C22.1199 18.6667 22.4333 18.3533 22.4333 17.9667C22.4333 17.5801 22.1199 17.2667 21.7333 17.2667H12.8667C12.4801 17.2667 12.1667 17.5801 12.1667 17.9667ZM6.56665 17.9667C6.56665 17.0651 7.29185 16.3333 8.19998 16.3333C9.10158 16.3333 9.83332 17.0585 9.83332 17.9667C9.83332 18.8683 9.10812 19.6 8.19998 19.6C7.29838 19.6 6.56665 18.8748 6.56665 17.9667Z"
+                                                            fill="black"
+                                                        />
+                                                        <mask id="mask3" mask-type="alpha" maskUnits="userSpaceOnUse" x="6" y="7" width="17" height="13">
+                                                            <path
+                                                                fill-rule="evenodd"
+                                                                clip-rule="evenodd"
+                                                                d="M12.1667 9.56668C12.1667 9.95308 12.4803 10.2667 12.8667 10.2667H21.7333C22.1199 10.2667 22.4333 9.95328 22.4333 9.56668C22.4333 9.18008 22.1199 8.86668 21.7333 8.86668H12.8667C12.4801 8.86668 12.1667 9.18008 12.1667 9.56668ZM6.56665 9.56668C6.56665 8.66508 7.29185 7.93335 8.19998 7.93335C9.10158 7.93335 9.83332 8.65855 9.83332 9.56668C9.83332 10.4683 9.10812 11.2 8.19998 11.2C7.29838 11.2 6.56665 10.4748 6.56665 9.56668ZM12.1667 17.9667C12.1667 18.3531 12.4803 18.6667 12.8667 18.6667H21.7333C22.1199 18.6667 22.4333 18.3533 22.4333 17.9667C22.4333 17.5801 22.1199 17.2667 21.7333 17.2667H12.8667C12.4801 17.2667 12.1667 17.5801 12.1667 17.9667ZM6.56665 17.9667C6.56665 17.0651 7.29185 16.3333 8.19998 16.3333C9.10158 16.3333 9.83332 17.0585 9.83332 17.9667C9.83332 18.8683 9.10812 19.6 8.19998 19.6C7.29838 19.6 6.56665 18.8748 6.56665 17.9667Z"
+                                                                fill="white"
+                                                            />
+                                                        </mask>
+                                                        <g mask="url(#mask3)">
+                                                            <rect x="5.16663" y="4.66663" width="18.6667" height="18.6667" fill="#333333" />
+                                                        </g>
+                                                    </svg>
+                                                </div>
+                                                <div class="w-10 h-10 cursor-pointer bg-transparent flex items-center justify-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
+                                                        <path
+                                                            fill-rule="evenodd"
+                                                            clip-rule="evenodd"
+                                                            d="M12.6333 10.0333C12.6333 10.4197 12.9469 10.7333 13.3333 10.7333H22.2C22.5866 10.7333 22.9 10.4199 22.9 10.0333C22.9 9.64671 22.5866 9.33331 22.2 9.33331H13.3333C12.9467 9.33331 12.6333 9.64671 12.6333 10.0333ZM9.36666 7.46665V12.1333H7.96666V8.11998H7.03333V7.18665H9.36666V7.46665ZM6.42013 21.3332L8.83746 18.2933H8.82533C8.96082 18.0579 8.90789 17.7593 8.69977 17.5848C8.49165 17.4103 8.18833 17.4103 7.98021 17.5848C7.7721 17.7593 7.71917 18.0579 7.85466 18.2933H6.38186C6.34741 17.605 6.69502 16.9537 7.28604 16.5992C7.87706 16.2447 8.61532 16.2447 9.20634 16.5992C9.79736 16.9537 10.145 17.605 10.1105 18.2933H10.1096C10.0648 18.6713 9.96026 18.9784 9.79879 19.2154C9.63546 19.4525 9.24813 19.8613 8.63773 20.44H10.1133V21.3733H6.37999L6.42013 21.3332ZM12.6333 18.4333C12.6333 18.0467 12.9467 17.7333 13.3333 17.7333H22.2C22.5866 17.7333 22.9 18.0467 22.9 18.4333C22.9 18.8199 22.5866 19.1333 22.2 19.1333H13.3333C12.9467 19.1333 12.6333 18.8199 12.6333 18.4333Z"
+                                                            fill="black"
+                                                        />
+                                                        <mask id="mask4" mask-type="alpha" maskUnits="userSpaceOnUse" x="6" y="7" width="17" height="15">
+                                                            <path
+                                                                fill-rule="evenodd"
+                                                                clip-rule="evenodd"
+                                                                d="M12.6333 10.0333C12.6333 10.4197 12.9469 10.7333 13.3333 10.7333H22.2C22.5866 10.7333 22.9 10.4199 22.9 10.0333C22.9 9.64671 22.5866 9.33331 22.2 9.33331H13.3333C12.9467 9.33331 12.6333 9.64671 12.6333 10.0333ZM9.36666 7.46665V12.1333H7.96666V8.11998H7.03333V7.18665H9.36666V7.46665ZM6.42013 21.3332L8.83746 18.2933H8.82533C8.96082 18.0579 8.90789 17.7593 8.69977 17.5848C8.49165 17.4103 8.18833 17.4103 7.98021 17.5848C7.7721 17.7593 7.71917 18.0579 7.85466 18.2933H6.38186C6.34741 17.605 6.69502 16.9537 7.28604 16.5992C7.87706 16.2447 8.61532 16.2447 9.20634 16.5992C9.79736 16.9537 10.145 17.605 10.1105 18.2933H10.1096C10.0648 18.6713 9.96026 18.9784 9.79879 19.2154C9.63546 19.4525 9.24813 19.8613 8.63773 20.44H10.1133V21.3733H6.37999L6.42013 21.3332ZM12.6333 18.4333C12.6333 18.0467 12.9467 17.7333 13.3333 17.7333H22.2C22.5866 17.7333 22.9 18.0467 22.9 18.4333C22.9 18.8199 22.5866 19.1333 22.2 19.1333H13.3333C12.9467 19.1333 12.6333 18.8199 12.6333 18.4333Z"
+                                                                fill="white"
+                                                            />
+                                                        </mask>
+                                                        <g mask="url(#mask4)">
+                                                            <rect x="5.16663" y="4.66663" width="18.6667" height="18.6667" fill="#333333" />
+                                                        </g>
+                                                    </svg>
+                                                </div>
+                                                <div class="w-10 h-10 cursor-pointer bg-transparent flex items-center justify-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
+                                                        <path
+                                                            fill-rule="evenodd"
+                                                            clip-rule="evenodd"
+                                                            d="M21.0146 7.46667C21.5746 7.46667 22.032 7.90534 22.032 8.44667V19.4973C22.032 20.048 21.5746 20.4867 21.0146 20.4867H7.58398C7.02398 20.4867 6.56665 20.048 6.56665 19.4973V8.44667C6.56665 7.90534 7.02398 7.46667 7.59332 7.46667H21.0146ZM11.4293 14.476C11.672 14.2613 12.0266 14.28 12.2506 14.504L15.3866 17.4347L17.468 15.512C17.697 15.2998 18.0509 15.2998 18.28 15.512L20.632 18.284V8.83867H7.96665V18.284L11.4293 14.476ZM16.1439 10.8246C15.8163 11.391 15.8159 12.0891 16.1427 12.656C16.6478 13.5323 17.7677 13.8332 18.644 13.328C19.5203 12.8229 19.8211 11.703 19.316 10.8267C18.9892 10.2598 18.3848 9.91035 17.7305 9.90991C17.0762 9.90948 16.4714 10.2582 16.1439 10.8246Z"
+                                                            fill="black"
+                                                        />
+                                                        <mask id="mask5" mask-type="alpha" maskUnits="userSpaceOnUse" x="6" y="7" width="17" height="14">
+                                                            <path
+                                                                fill-rule="evenodd"
+                                                                clip-rule="evenodd"
+                                                                d="M21.0146 7.46667C21.5746 7.46667 22.032 7.90534 22.032 8.44667V19.4973C22.032 20.048 21.5746 20.4867 21.0146 20.4867H7.58398C7.02398 20.4867 6.56665 20.048 6.56665 19.4973V8.44667C6.56665 7.90534 7.02398 7.46667 7.59332 7.46667H21.0146ZM11.4293 14.476C11.672 14.2613 12.0266 14.28 12.2506 14.504L15.3866 17.4347L17.468 15.512C17.697 15.2998 18.0509 15.2998 18.28 15.512L20.632 18.284V8.83867H7.96665V18.284L11.4293 14.476ZM16.1439 10.8246C15.8163 11.391 15.8159 12.0891 16.1427 12.656C16.6478 13.5323 17.7677 13.8332 18.644 13.328C19.5203 12.8229 19.8211 11.703 19.316 10.8267C18.9892 10.2598 18.3848 9.91035 17.7305 9.90991C17.0762 9.90948 16.4714 10.2582 16.1439 10.8246Z"
+                                                                fill="white"
+                                                            />
+                                                        </mask>
+                                                        <g mask="url(#mask5)">
+                                                            <rect x="5.16663" y="4.66663" width="18.6667" height="18.6667" fill="#333333" />
+                                                        </g>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-center">
+                                                <div class="w-10 h-10 ml-2 md:ml-0 cursor-pointer bg-transparent flex items-center justify-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
+                                                        <path
+                                                            fill-rule="evenodd"
+                                                            clip-rule="evenodd"
+                                                            d="M7.57605 14.4983C7.61344 11.3362 10.0734 8.73324 13.2283 8.51746L13.2638 9.14279C10.7942 9.83159 9.77312 11.9223 9.64805 14.1035H13.176C13.6912 14.1035 13.6427 14.5067 13.6427 15.0237V19.234C13.6427 19.7511 13.2246 19.7035 12.7094 19.7035H8.04272C7.52752 19.7035 7.57605 19.2844 7.57605 18.7673V15.0237V14.4983ZM15.0427 14.4983C15.0801 11.3362 17.5401 8.73324 20.695 8.51746L20.7304 9.14279C18.2608 9.83252 17.2398 11.9232 17.1156 14.1035H20.6427C21.1579 14.1035 21.1094 14.5067 21.1094 15.0237V19.234C21.1094 19.7511 20.6912 19.7035 20.176 19.7035H15.5094C14.9942 19.7035 15.0427 19.2844 15.0427 18.7673V15.0237V14.4983Z"
+                                                            fill="black"
+                                                        />
+                                                        <mask id="mask6" mask-type="alpha" maskUnits="userSpaceOnUse" x="7" y="8" width="15" height="12">
+                                                            <path
+                                                                fill-rule="evenodd"
+                                                                clip-rule="evenodd"
+                                                                d="M7.57605 14.4983C7.61344 11.3362 10.0734 8.73324 13.2283 8.51746L13.2638 9.14279C10.7942 9.83159 9.77312 11.9223 9.64805 14.1035H13.176C13.6912 14.1035 13.6427 14.5067 13.6427 15.0237V19.234C13.6427 19.7511 13.2246 19.7035 12.7094 19.7035H8.04272C7.52752 19.7035 7.57605 19.2844 7.57605 18.7673V15.0237V14.4983ZM15.0427 14.4983C15.0801 11.3362 17.5401 8.73324 20.695 8.51746L20.7304 9.14279C18.2608 9.83252 17.2398 11.9232 17.1156 14.1035H20.6427C21.1579 14.1035 21.1094 14.5067 21.1094 15.0237V19.234C21.1094 19.7511 20.6912 19.7035 20.176 19.7035H15.5094C14.9942 19.7035 15.0427 19.2844 15.0427 18.7673V15.0237V14.4983Z"
+                                                                fill="white"
+                                                            />
+                                                        </mask>
+                                                        <g mask="url(#mask6)">
+                                                            <rect x="5.16663" y="4.66663" width="18.6667" height="18.6667" fill="#333333" />
+                                                        </g>
+                                                    </svg>
+                                                </div>
+                                                <div class="w-10 h-10 cursor-pointer bg-transparent flex items-center justify-center">
+                                                    <img src="https://cdn.tuk.dev/assets/components/todos/button-table.png" alt="button-table" srcset="" />
+                                                </div>
+                                                <div class="w-10 h-10 cursor-pointer bg-transparent ml-2 flex items-center justify-center">
+                                                    <img src="https://cdn.tuk.dev/assets/components/todos/button-media-embed.png" alt="button-media-embed" srcset="" />
+                                                </div>
+                                                <div class="w-10 h-10 cursor-pointer bg-transparent flex items-center justify-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
+                                                        <g opacity="0.5">
+                                                            <path
+                                                                fill-rule="evenodd"
+                                                                clip-rule="evenodd"
+                                                                d="M9.87249 13.4091L11.9156 15.1237C12.2117 15.3724 12.2501 15.8141 12.0014 16.1102C11.7527 16.4063 11.311 16.4448 11.0149 16.1961L7.47942 13.2281C7.39384 13.1567 7.32662 13.0658 7.28342 12.963C7.11652 12.6692 7.18327 12.2982 7.44209 12.081L10.9813 9.11114C11.2777 8.86268 11.7194 8.90155 11.9678 9.19794C12.2163 9.49433 12.1774 9.93602 11.881 10.1845L9.70542 12.0082H18.028C18.0976 12.0085 18.1668 12.0192 18.2333 12.0399C19.7363 12.0406 21.0924 12.9425 21.6741 14.3284C22.2558 15.7143 21.9497 17.3139 20.8974 18.3871C19.8451 19.4603 18.2518 19.7978 16.8548 19.2434L17.1758 17.8537C18.0406 18.2917 19.0861 18.1494 19.8024 17.4961C20.5187 16.8429 20.7564 15.8149 20.3997 14.9135C20.043 14.0122 19.1662 13.4252 18.1969 13.439L18.2044 13.4091H9.87249Z"
+                                                                fill="black"
+                                                            />
+                                                            <mask id="mask9" mask-type="alpha" maskUnits="userSpaceOnUse" x="7" y="8" width="15" height="12">
+                                                                <path
+                                                                    fill-rule="evenodd"
+                                                                    clip-rule="evenodd"
+                                                                    d="M9.87249 13.4091L11.9156 15.1237C12.2117 15.3724 12.2501 15.8141 12.0014 16.1102C11.7527 16.4063 11.311 16.4448 11.0149 16.1961L7.47942 13.2281C7.39384 13.1567 7.32662 13.0658 7.28342 12.963C7.11652 12.6692 7.18327 12.2982 7.44209 12.081L10.9813 9.11114C11.2777 8.86268 11.7194 8.90155 11.9678 9.19794C12.2163 9.49433 12.1774 9.93602 11.881 10.1845L9.70542 12.0082H18.028C18.0976 12.0085 18.1668 12.0192 18.2333 12.0399C19.7363 12.0406 21.0924 12.9425 21.6741 14.3284C22.2558 15.7143 21.9497 17.3139 20.8974 18.3871C19.8451 19.4603 18.2518 19.7978 16.8548 19.2434L17.1758 17.8537C18.0406 18.2917 19.0861 18.1494 19.8024 17.4961C20.5187 16.8429 20.7564 15.8149 20.3997 14.9135C20.043 14.0122 19.1662 13.4252 18.1969 13.439L18.2044 13.4091H9.87249Z"
+                                                                    fill="white"
+                                                                />
+                                                            </mask>
+                                                            <g mask="url(#mask9)">
+                                                                <rect x="5.16663" y="4.66663" width="18.6667" height="18.6667" fill="#333333" />
+                                                            </g>
+                                                        </g>
+                                                    </svg>
+                                                </div>
+                                                <div class="w-10 h-10 cursor-pointer bg-transparent flex items-center justify-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
+                                                        <g opacity="0.5">
+                                                            <path
+                                                                fill-rule="evenodd"
+                                                                clip-rule="evenodd"
+                                                                d="M19.1274 13.4091L17.0844 15.1237C16.7882 15.3724 16.7498 15.8141 16.9985 16.1102C17.2472 16.4063 17.6889 16.4448 17.985 16.1961L21.5205 13.2281C21.6061 13.1566 21.6733 13.0658 21.7165 12.963C21.8834 12.6692 21.8166 12.2982 21.5578 12.081L18.0186 9.11113C17.8269 8.95041 17.564 8.90419 17.3289 8.98987C17.0939 9.07555 16.9224 9.28013 16.8791 9.52654C16.8357 9.77294 16.9272 10.0237 17.1189 10.1845L19.2945 12.0091H10.972C10.9024 12.0091 10.8332 12.0195 10.7666 12.0399C9.2636 12.0406 7.90753 12.9425 7.32583 14.3284C6.74412 15.7143 7.05024 17.3139 8.10254 18.3871C9.15484 19.4602 10.7481 19.7977 12.1452 19.2434L11.8241 17.8537C10.9593 18.2926 9.91308 18.1508 9.19627 17.4975C8.47947 16.8443 8.24152 15.8157 8.59858 14.9139C8.95565 14.0122 9.83329 13.4254 10.803 13.4399L10.7956 13.4101H19.1274V13.4091Z"
+                                                                fill="black"
+                                                            />
+                                                            <mask id="mask10" mask-type="alpha" maskUnits="userSpaceOnUse" x="7" y="8" width="15" height="12">
+                                                                <path
+                                                                    fill-rule="evenodd"
+                                                                    clip-rule="evenodd"
+                                                                    d="M19.1274 13.4091L17.0844 15.1237C16.7882 15.3724 16.7498 15.8141 16.9985 16.1102C17.2472 16.4063 17.6889 16.4448 17.985 16.1961L21.5205 13.2281C21.6061 13.1566 21.6733 13.0658 21.7165 12.963C21.8834 12.6692 21.8166 12.2982 21.5578 12.081L18.0186 9.11113C17.8269 8.95041 17.564 8.90419 17.3289 8.98987C17.0939 9.07555 16.9224 9.28013 16.8791 9.52654C16.8357 9.77294 16.9272 10.0237 17.1189 10.1845L19.2945 12.0091H10.972C10.9024 12.0091 10.8332 12.0195 10.7666 12.0399C9.2636 12.0406 7.90753 12.9425 7.32583 14.3284C6.74412 15.7143 7.05024 17.3139 8.10254 18.3871C9.15484 19.4602 10.7481 19.7977 12.1452 19.2434L11.8241 17.8537C10.9593 18.2926 9.91308 18.1508 9.19627 17.4975C8.47947 16.8443 8.24152 15.8157 8.59858 14.9139C8.95565 14.0122 9.83329 13.4254 10.803 13.4399L10.7956 13.4101H19.1274V13.4091Z"
+                                                                    fill="white"
+                                                                />
+                                                            </mask>
+                                                            <g mask="url(#mask10)">
+                                                                <rect x="5.16663" y="4.66663" width="18.6667" height="18.6667" fill="#333333" />
+                                                            </g>
+                                                        </g>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mt-10 border-b border-gray-400">
+                                            <input class="w-full text-2xl font-bold pb-2 focus:outline-none placeholder-gray-400" placeholder="Fix Car Foundation" type="text" />
+                                        </div>
+                                        <div class="mt-12">
+                                            <div class="checkbox items-center cursor-pointer flex">
+                                                <label class="text-base"> <input class="mr-4" type="checkbox" value="" />Add tasks to list </label>
+                                            </div>
+                                            <div class="checkbox mt-4 items-center cursor-pointer flex">
+                                                <label class="text-base"> <input class="mr-4" type="checkbox" value="" />Get grocery </label>
+                                            </div>
+                                            <div class="checkbox mt-4 items-center cursor-pointer flex">
+                                                <label class="text-base"> <input class="mr-4" type="checkbox" value="" />Take the kids to the park </label>
+                                            </div>
+                                            <div class="checkbox mt-4 items-center cursor-pointer flex">
+                                                <label class="text-base"> <input class="mr-4" type="checkbox" value="" />Get my car washed </label>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center mt-16">
+                                            <div class="flex items-center px-3 py-2 border-gray-300 border rounded-full">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                                    <circle cx="6.00004" cy="6.66667" r="4.66667" stroke="#4A5568" stroke-linecap="round" stroke-linejoin="round" />
+                                                    <path d="M6 4.66663V6.66663H7.33333" stroke="#4A5568" stroke-linecap="round" stroke-linejoin="round" />
+                                                    <path d="M2.66671 0.666626L0.833374 1.99996" stroke="#4A5568" stroke-linecap="round" stroke-linejoin="round" />
+                                                    <path d="M9.33337 0.666626L11.1667 1.99996" stroke="#4A5568" stroke-linecap="round" stroke-linejoin="round" />
+                                                </svg>
+                                                <p class="text-gray-600 ml-2 text-xs">7 Sept, 23:00</p>
+                                            </div>
+                                            <div class="px-3 py-2 border border-gray-300 rounded-lg ml-5">
+                                                <p class="text-gray-600 text-xs">Personal Work</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 md:mt-0">
+                                        <div>
+                                            <p class="text-base text-orange mb-6">This task is scheduled for 9th September 2020 at 18:00</p>
+                                        </div>
+                                        <div class="md:flex justify-between w-full py-4 border-t border-gray-400">
+                                            <div class="flex items-center">
+                                                <div class="flex items-center justify-end text-gray-700">
+                                                    <div class="mr-3">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                            <path stroke="none" d="M0 0h24v24H0z"></path>
+                                                            <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4"></path>
+                                                            <circle cx="9" cy="9" r="2"></circle>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="mr-3">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bell" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                            <path stroke="none" d="M0 0h24v24H0z"></path>
+                                                            <path d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6"></path>
+                                                            <path d="M9 17v1a3 3 0 0 0 6 0v-1"></path>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="mr-3">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-event" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                            <path stroke="none" d="M0 0h24v24H0z"></path>
+                                                            <rect x="4" y="5" width="16" height="16" rx="2"></rect>
+                                                            <line x1="16" y1="3" x2="16" y2="7"></line>
+                                                            <line x1="8" y1="3" x2="8" y2="7"></line>
+                                                            <line x1="4" y1="11" x2="20" y2="11"></line>
+                                                            <rect x="8" y="15" width="2" height="2"></rect>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="mr-3">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                            <path stroke="none" d="M0 0h24v24H0z"></path>
+                                                            <circle cx="9" cy="7" r="4"></circle>
+                                                            <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
+                                                            <path d="M16 11h6m-3 -3v6"></path>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="mr-3">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                            <path stroke="none" d="M0 0h24v24H0z"></path>
+                                                            <rect x="3" y="4" width="18" height="4" rx="2"></rect>
+                                                            <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10"></path>
+                                                            <line x1="10" y1="12" x2="14" y2="12"></line>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="mr-3">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                            <path stroke="none" d="M0 0h24v24H0z"></path>
+                                                            <circle cx="5" cy="12" r="1"></circle>
+                                                            <circle cx="12" cy="12" r="1"></circle>
+                                                            <circle cx="19" cy="12" r="1"></circle>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mt-4 md:mt-0">
+                                                <button class="text-sm text-white focus:outline-none py-3 px-6 bg-custom-orange-2 rounded-md">Save Task</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex pt-6 items-center">
+                        <div data-menu class="cursor-pointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" aria-label="Hide" class="hidden icon icon-tabler icon-tabler-chevron-up" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#718096" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" />
+                                <polyline points="6 15 12 9 18 15" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" aria-label="Show" class="icon icon-tabler icon-tabler-chevron-down" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#718096" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z"></path>
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                        <h1 class="text-lg text-gray-900 font-semibold ml-3">Overdue</h1>
+                    </div>
+                    <ul class="pt-6">
+                        <li class="md:flex justify-between items-center">
+                            <div class="flex items-center text-gray-400 w-full md:w-1/2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots-vertical" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <circle cx="12" cy="12" r="1" />
+                                    <circle cx="12" cy="19" r="1" />
+                                    <circle cx="12" cy="5" r="1" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="-ml-3 icon icon-tabler icon-tabler-dots-vertical" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <circle cx="12" cy="12" r="1" />
+                                    <circle cx="12" cy="19" r="1" />
+                                    <circle cx="12" cy="5" r="1" />
+                                </svg>
+                                <div class="mx-4 bg-white border rounded-sm border-gray-400 w-4 h-4 flex flex-shrink-0 justify-center items-center relative">
+                                    <input type="checkbox" class="checkbox opacity-0 absolute cursor-pointer w-full h-full" />
+                                    <div class="check-icon bg-yellow-400 text-white rounded-sm hidden">
+                                        <svg class="icon icon-tabler icon-tabler-check" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z"></path>
+                                            <path d="M5 12l5 5l10 -10"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 font-semibold">Welcome to Quicklist!</p>
+                            </div>
+                            <div class="md:flex items-center md:w-1/2 w-full justify-end text-gray-700">
+                                <p class="text-red-500 mt-4 md:mt-0 mr-10">Due today at 18:00</p>
+                                <div class="mt-4 md:mt-0 flex items-center">
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+                                            <circle cx="9" cy="9" r="2" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bell" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <path d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
+                                            <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-event" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <rect x="4" y="5" width="16" height="16" rx="2" />
+                                            <line x1="16" y1="3" x2="16" y2="7" />
+                                            <line x1="8" y1="3" x2="8" y2="7" />
+                                            <line x1="4" y1="11" x2="20" y2="11" />
+                                            <rect x="8" y="15" width="2" height="2" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <circle cx="9" cy="7" r="4" />
+                                            <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                                            <path d="M16 11h6m-3 -3v6" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <rect x="3" y="4" width="18" height="4" rx="2" />
+                                            <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+                                            <line x1="10" y1="12" x2="14" y2="12" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <circle cx="5" cy="12" r="1" />
+                                            <circle cx="12" cy="12" r="1" />
+                                            <circle cx="19" cy="12" r="1" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <hr class="my-5 border-t border-gray-300" />
+                        </li>
+                        <li class="md:flex justify-between items-center">
+                            <div class="flex items-center text-gray-400 w-full md:w-1/2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots-vertical" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <circle cx="12" cy="12" r="1" />
+                                    <circle cx="12" cy="19" r="1" />
+                                    <circle cx="12" cy="5" r="1" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="-ml-3 icon icon-tabler icon-tabler-dots-vertical" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <circle cx="12" cy="12" r="1" />
+                                    <circle cx="12" cy="19" r="1" />
+                                    <circle cx="12" cy="5" r="1" />
+                                </svg>
+                                <div class="mx-4 bg-white border rounded-sm border-gray-400 w-4 h-4 flex flex-shrink-0 justify-center items-center relative">
+                                    <input type="checkbox" class="checkbox opacity-0 absolute cursor-pointer w-full h-full" />
+                                    <div class="check-icon bg-yellow-400 text-white rounded-sm hidden">
+                                        <svg class="icon icon-tabler icon-tabler-check" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z"></path>
+                                            <path d="M5 12l5 5l10 -10"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 font-semibold">Welcome to Quicklist!</p>
+                            </div>
+                            <div class="md:flex items-center md:w-1/2 w-full justify-end text-gray-700">
+                                <p class="text-red-500 mt-4 md:mt-0 mr-10">Due today at 18:00</p>
+                                <div class="mt-4 md:mt-0 flex items-center">
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+                                            <circle cx="9" cy="9" r="2" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bell" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <path d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
+                                            <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-event" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <rect x="4" y="5" width="16" height="16" rx="2" />
+                                            <line x1="16" y1="3" x2="16" y2="7" />
+                                            <line x1="8" y1="3" x2="8" y2="7" />
+                                            <line x1="4" y1="11" x2="20" y2="11" />
+                                            <rect x="8" y="15" width="2" height="2" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <circle cx="9" cy="7" r="4" />
+                                            <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                                            <path d="M16 11h6m-3 -3v6" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <rect x="3" y="4" width="18" height="4" rx="2" />
+                                            <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+                                            <line x1="10" y1="12" x2="14" y2="12" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <circle cx="5" cy="12" r="1" />
+                                            <circle cx="12" cy="12" r="1" />
+                                            <circle cx="19" cy="12" r="1" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <hr class="my-5 border-t border-gray-300" />
+                        </li>
+                        <li class="md:flex justify-between items-center">
+                            <div class="flex items-center text-gray-400 w-full md:w-1/2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots-vertical" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <circle cx="12" cy="12" r="1" />
+                                    <circle cx="12" cy="19" r="1" />
+                                    <circle cx="12" cy="5" r="1" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="-ml-3 icon icon-tabler icon-tabler-dots-vertical" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <circle cx="12" cy="12" r="1" />
+                                    <circle cx="12" cy="19" r="1" />
+                                    <circle cx="12" cy="5" r="1" />
+                                </svg>
+                                <div class="mx-4 bg-white border rounded-sm border-gray-400 w-4 h-4 flex flex-shrink-0 justify-center items-center relative">
+                                    <input type="checkbox" class="checkbox opacity-0 absolute cursor-pointer w-full h-full" />
+                                    <div class="check-icon bg-yellow-400 text-white rounded-sm hidden">
+                                        <svg class="icon icon-tabler icon-tabler-check" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z"></path>
+                                            <path d="M5 12l5 5l10 -10"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 font-semibold">Welcome to Quicklist!</p>
+                            </div>
+                            <div class="md:flex items-center md:w-1/2 w-full justify-end text-gray-700">
+                                <p class="text-red-500 mt-4 md:mt-0 mr-10">Due today at 18:00</p>
+                                <div class="mt-4 md:mt-0 flex items-center">
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+                                            <circle cx="9" cy="9" r="2" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bell" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <path d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
+                                            <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-event" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <rect x="4" y="5" width="16" height="16" rx="2" />
+                                            <line x1="16" y1="3" x2="16" y2="7" />
+                                            <line x1="8" y1="3" x2="8" y2="7" />
+                                            <line x1="4" y1="11" x2="20" y2="11" />
+                                            <rect x="8" y="15" width="2" height="2" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <circle cx="9" cy="7" r="4" />
+                                            <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                                            <path d="M16 11h6m-3 -3v6" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <rect x="3" y="4" width="18" height="4" rx="2" />
+                                            <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+                                            <line x1="10" y1="12" x2="14" y2="12" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <circle cx="5" cy="12" r="1" />
+                                            <circle cx="12" cy="12" r="1" />
+                                            <circle cx="19" cy="12" r="1" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <hr class="mt-6 border-t border-gray-300" />
+                <div>
+                    <div class="flex pt-6 items-center">
+                        <div data-menu class="cursor-pointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" aria-label="Hide" class="hidden icon icon-tabler icon-tabler-chevron-up" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#718096" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" />
+                                <polyline points="6 15 12 9 18 15" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" aria-label="Show" class="icon icon-tabler icon-tabler-chevron-down" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#718096" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z"></path>
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                        <h1 class="text-lg text-gray-900 font-semibold ml-3">Urgent</h1>
+                    </div>
+                    <ul class="pt-6">
+                        <li class="md:flex justify-between items-center">
+                            <div class="flex items-center text-gray-400 w-full md:w-1/2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots-vertical" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <circle cx="12" cy="12" r="1" />
+                                    <circle cx="12" cy="19" r="1" />
+                                    <circle cx="12" cy="5" r="1" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="-ml-3 icon icon-tabler icon-tabler-dots-vertical" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <circle cx="12" cy="12" r="1" />
+                                    <circle cx="12" cy="19" r="1" />
+                                    <circle cx="12" cy="5" r="1" />
+                                </svg>
+                                <div class="mx-4 bg-white border rounded-sm border-gray-400 w-4 h-4 flex flex-shrink-0 justify-center items-center relative">
+                                    <input type="checkbox" class="checkbox opacity-0 absolute cursor-pointer w-full h-full" />
+                                    <div class="check-icon bg-yellow-400 text-white rounded-sm hidden">
+                                        <svg class="icon icon-tabler icon-tabler-check" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z"></path>
+                                            <path d="M5 12l5 5l10 -10"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 font-semibold">Welcome to Quicklist!</p>
+                            </div>
+                            <div class="md:flex items-center md:w-1/2 w-full justify-end text-gray-700">
+                                <p class="text-yellow-600 mt-4 md:mt-0 mr-10">Due today at 18:00</p>
+                                <div class="mt-4 md:mt-0 flex items-center">
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+                                            <circle cx="9" cy="9" r="2" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bell" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <path d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
+                                            <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-event" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <rect x="4" y="5" width="16" height="16" rx="2" />
+                                            <line x1="16" y1="3" x2="16" y2="7" />
+                                            <line x1="8" y1="3" x2="8" y2="7" />
+                                            <line x1="4" y1="11" x2="20" y2="11" />
+                                            <rect x="8" y="15" width="2" height="2" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <circle cx="9" cy="7" r="4" />
+                                            <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                                            <path d="M16 11h6m-3 -3v6" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <rect x="3" y="4" width="18" height="4" rx="2" />
+                                            <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+                                            <line x1="10" y1="12" x2="14" y2="12" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <circle cx="5" cy="12" r="1" />
+                                            <circle cx="12" cy="12" r="1" />
+                                            <circle cx="19" cy="12" r="1" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <hr class="my-5 border-t border-gray-300" />
+                        </li>
+                        <li class="md:flex justify-between items-center">
+                            <div class="flex items-center text-gray-400 w-full md:w-1/2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots-vertical" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <circle cx="12" cy="12" r="1" />
+                                    <circle cx="12" cy="19" r="1" />
+                                    <circle cx="12" cy="5" r="1" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="-ml-3 icon icon-tabler icon-tabler-dots-vertical" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <circle cx="12" cy="12" r="1" />
+                                    <circle cx="12" cy="19" r="1" />
+                                    <circle cx="12" cy="5" r="1" />
+                                </svg>
+                                <div class="mx-4 bg-white border rounded-sm border-gray-400 w-4 h-4 flex flex-shrink-0 justify-center items-center relative">
+                                    <input type="checkbox" class="checkbox opacity-0 absolute cursor-pointer w-full h-full" />
+                                    <div class="check-icon bg-yellow-400 text-white rounded-sm hidden">
+                                        <svg class="icon icon-tabler icon-tabler-check" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z"></path>
+                                            <path d="M5 12l5 5l10 -10"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 font-semibold">Welcome to Quicklist!</p>
+                            </div>
+                            <div class="md:flex items-center md:w-1/2 w-full justify-end text-gray-700">
+                                <p class="text-yellow-600 mt-4 md:mt-0 mr-10">Due today at 18:00</p>
+                                <div class="mt-4 md:mt-0 flex items-center">
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+                                            <circle cx="9" cy="9" r="2" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bell" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <path d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
+                                            <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-event" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <rect x="4" y="5" width="16" height="16" rx="2" />
+                                            <line x1="16" y1="3" x2="16" y2="7" />
+                                            <line x1="8" y1="3" x2="8" y2="7" />
+                                            <line x1="4" y1="11" x2="20" y2="11" />
+                                            <rect x="8" y="15" width="2" height="2" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <circle cx="9" cy="7" r="4" />
+                                            <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                                            <path d="M16 11h6m-3 -3v6" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <rect x="3" y="4" width="18" height="4" rx="2" />
+                                            <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+                                            <line x1="10" y1="12" x2="14" y2="12" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <circle cx="5" cy="12" r="1" />
+                                            <circle cx="12" cy="12" r="1" />
+                                            <circle cx="19" cy="12" r="1" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <hr class="my-5 border-t border-gray-300" />
+                        </li>
+                        <li class="md:flex justify-between items-center">
+                            <div class="flex items-center text-gray-400 w-full md:w-1/2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots-vertical" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <circle cx="12" cy="12" r="1" />
+                                    <circle cx="12" cy="19" r="1" />
+                                    <circle cx="12" cy="5" r="1" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="-ml-3 icon icon-tabler icon-tabler-dots-vertical" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <circle cx="12" cy="12" r="1" />
+                                    <circle cx="12" cy="19" r="1" />
+                                    <circle cx="12" cy="5" r="1" />
+                                </svg>
+                                <div class="mx-4 bg-white border rounded-sm border-gray-400 w-4 h-4 flex flex-shrink-0 justify-center items-center relative">
+                                    <input type="checkbox" class="checkbox opacity-0 absolute cursor-pointer w-full h-full" />
+                                    <div class="check-icon bg-yellow-400 text-white rounded-sm hidden">
+                                        <svg class="icon icon-tabler icon-tabler-check" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z"></path>
+                                            <path d="M5 12l5 5l10 -10"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 font-semibold">Welcome to Quicklist!</p>
+                            </div>
+                            <div class="md:flex items-center md:w-1/2 w-full justify-end text-gray-700">
+                                <p class="text-yellow-600 mt-4 md:mt-0 mr-10">Due today at 18:00</p>
+                                <div class="mt-4 md:mt-0 flex items-center">
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+                                            <circle cx="9" cy="9" r="2" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bell" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <path d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
+                                            <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-event" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <rect x="4" y="5" width="16" height="16" rx="2" />
+                                            <line x1="16" y1="3" x2="16" y2="7" />
+                                            <line x1="8" y1="3" x2="8" y2="7" />
+                                            <line x1="4" y1="11" x2="20" y2="11" />
+                                            <rect x="8" y="15" width="2" height="2" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <circle cx="9" cy="7" r="4" />
+                                            <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                                            <path d="M16 11h6m-3 -3v6" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <rect x="3" y="4" width="18" height="4" rx="2" />
+                                            <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+                                            <line x1="10" y1="12" x2="14" y2="12" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <circle cx="5" cy="12" r="1" />
+                                            <circle cx="12" cy="12" r="1" />
+                                            <circle cx="19" cy="12" r="1" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <hr class="mt-6 border-t border-gray-300" />
+                <div>
+                    <div class="flex pt-6 items-center">
+                        <div data-menu class="cursor-pointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" aria-label="Hide" class="icon icon-tabler icon-tabler-chevron-up" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#718096" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" />
+                                <polyline points="6 15 12 9 18 15" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" aria-label="Show" class="hidden icon icon-tabler icon-tabler-chevron-down" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#718096" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z"></path>
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                        <h1 class="text-lg text-gray-900 font-semibold ml-3">This week</h1>
+                    </div>
+                    <ul class="pt-6 hidden">
+                        <li class="md:flex justify-between items-center">
+                            <div class="flex items-center text-gray-400 w-full md:w-1/2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots-vertical" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <circle cx="12" cy="12" r="1" />
+                                    <circle cx="12" cy="19" r="1" />
+                                    <circle cx="12" cy="5" r="1" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="-ml-3 icon icon-tabler icon-tabler-dots-vertical" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <circle cx="12" cy="12" r="1" />
+                                    <circle cx="12" cy="19" r="1" />
+                                    <circle cx="12" cy="5" r="1" />
+                                </svg>
+                                <div class="mx-4 bg-white border rounded-sm border-gray-400 w-4 h-4 flex flex-shrink-0 justify-center items-center relative">
+                                    <input type="checkbox" class="checkbox opacity-0 absolute cursor-pointer w-full h-full" />
+                                    <div class="check-icon bg-yellow-400 text-white rounded-sm hidden">
+                                        <svg class="icon icon-tabler icon-tabler-check" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z"></path>
+                                            <path d="M5 12l5 5l10 -10"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 font-semibold">Welcome to Quicklist!</p>
+                            </div>
+                            <div class="md:flex items-center md:w-1/2 w-full justify-end text-gray-700">
+                                <p class="text-red-500 mt-4 md:mt-0 mr-10">Due today at 18:00</p>
+                                <div class="mt-4 md:mt-0 flex items-center">
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+                                            <circle cx="9" cy="9" r="2" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bell" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <path d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
+                                            <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-event" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <rect x="4" y="5" width="16" height="16" rx="2" />
+                                            <line x1="16" y1="3" x2="16" y2="7" />
+                                            <line x1="8" y1="3" x2="8" y2="7" />
+                                            <line x1="4" y1="11" x2="20" y2="11" />
+                                            <rect x="8" y="15" width="2" height="2" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <circle cx="9" cy="7" r="4" />
+                                            <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                                            <path d="M16 11h6m-3 -3v6" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <rect x="3" y="4" width="18" height="4" rx="2" />
+                                            <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+                                            <line x1="10" y1="12" x2="14" y2="12" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <circle cx="5" cy="12" r="1" />
+                                            <circle cx="12" cy="12" r="1" />
+                                            <circle cx="19" cy="12" r="1" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <hr class="my-5 border-t border-gray-300" />
+                        </li>
+                        <li class="md:flex justify-between items-center">
+                            <div class="flex items-center text-gray-400 w-full md:w-1/2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots-vertical" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <circle cx="12" cy="12" r="1" />
+                                    <circle cx="12" cy="19" r="1" />
+                                    <circle cx="12" cy="5" r="1" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="-ml-3 icon icon-tabler icon-tabler-dots-vertical" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <circle cx="12" cy="12" r="1" />
+                                    <circle cx="12" cy="19" r="1" />
+                                    <circle cx="12" cy="5" r="1" />
+                                </svg>
+                                <div class="mx-4 bg-white border rounded-sm border-gray-400 w-4 h-4 flex flex-shrink-0 justify-center items-center relative">
+                                    <input type="checkbox" class="checkbox opacity-0 absolute cursor-pointer w-full h-full" />
+                                    <div class="check-icon bg-yellow-400 text-white rounded-sm hidden">
+                                        <svg class="icon icon-tabler icon-tabler-check" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z"></path>
+                                            <path d="M5 12l5 5l10 -10"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 font-semibold">Welcome to Quicklist!</p>
+                            </div>
+                            <div class="md:flex items-center md:w-1/2 w-full justify-end text-gray-700">
+                                <p class="text-red-500 mt-4 md:mt-0 mr-10">Due today at 18:00</p>
+                                <div class="mt-4 md:mt-0 flex items-center">
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+                                            <circle cx="9" cy="9" r="2" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bell" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <path d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
+                                            <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-event" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <rect x="4" y="5" width="16" height="16" rx="2" />
+                                            <line x1="16" y1="3" x2="16" y2="7" />
+                                            <line x1="8" y1="3" x2="8" y2="7" />
+                                            <line x1="4" y1="11" x2="20" y2="11" />
+                                            <rect x="8" y="15" width="2" height="2" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <circle cx="9" cy="7" r="4" />
+                                            <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                                            <path d="M16 11h6m-3 -3v6" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <rect x="3" y="4" width="18" height="4" rx="2" />
+                                            <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+                                            <line x1="10" y1="12" x2="14" y2="12" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <circle cx="5" cy="12" r="1" />
+                                            <circle cx="12" cy="12" r="1" />
+                                            <circle cx="19" cy="12" r="1" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <hr class="my-5 border-t border-gray-300" />
+                        </li>
+                        <li class="md:flex justify-between items-center">
+                            <div class="flex items-center text-gray-400 w-full md:w-1/2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots-vertical" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <circle cx="12" cy="12" r="1" />
+                                    <circle cx="12" cy="19" r="1" />
+                                    <circle cx="12" cy="5" r="1" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="-ml-3 icon icon-tabler icon-tabler-dots-vertical" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <circle cx="12" cy="12" r="1" />
+                                    <circle cx="12" cy="19" r="1" />
+                                    <circle cx="12" cy="5" r="1" />
+                                </svg>
+                                <div class="mx-4 bg-white border rounded-sm border-gray-400 w-4 h-4 flex flex-shrink-0 justify-center items-center relative">
+                                    <input type="checkbox" class="checkbox opacity-0 absolute cursor-pointer w-full h-full" />
+                                    <div class="check-icon bg-yellow-400 text-white rounded-sm hidden">
+                                        <svg class="icon icon-tabler icon-tabler-check" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z"></path>
+                                            <path d="M5 12l5 5l10 -10"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 font-semibold">Welcome to Quicklist!</p>
+                            </div>
+                            <div class="md:flex items-center md:w-1/2 w-full justify-end text-gray-700">
+                                <p class="text-red-500 mt-4 md:mt-0 mr-10">Due today at 18:00</p>
+                                <div class="mt-4 md:mt-0 flex items-center">
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+                                            <circle cx="9" cy="9" r="2" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bell" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <path d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
+                                            <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-event" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <rect x="4" y="5" width="16" height="16" rx="2" />
+                                            <line x1="16" y1="3" x2="16" y2="7" />
+                                            <line x1="8" y1="3" x2="8" y2="7" />
+                                            <line x1="4" y1="11" x2="20" y2="11" />
+                                            <rect x="8" y="15" width="2" height="2" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <circle cx="9" cy="7" r="4" />
+                                            <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                                            <path d="M16 11h6m-3 -3v6" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <rect x="3" y="4" width="18" height="4" rx="2" />
+                                            <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+                                            <line x1="10" y1="12" x2="14" y2="12" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <circle cx="5" cy="12" r="1" />
+                                            <circle cx="12" cy="12" r="1" />
+                                            <circle cx="19" cy="12" r="1" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <hr class="mt-6 border-t border-gray-300" />
+                <div>
+                    <div class="flex pt-6 items-center">
+                        <div data-menu class="cursor-pointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" aria-label="Hide" class="icon icon-tabler icon-tabler-chevron-up" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#718096" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" />
+                                <polyline points="6 15 12 9 18 15" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" aria-label="Show" class="hidden icon icon-tabler icon-tabler-chevron-down" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#718096" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z"></path>
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                        <h1 class="text-lg text-gray-900 font-semibold ml-3">Unscheduled</h1>
+                    </div>
+                    <ul class="pt-6 hidden">
+                        <li class="md:flex justify-between items-center">
+                            <div class="flex items-center text-gray-400 w-full md:w-1/2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots-vertical" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <circle cx="12" cy="12" r="1" />
+                                    <circle cx="12" cy="19" r="1" />
+                                    <circle cx="12" cy="5" r="1" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="-ml-3 icon icon-tabler icon-tabler-dots-vertical" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <circle cx="12" cy="12" r="1" />
+                                    <circle cx="12" cy="19" r="1" />
+                                    <circle cx="12" cy="5" r="1" />
+                                </svg>
+                                <div class="mx-4 bg-white border rounded-sm border-gray-400 w-4 h-4 flex flex-shrink-0 justify-center items-center relative">
+                                    <input type="checkbox" class="checkbox opacity-0 absolute cursor-pointer w-full h-full" />
+                                    <div class="check-icon bg-yellow-400 text-white rounded-sm hidden">
+                                        <svg class="icon icon-tabler icon-tabler-check" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z"></path>
+                                            <path d="M5 12l5 5l10 -10"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 font-semibold">Welcome to Quicklist!</p>
+                            </div>
+                            <div class="md:flex items-center md:w-1/2 w-full justify-end text-gray-700">
+                                <p class="text-yellow-600 mt-4 md:mt-0 mr-10">Due today at 18:00</p>
+                                <div class="mt-4 md:mt-0 flex items-center">
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+                                            <circle cx="9" cy="9" r="2" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bell" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <path d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
+                                            <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-event" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <rect x="4" y="5" width="16" height="16" rx="2" />
+                                            <line x1="16" y1="3" x2="16" y2="7" />
+                                            <line x1="8" y1="3" x2="8" y2="7" />
+                                            <line x1="4" y1="11" x2="20" y2="11" />
+                                            <rect x="8" y="15" width="2" height="2" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <circle cx="9" cy="7" r="4" />
+                                            <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                                            <path d="M16 11h6m-3 -3v6" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <rect x="3" y="4" width="18" height="4" rx="2" />
+                                            <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+                                            <line x1="10" y1="12" x2="14" y2="12" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <circle cx="5" cy="12" r="1" />
+                                            <circle cx="12" cy="12" r="1" />
+                                            <circle cx="19" cy="12" r="1" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <hr class="my-5 border-t border-gray-300" />
+                        </li>
+                        <li class="md:flex justify-between items-center">
+                            <div class="flex items-center text-gray-400 w-full md:w-1/2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots-vertical" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <circle cx="12" cy="12" r="1" />
+                                    <circle cx="12" cy="19" r="1" />
+                                    <circle cx="12" cy="5" r="1" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="-ml-3 icon icon-tabler icon-tabler-dots-vertical" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <circle cx="12" cy="12" r="1" />
+                                    <circle cx="12" cy="19" r="1" />
+                                    <circle cx="12" cy="5" r="1" />
+                                </svg>
+                                <div class="mx-4 bg-white border rounded-sm border-gray-400 w-4 h-4 flex flex-shrink-0 justify-center items-center relative">
+                                    <input type="checkbox" class="checkbox opacity-0 absolute cursor-pointer w-full h-full" />
+                                    <div class="check-icon bg-yellow-400 text-white rounded-sm hidden">
+                                        <svg class="icon icon-tabler icon-tabler-check" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z"></path>
+                                            <path d="M5 12l5 5l10 -10"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 font-semibold">Welcome to Quicklist!</p>
+                            </div>
+                            <div class="md:flex items-center md:w-1/2 w-full justify-end text-gray-700">
+                                <p class="text-yellow-600 mt-4 md:mt-0 mr-10">Due today at 18:00</p>
+                                <div class="mt-4 md:mt-0 flex items-center">
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+                                            <circle cx="9" cy="9" r="2" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bell" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <path d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
+                                            <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-event" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <rect x="4" y="5" width="16" height="16" rx="2" />
+                                            <line x1="16" y1="3" x2="16" y2="7" />
+                                            <line x1="8" y1="3" x2="8" y2="7" />
+                                            <line x1="4" y1="11" x2="20" y2="11" />
+                                            <rect x="8" y="15" width="2" height="2" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <circle cx="9" cy="7" r="4" />
+                                            <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                                            <path d="M16 11h6m-3 -3v6" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <rect x="3" y="4" width="18" height="4" rx="2" />
+                                            <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+                                            <line x1="10" y1="12" x2="14" y2="12" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <circle cx="5" cy="12" r="1" />
+                                            <circle cx="12" cy="12" r="1" />
+                                            <circle cx="19" cy="12" r="1" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <hr class="my-5 border-t border-gray-300" />
+                        </li>
+                        <li class="md:flex justify-between items-center">
+                            <div class="flex items-center text-gray-400 w-full md:w-1/2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots-vertical" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <circle cx="12" cy="12" r="1" />
+                                    <circle cx="12" cy="19" r="1" />
+                                    <circle cx="12" cy="5" r="1" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="-ml-3 icon icon-tabler icon-tabler-dots-vertical" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <circle cx="12" cy="12" r="1" />
+                                    <circle cx="12" cy="19" r="1" />
+                                    <circle cx="12" cy="5" r="1" />
+                                </svg>
+                                <div class="mx-4 bg-white border rounded-sm border-gray-400 w-4 h-4 flex flex-shrink-0 justify-center items-center relative">
+                                    <input type="checkbox" class="checkbox opacity-0 absolute cursor-pointer w-full h-full" />
+                                    <div class="check-icon bg-yellow-400 text-white rounded-sm hidden">
+                                        <svg class="icon icon-tabler icon-tabler-check" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z"></path>
+                                            <path d="M5 12l5 5l10 -10"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 font-semibold">Welcome to Quicklist!</p>
+                            </div>
+                            <div class="md:flex items-center md:w-1/2 w-full justify-end text-gray-700">
+                                <p class="text-yellow-600 mt-4 md:mt-0 mr-10">Due today at 18:00</p>
+                                <div class="mt-4 md:mt-0 flex items-center">
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+                                            <circle cx="9" cy="9" r="2" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bell" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <path d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
+                                            <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-event" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <rect x="4" y="5" width="16" height="16" rx="2" />
+                                            <line x1="16" y1="3" x2="16" y2="7" />
+                                            <line x1="8" y1="3" x2="8" y2="7" />
+                                            <line x1="4" y1="11" x2="20" y2="11" />
+                                            <rect x="8" y="15" width="2" height="2" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <circle cx="9" cy="7" r="4" />
+                                            <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                                            <path d="M16 11h6m-3 -3v6" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <rect x="3" y="4" width="18" height="4" rx="2" />
+                                            <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+                                            <line x1="10" y1="12" x2="14" y2="12" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <circle cx="5" cy="12" r="1" />
+                                            <circle cx="12" cy="12" r="1" />
+                                            <circle cx="19" cy="12" r="1" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <hr class="mt-6 border-t border-gray-300" />
+                <div>
+                    <div class="flex pt-6 items-center">
+                        <div data-menu class="cursor-pointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" aria-label="Hide" class="icon icon-tabler icon-tabler-chevron-up" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#718096" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" />
+                                <polyline points="6 15 12 9 18 15" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" aria-label="Show" class="hidden icon icon-tabler icon-tabler-chevron-down" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#718096" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z"></path>
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                        <h1 class="text-lg text-gray-900 font-semibold ml-3">Completed</h1>
+                    </div>
+                    <ul class="pt-6 hidden">
+                        <li class="md:flex justify-between items-center">
+                            <div class="flex items-center text-gray-400 w-full md:w-1/2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots-vertical" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <circle cx="12" cy="12" r="1" />
+                                    <circle cx="12" cy="19" r="1" />
+                                    <circle cx="12" cy="5" r="1" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="-ml-3 icon icon-tabler icon-tabler-dots-vertical" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <circle cx="12" cy="12" r="1" />
+                                    <circle cx="12" cy="19" r="1" />
+                                    <circle cx="12" cy="5" r="1" />
+                                </svg>
+                                <div class="mx-4 bg-white border rounded-sm border-gray-400 w-4 h-4 flex flex-shrink-0 justify-center items-center relative">
+                                    <input type="checkbox" class="checkbox opacity-0 absolute cursor-pointer w-full h-full" />
+                                    <div class="check-icon bg-yellow-400 text-white rounded-sm hidden">
+                                        <svg class="icon icon-tabler icon-tabler-check" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z"></path>
+                                            <path d="M5 12l5 5l10 -10"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 font-semibold">Welcome to Quicklist!</p>
+                            </div>
+                            <div class="md:flex items-center md:w-1/2 w-full justify-end text-gray-700">
+                                <p class="text-red-500 mt-4 md:mt-0 mr-10">Due today at 18:00</p>
+                                <div class="mt-4 md:mt-0 flex items-center">
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+                                            <circle cx="9" cy="9" r="2" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bell" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <path d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
+                                            <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-event" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <rect x="4" y="5" width="16" height="16" rx="2" />
+                                            <line x1="16" y1="3" x2="16" y2="7" />
+                                            <line x1="8" y1="3" x2="8" y2="7" />
+                                            <line x1="4" y1="11" x2="20" y2="11" />
+                                            <rect x="8" y="15" width="2" height="2" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <circle cx="9" cy="7" r="4" />
+                                            <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                                            <path d="M16 11h6m-3 -3v6" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <rect x="3" y="4" width="18" height="4" rx="2" />
+                                            <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+                                            <line x1="10" y1="12" x2="14" y2="12" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <circle cx="5" cy="12" r="1" />
+                                            <circle cx="12" cy="12" r="1" />
+                                            <circle cx="19" cy="12" r="1" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <hr class="my-5 border-t border-gray-300" />
+                        </li>
+                        <li class="md:flex justify-between items-center">
+                            <div class="flex items-center text-gray-400 w-full md:w-1/2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots-vertical" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <circle cx="12" cy="12" r="1" />
+                                    <circle cx="12" cy="19" r="1" />
+                                    <circle cx="12" cy="5" r="1" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="-ml-3 icon icon-tabler icon-tabler-dots-vertical" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <circle cx="12" cy="12" r="1" />
+                                    <circle cx="12" cy="19" r="1" />
+                                    <circle cx="12" cy="5" r="1" />
+                                </svg>
+                                <div class="mx-4 bg-white border rounded-sm border-gray-400 w-4 h-4 flex flex-shrink-0 justify-center items-center relative">
+                                    <input type="checkbox" class="checkbox opacity-0 absolute cursor-pointer w-full h-full" />
+                                    <div class="check-icon bg-yellow-400 text-white rounded-sm hidden">
+                                        <svg class="icon icon-tabler icon-tabler-check" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z"></path>
+                                            <path d="M5 12l5 5l10 -10"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 font-semibold">Welcome to Quicklist!</p>
+                            </div>
+                            <div class="md:flex items-center md:w-1/2 w-full justify-end text-gray-700">
+                                <p class="text-red-500 mt-4 md:mt-0 mr-10">Due today at 18:00</p>
+                                <div class="mt-4 md:mt-0 flex items-center">
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+                                            <circle cx="9" cy="9" r="2" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bell" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <path d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
+                                            <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-event" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <rect x="4" y="5" width="16" height="16" rx="2" />
+                                            <line x1="16" y1="3" x2="16" y2="7" />
+                                            <line x1="8" y1="3" x2="8" y2="7" />
+                                            <line x1="4" y1="11" x2="20" y2="11" />
+                                            <rect x="8" y="15" width="2" height="2" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <circle cx="9" cy="7" r="4" />
+                                            <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                                            <path d="M16 11h6m-3 -3v6" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <rect x="3" y="4" width="18" height="4" rx="2" />
+                                            <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+                                            <line x1="10" y1="12" x2="14" y2="12" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <circle cx="5" cy="12" r="1" />
+                                            <circle cx="12" cy="12" r="1" />
+                                            <circle cx="19" cy="12" r="1" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <hr class="my-5 border-t border-gray-300" />
+                        </li>
+                        <li class="md:flex justify-between items-center">
+                            <div class="flex items-center text-gray-400 w-full md:w-1/2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots-vertical" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <circle cx="12" cy="12" r="1" />
+                                    <circle cx="12" cy="19" r="1" />
+                                    <circle cx="12" cy="5" r="1" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="-ml-3 icon icon-tabler icon-tabler-dots-vertical" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <circle cx="12" cy="12" r="1" />
+                                    <circle cx="12" cy="19" r="1" />
+                                    <circle cx="12" cy="5" r="1" />
+                                </svg>
+                                <div class="mx-4 bg-white border rounded-sm border-gray-400 w-4 h-4 flex flex-shrink-0 justify-center items-center relative">
+                                    <input type="checkbox" class="checkbox opacity-0 absolute cursor-pointer w-full h-full" />
+                                    <div class="check-icon bg-yellow-400 text-white rounded-sm hidden">
+                                        <svg class="icon icon-tabler icon-tabler-check" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z"></path>
+                                            <path d="M5 12l5 5l10 -10"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 font-semibold">Welcome to Quicklist!</p>
+                            </div>
+                            <div class="md:flex items-center md:w-1/2 w-full justify-end text-gray-700">
+                                <p class="text-red-500 mt-4 md:mt-0 mr-10">Due today at 18:00</p>
+                                <div class="mt-4 md:mt-0 flex items-center">
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+                                            <circle cx="9" cy="9" r="2" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bell" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <path d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
+                                            <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-event" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <rect x="4" y="5" width="16" height="16" rx="2" />
+                                            <line x1="16" y1="3" x2="16" y2="7" />
+                                            <line x1="8" y1="3" x2="8" y2="7" />
+                                            <line x1="4" y1="11" x2="20" y2="11" />
+                                            <rect x="8" y="15" width="2" height="2" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <circle cx="9" cy="7" r="4" />
+                                            <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                                            <path d="M16 11h6m-3 -3v6" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <rect x="3" y="4" width="18" height="4" rx="2" />
+                                            <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+                                            <line x1="10" y1="12" x2="14" y2="12" />
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <circle cx="5" cy="12" r="1" />
+                                            <circle cx="12" cy="12" r="1" />
+                                            <circle cx="19" cy="12" r="1" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <script src="./assets/scripts/script.js"></script>
+    </body>
+</html>

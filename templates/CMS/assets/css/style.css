@@ -1,0 +1,37 @@
+body {
+    font-family: "Lato", sans-serif;
+}
+/* shows controls on hover */
+.controls {
+    opacity: 0;
+}
+.trigger:hover .controls {
+    opacity: 1;
+}
+.trigger:hover .overlay {
+    --bg-opacity: 0.75;
+}
+/* Checkbox */
+.checkbox:checked {
+    /* Apply class right-0*/
+    right: 0;
+}
+.checkbox:checked + .toggle-label{
+    /* Apply class bg-indigo-700 */
+    background-color: #4299e1;
+    
+}
+
+.divcolor{
+    background-color: #4299e1;
+}
+.buttoncolor{
+    background-color:  #667EEA;
+}
+.text-color{
+    color: #4A5568;
+}
+.height{
+    height: 0.313rem;
+}
+

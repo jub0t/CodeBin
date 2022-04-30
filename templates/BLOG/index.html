@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Blog</title>
+        <link href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&display=swap" rel="stylesheet" />
+        <link href="./assets/css/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Nav starts here -->
+        <div class="py-4 md:py-10">
+            <header class="mx-auto container px-4 xl:px-0">
+                <div class="flex items-center justify-between">
+                    <a href="/">
+                       <img class="w-40" src="./assets/images/logo.png" alt="logo"/>
+                    </a>
+                    <div>
+                        <div onclick="toggleMenu(true)" class="sm:block md:hidden lg:hidden text-gray-500 hover:text-gray-700 focus:text-gray-700 focus:outline-none">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" />
+                                <line x1="4" y1="6" x2="20" y2="6" />
+                                <line x1="4" y1="12" x2="20" y2="12" />
+                                <line x1="4" y1="18" x2="20" y2="18" />
+                            </svg>
+                        </div>
+                        <div id="menu" class="md:block lg:block hidden">
+                            <div onclick="toggleMenu(false)" class="block md:hidden lg:hidden text-gray-500 hover:text-gray-700 focus:text-gray-700 fixed focus:outline-none z-30 top-0 pt-4">
+                                <svg aria-haspopup="true" aria-label="Main Menu" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <line x1="18" y1="6" x2="6" y2="18" />
+                                    <line x1="6" y1="6" x2="18" y2="18" />
+                                </svg>
+                            </div>
+                            <ul class="flex md:flex text-3xl md:text-base bg-white lg:text-base lg:flex flex-col md:flex-row lg:flex-row justify-center items-center fixed md:relative lg:relative top-0 bottom-0 left-0 right-0 z-20">
+                                <li class="md:hidden md:mr-8 lg:mr-10 flex items-center">
+                                    <a class="hover:text-gray-800 text-gray-600 font-semibold pt-10 md:pt-0" href="./about.html">About</a>
+                                </li>
+                                <li class="md:hidden md:mr-8 lg:mr-10 flex items-center">
+                                    <a class="hover:text-gray-800 text-gray-600 font-semibold pt-10 md:pt-0" href="./blog.html">Blog</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="mt-12 container mx-auto px-4 xl:px-0">
+            <div class="sm:hidden relative w-11/12 mx-auto bg-white rounded">
+                <div class="absolute inset-0 m-auto mr-4 z-0 w-6 h-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-selector" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#A0AEC0" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z"></path>
+                        <polyline points="8 9 12 5 16 9"></polyline>
+                        <polyline points="16 15 12 19 8 15"></polyline>
+                    </svg>
+                </div>
+                <select aria-label="Selected tab" class="form-select block w-full p-3 border border-gray-300 rounded text-gray-600 appearance-none bg-transparent relative z-10">
+                    <option class="text-sm text-gray-600">Business</option>
+                    <option class="text-sm text-gray-600">Technology</option>
+                    <option class="text-sm text-gray-600">Lifestyle</option>
+                </select>
+            </div>
+            <ul class="hidden text-lg sm:flex items-center">
+                <li onclick="toggleContent(this,1)" class="-mb-px border-b-2 border-yellow-500 pb-5 text-yellow-500 mr-20">Explore</li>
+                <li onclick="toggleContent(this,2)" class="-mb-px cursor-pointer pb-5 text-gray-600 mr-20">Business</li>
+                <li onclick="toggleContent(this,3)" class="-mb-px cursor-pointer pb-5 text-gray-600 mr-20">Technology</li>
+                <li onclick="toggleContent(this,4)" class="-mb-px cursor-pointer pb-5 text-gray-600 mr-20">Lifestyle</li>
+            </ul>
+            <hr class="hidden sm:block border-t-2 border-gray-300" />
+        </div>
+
+        <!-- Nav ends here -->
+
+        <div id="explore">
+            <!-- Header starts here -->
+            <div class="mx-auto container py-6 sm:py-12 px-4 xl:px-0">
+                <div class="flex flex-wrap mt-8 sm:mt-16">
+                    <div class="md:w-2/3 w-full pb-6 md:pb-0 md:pr-12">
+                        <a href="./blog.html">                        
+                            <div class="h-96 w-full">
+                                <img src="./assets/images/1.png" alt="" class="h-full w-full object-cover overflow-hidden rounded shadow" />
+                            </div>
+                            <p class="mt-6 mb-2 text-sm text-teal-500">Travel</p>
+                            <h2 class="text-4xl text-gray-900 font-light">Crossing the Canadian border on foot. Learn the basics and join me!</h2>
+                            <p class="text-gray-600 text-sm mt-4">12 September 2020</p>
+                        </a>
+                    </div>
+                    <div class="md:w-1/3 w-full">
+                        <a href="./blog.html">                        
+                            <div class="h-96 w-full">
+                                <img src="./assets/images/2.png" alt="" class="h-full w-full object-cover overflow-hidden rounded shadow" />
+                            </div>
+                            <p class="mt-6 mb-2 text-sm text-teal-500">Travel</p>
+                            <h2 class="text-4xl text-gray-900 font-light">Crossing the Canadian border on foot. Learn the basics and join me!</h2>
+                            <p class="text-gray-600 text-sm mt-4">12 September 2020</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Header ends here -->
+
+            <!-- Posts start -->
+            <div class="mx-auto container py-6 sm:py-12 px-4 xl:px-0">
+                <div class="container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
+                    <div class="flex items-center">
+                        <div class="h-24 w-24 flex-shrink-0">
+                            <img src="./assets/images/3.png" alt="" class="h-full w-full object-cover overflow-hidden rounded shadow" />
+                        </div>
+                        <div class="pt-3 pb-3 ml-2 pr-5">
+                            <p class="text-sm text-yellow-500">Business</p>
+                            <p class="text-2xl text-gray-800 leading-8">Productivity Tips for Effective Leaders</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="h-24 w-24 flex-shrink-0">
+                            <img src="./assets/images/4.png" alt="" class="h-full w-full object-cover overflow-hidden rounded shadow" />
+                        </div>
+                        <div class="pt-3 pb-3 ml-2 pr-5">
+                            <p class="text-sm text-yellow-500">Business</p>
+                            <p class="text-2xl text-gray-800 leading-8">Productivity Tips for Effective Leaders</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="h-24 w-24 flex-shrink-0">
+                            <img src="./assets/images/5.png" alt="" class="h-full w-full object-cover overflow-hidden rounded shadow" />
+                        </div>
+                        <div class="pt-3 pb-3 ml-2 pr-5">
+                            <p class="text-sm text-yellow-500">Business</p>
+                            <p class="text-2xl text-gray-800 leading-8">Productivity Tips for Effective Leaders</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Posts end -->
+
+            <div class="container px-4 xl:px-0 mx-auto">
+                <hr class="border-t border-gry-300" />
+            </div>
+
+            <!-- Trending posts start -->
+            <div class="mx-auto container py-6 sm:py-12 px-4 xl:px-0">
+                <div class="flex flex-wrap mt-8 sm:mt-16">
+                    <div class="md:w-2/3 w-full pb-6 md:pb-0 md:pr-12">
+                        <a href="./blog.html">                        
+                            <div class="h-96 w-full">
+                                <img src="./assets/images/6.png" alt="" class="h-full w-full object-cover overflow-hidden rounded shadow" />
+                            </div>
+                            <p class="mt-6 mb-2 text-sm text-teal-500">Travel</p>
+                            <h2 class="text-4xl text-gray-900 font-light">Crossing the Canadian border on foot. Learn the basics and join me!</h2>
+                            <p class="text-gray-600 text-sm mt-4">12 September 2020</p>
+                         </a>
+                    </div>
+                    <div class="md:w-1/3 w-full">
+                        <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8">
+                        <a href="./blog.html">                        
+                            <div>
+                                <div class="h-44 w-full">
+                                    <img src="./assets/images/7.png" alt="" class="h-full w-full object-cover overflow-hidden rounded shadow" />
+                                </div>
+                                <h2 class="mt-3 text-gray-900">10 Tips to design productively amidst the pandemic</h2>
+                                <p class="text-gray-600 text-sm mt-3">12 September 2020</p>
+                            </div>
+                        <a href="./blog.html">                        
+
+                            <div>
+                                <div class="h-44 w-full">
+                                    <img src="./assets/images/8.png" alt="" class="h-full w-full object-cover overflow-hidden rounded shadow" />
+                                </div>
+                                <h2 class="mt-3 text-gray-900">10 Tips to design productively amidst the pandemic</h2>
+                                <p class="text-gray-600 text-sm mt-3">12 September 2020</p>
+                            </div>
+                            </a>
+                            <a href="./blog.html">                        
+                                <div>
+                                <div class="h-44 w-full">
+                                    <img src="./assets/images/9.png" alt="" class="h-full w-full object-cover overflow-hidden rounded shadow" />
+                                </div>
+                                <h2 class="mt-3 text-gray-900">10 Tips to design productively amidst the pandemic</h2>
+                                <p class="text-gray-600 text-sm mt-3">12 September 2020</p>
+                            </div>
+                            </a>
+                            <a href="./blog.html">                        
+                                <div>
+                                <div class="h-44 w-full">
+                                    <img src="./assets/images/10.png" alt="" class="h-full w-full object-cover overflow-hidden rounded shadow" />
+                                </div>
+                                <h2 class="mt-3 text-gray-900">10 Tips to design productively amidst the pandemic</h2>
+                                <p class="text-gray-600 text-sm mt-3">12 September 2020</p>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Trending posts end -->
+
+            <!-- Trending videos start -->
+            <div class="mx-auto container py-6 sm:py-12 px-4 xl:px-0">
+                <h3 class="text-2xl text-gray-900 mb-8">Trending Videos</h3>
+                <div class="container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    <div class="border-b border-gray-300">
+                        <div class="h-48 w-full relative border-b border-gray-300">
+                            <div class="w-16 h-16 border-4 border-white rounded-full absolute inset-0 m-auto flex justify-center items-center text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-caret-right" width="56" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M18 15l-6-6l-6 6h12" transform="rotate(90 12 12)" />
+                                </svg>
+                            </div>
+                            <img src="./assets/images/11.png" alt="" class="h-full w-full object-cover overflow-hidden shadow" />
+                        </div>
+                        <h4 class="text-xl text-center text-gray-800 mt-4">Introduction to Prototyping</h4>
+                        <p class="text-xs text-gray-600 mt-3 mb-8 text-center">3 hours, 30 minutes</p>
+                    </div>
+                    <div class="border-b border-gray-300">
+                        <div class="h-48 w-full relative border-b border-gray-300">
+                            <div class="w-16 h-16 border-4 border-white rounded-full absolute inset-0 m-auto flex justify-center items-center text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-caret-right" width="56" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M18 15l-6-6l-6 6h12" transform="rotate(90 12 12)" />
+                                </svg>
+                            </div>
+                            <img src="./assets/images/12.png" alt="" class="h-full w-full object-cover overflow-hidden shadow" />
+                        </div>
+                        <h4 class="text-xl text-center text-gray-800 mt-4">Introduction to Prototyping</h4>
+                        <p class="text-xs text-gray-600 mt-3 mb-8 text-center">3 hours, 30 minutes</p>
+                    </div>
+                    <div class="border-b border-gray-300">
+                        <div class="h-48 w-full relative border-b border-gray-300">
+                            <div class="w-16 h-16 border-4 border-white rounded-full absolute inset-0 m-auto flex justify-center items-center text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-caret-right" width="56" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M18 15l-6-6l-6 6h12" transform="rotate(90 12 12)" />
+                                </svg>
+                            </div>
+                            <img src="./assets/images/13.png" alt="" class="h-full w-full object-cover overflow-hidden shadow" />
+                        </div>
+                        <h4 class="text-xl text-center text-gray-800 mt-4">Introduction to Prototyping</h4>
+                        <p class="text-xs text-gray-600 mt-3 mb-8 text-center">3 hours, 30 minutes</p>
+                    </div>
+                    <div class="border-b border-gray-300">
+                        <div class="h-48 w-full relative border-b border-gray-300">
+                            <div class="w-16 h-16 border-4 border-white rounded-full absolute inset-0 m-auto flex justify-center items-center text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-caret-right" width="56" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M18 15l-6-6l-6 6h12" transform="rotate(90 12 12)" />
+                                </svg>
+                            </div>
+                            <img src="./assets/images/14.png" alt="" class="h-full w-full object-cover overflow-hidden shadow" />
+                        </div>
+                        <h4 class="text-xl text-center text-gray-800 mt-4">Introduction to Prototyping</h4>
+                        <p class="text-xs text-gray-600 mt-3 mb-8 text-center">3 hours, 30 minutes</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Trending videos end -->
+
+            <!-- Blog posts start -->
+            <div class="mx-auto container py-6 sm:py-12 px-4 xl:px-0">
+                <h3 class="text-2xl text-gray-900 mb-8">Blog Posts</h3>
+                <div class="container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-16">
+                    <a href="./blog.html">                        
+                        <div>
+                        <div class="h-56 w-full relative border-b border-gray-300">
+                            <img src="./assets/images/15.png" alt="" class="h-full w-full object-cover rounded overflow-hidden shadow" />
+                        </div>
+                        <p class="mt-4 mb-3 text-teal-500 text-sm">Travel</p>
+                        <h4 class="text-2xl text-gray-800">How to get a good nights sleep according to science</h4>
+                        <div class="flex items-center justify-between mt-4 mb-5">
+                            <p class="text-gray-600 text-sm">20th September 2020</p>
+                            <div class="text-gray-600 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M12 20l-7 -7a4 4 0 0 1 6.5 -6a.9 .9 0 0 0 1 0a4 4 0 0 1 6.5 6l-7 7" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 icon icon-tabler icon-tabler-bookmark" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M9 4h6a2 2 0 0 1 2 2v14l-5-3l-5 3v-14a2 2 0 0 1 2 -2" />
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="mb-5 text-gray-600 text-sm">Duis congue mattis odio, a posuere urna feugiat id. Praesent id est tellus. Sed mollis ex at dapibus hendrerit. Curabitur efficitur nulla at finibus suscipit duis efficitur .</p>
+                        <p class="text-gray-600 text-sm">#lifestyle &nbsp; #productivity &nbsp; #rest &nbsp; #sleep</p>
+                        </div>
+                    </a>
+                    <a href="./blog.html">                        
+                        <div>
+                            <div class="h-56 w-full relative border-b border-gray-300">
+                                <img src="./assets/images/16.png" alt="" class="h-full w-full rounded object-cover overflow-hidden shadow" />
+                            </div>
+                            <p class="mt-4 mb-3 text-teal-500 text-sm">Travel</p>
+                            <h4 class="text-2xl text-gray-800">How to get a good nights sleep according to science</h4>
+                            <div class="flex items-center justify-between mt-4 mb-5">
+                                <p class="text-gray-600 text-sm">20th September 2020</p>
+                                <div class="text-gray-600 flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" />
+                                        <path d="M12 20l-7 -7a4 4 0 0 1 6.5 -6a.9 .9 0 0 0 1 0a4 4 0 0 1 6.5 6l-7 7" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 icon icon-tabler icon-tabler-bookmark" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" />
+                                        <path d="M9 4h6a2 2 0 0 1 2 2v14l-5-3l-5 3v-14a2 2 0 0 1 2 -2" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <p class="mb-5 text-gray-600 text-sm">Duis congue mattis odio, a posuere urna feugiat id. Praesent id est tellus. Sed mollis ex at dapibus hendrerit. Curabitur efficitur nulla at finibus suscipit duis efficitur .</p>
+                            <p class="text-gray-600 text-sm">#lifestyle &nbsp; #productivity &nbsp; #rest &nbsp; #sleep</p>
+                        </div>
+                    </a>
+                    <a href="./blog.html">                        
+                        <div>
+                            <div class="h-56 w-full relative border-b border-gray-300">
+                                <img src="./assets/images/17.png" alt="" class="h-full w-full rounded object-cover overflow-hidden shadow" />
+                            </div>
+                            <p class="mt-4 mb-3 text-teal-500 text-sm">Travel</p>
+                            <h4 class="text-2xl text-gray-800">How to get a good nights sleep according to science</h4>
+                            <div class="flex items-center justify-between mt-4 mb-5">
+                                <p class="text-gray-600 text-sm">20th September 2020</p>
+                                <div class="text-gray-600 flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" />
+                                        <path d="M12 20l-7 -7a4 4 0 0 1 6.5 -6a.9 .9 0 0 0 1 0a4 4 0 0 1 6.5 6l-7 7" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 icon icon-tabler icon-tabler-bookmark" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" />
+                                        <path d="M9 4h6a2 2 0 0 1 2 2v14l-5-3l-5 3v-14a2 2 0 0 1 2 -2" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <p class="mb-5 text-gray-600 text-sm">Duis congue mattis odio, a posuere urna feugiat id. Praesent id est tellus. Sed mollis ex at dapibus hendrerit. Curabitur efficitur nulla at finibus suscipit duis efficitur .</p>
+                            <p class="text-gray-600 text-sm">#lifestyle &nbsp; #productivity &nbsp; #rest &nbsp; #sleep</p>
+                        </div>
+                    </a>
+                    <div>
+                        <div class="h-56 w-full relative border-b border-gray-300">
+                            <img src="./assets/images/18.png" alt="" class="h-full w-full rounded object-cover overflow-hidden shadow" />
+                        </div>
+                        <p class="mt-4 mb-3 text-teal-500 text-sm">Travel</p>
+                        <h4 class="text-2xl text-gray-800">How to get a good nights sleep according to science</h4>
+                        <div class="flex items-center justify-between mt-4 mb-5">
+                            <p class="text-gray-600 text-sm">20th September 2020</p>
+                            <div class="text-gray-600 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M12 20l-7 -7a4 4 0 0 1 6.5 -6a.9 .9 0 0 0 1 0a4 4 0 0 1 6.5 6l-7 7" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 icon icon-tabler icon-tabler-bookmark" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M9 4h6a2 2 0 0 1 2 2v14l-5-3l-5 3v-14a2 2 0 0 1 2 -2" />
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="mb-5 text-gray-600 text-sm">Duis congue mattis odio, a posuere urna feugiat id. Praesent id est tellus. Sed mollis ex at dapibus hendrerit. Curabitur efficitur nulla at finibus suscipit duis efficitur .</p>
+                        <p class="text-gray-600 text-sm">#lifestyle &nbsp; #productivity &nbsp; #rest &nbsp; #sleep</p>
+                    </div>
+                    <a href="./blog.html">                        
+                        <div>
+                            <div class="h-56 w-full relative border-b border-gray-300">
+                                <img src="./assets/images/19.png" alt="" class="h-full w-full rounded object-cover overflow-hidden shadow" />
+                            </div>
+                            <p class="mt-4 mb-3 text-teal-500 text-sm">Travel</p>
+                            <h4 class="text-2xl text-gray-800">How to get a good nights sleep according to science</h4>
+                            <div class="flex items-center justify-between mt-4 mb-5">
+                                <p class="text-gray-600 text-sm">20th September 2020</p>
+                                <div class="text-gray-600 flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" />
+                                        <path d="M12 20l-7 -7a4 4 0 0 1 6.5 -6a.9 .9 0 0 0 1 0a4 4 0 0 1 6.5 6l-7 7" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 icon icon-tabler icon-tabler-bookmark" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" />
+                                        <path d="M9 4h6a2 2 0 0 1 2 2v14l-5-3l-5 3v-14a2 2 0 0 1 2 -2" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <p class="mb-5 text-gray-600 text-sm">Duis congue mattis odio, a posuere urna feugiat id. Praesent id est tellus. Sed mollis ex at dapibus hendrerit. Curabitur efficitur nulla at finibus suscipit duis efficitur .</p>
+                            <p class="text-gray-600 text-sm">#lifestyle &nbsp; #productivity &nbsp; #rest &nbsp; #sleep</p>
+                        </div>
+                    </a>
+                    <a href="./blog.html">                        
+                        <div>
+                            <div class="h-56 w-full relative border-b border-gray-300">
+                                <img src="./assets/images/20.png" alt="" class="h-full w-full rounded object-cover overflow-hidden shadow" />
+                            </div>
+                            <p class="mt-4 mb-3 text-teal-500 text-sm">Travel</p>
+                            <h4 class="text-2xl text-gray-800">How to get a good nights sleep according to science</h4>
+                            <div class="flex items-center justify-between mt-4 mb-5">
+                                <p class="text-gray-600 text-sm">20th September 2020</p>
+                                <div class="text-gray-600 flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" />
+                                        <path d="M12 20l-7 -7a4 4 0 0 1 6.5 -6a.9 .9 0 0 0 1 0a4 4 0 0 1 6.5 6l-7 7" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 icon icon-tabler icon-tabler-bookmark" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" />
+                                        <path d="M9 4h6a2 2 0 0 1 2 2v14l-5-3l-5 3v-14a2 2 0 0 1 2 -2" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <p class="mb-5 text-gray-600 text-sm">Duis congue mattis odio, a posuere urna feugiat id. Praesent id est tellus. Sed mollis ex at dapibus hendrerit. Curabitur efficitur nulla at finibus suscipit duis efficitur .</p>
+                            <p class="text-gray-600 text-sm">#lifestyle &nbsp; #productivity &nbsp; #rest &nbsp; #sleep</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- Blog posts end -->
+        </div>
+
+        <div id="business" class="hidden">
+            <!-- Header starts here -->
+            <div class="container mx-auto px-4 xl:px-0 py-6 sm:py-12">
+                <div class="w-1/2 mt-16">
+                    <h2 class="text-gray-700 text-5xl mb-4">Business</h2>
+                    <p class="text-sm text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. Check the actions below for more details</p>
+                </div>
+            </div>
+            <!-- Header ends here -->
+
+            <!-- Trending posts start -->
+            <div class="mx-auto container py-6 sm:py-12 px-4 xl:px-0">
+                <h3 class="text-2xl text-gray-900 mb-8">Trending posts</h3>
+                <div class="flex flex-wrap">
+                    <div class="md:w-2/3 w-full pb-6 md:pb-0 md:pr-12">
+                        <div class=" w-full h-96">
+                            <img src="./assets/images/21.png" alt="" class="h-full w-full object-cover overflow-hidden rounded shadow" />
+                        </div>
+                        <p class="mt-6 mb-2 text-sm text-teal-500">Travel</p>
+                        <h2 class="text-4xl text-gray-900 font-light">Crossing the Canadian border on foot. Learn the basics and join me!</h2>
+                        <p class="text-gray-600 text-sm mt-4">12 September 2020</p>
+                    </div>
+                    <div class="md:w-1/3 w-full">
+                        <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8">
+                            <div>
+                                <div class="h-44 w-full">
+                                    <img src="./assets/images/22.png" alt="" class="h-full w-full object-cover overflow-hidden rounded shadow" />
+                                </div>
+                                <h2 class="mt-3 text-gray-900 text-base">10 Tips to design productively amidst the pandemic</h2>
+                                <p class="text-gray-600 text-sm mt-3">12 September 2020</p>
+                            </div>
+                            <div>
+                                <div class="h-44 w-full">
+                                    <img src="./assets/images/23.png" alt="" class="h-full w-full object-cover overflow-hidden rounded shadow" />
+                                </div>
+                                <h2 class="mt-3 text-gray-900 text-base">10 Tips to design productively amidst the pandemic</h2>
+                                <p class="text-gray-600 text-sm mt-3">12 September 2020</p>
+                            </div>
+                            <div>
+                                <div class="h-44 w-full">
+                                    <img src="./assets/images/24.png" alt="" class="h-full w-full object-cover overflow-hidden rounded shadow" />
+                                </div>
+                                <h2 class="mt-3 text-gray-900 text-base">10 Tips to design productively amidst the pandemic</h2>
+                                <p class="text-gray-600 text-sm mt-3">12 September 2020</p>
+                            </div>
+                            <div>
+                                <div class="h-44 w-full">
+                                    <img src="./assets/images/25.png" alt="" class="h-full w-full object-cover overflow-hidden rounded shadow" />
+                                </div>
+                                <h2 class="mt-3 text-gray-900 text-base">10 Tips to design productively amidst the pandemic</h2>
+                                <p class="text-gray-600 text-sm mt-3">12 September 2020</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Trending posts end -->
+
+            <!-- Trending videos start -->
+            <div class="mx-auto container py-6 sm:py-12 px-4 xl:px-0">
+                <h3 class="text-2xl text-gray-900 mb-8">Trending videos</h3>
+                <div class="container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    <div class="border-b border-gray-300">
+                        <div class="h-48 w-full relative border-b border-gray-300">
+                            <div class="w-16 h-16 border-4 border-white rounded-full absolute inset-0 m-auto flex justify-center items-center text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-caret-right" width="56" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M18 15l-6-6l-6 6h12" transform="rotate(90 12 12)" />
+                                </svg>
+                            </div>
+                            <img src="./assets/images/26.png" alt="" class="h-full w-full object-cover overflow-hidden shadow" />
+                        </div>
+                        <h4 class="text-xl text-center text-gray-800 mt-4">Introduction to Prototyping</h4>
+                        <p class="text-xs text-gray-600 mt-3 mb-8 text-center">3 hours, 30 minutes</p>
+                    </div>
+                    <div class="border-b border-gray-300">
+                        <div class="h-48 w-full relative border-b border-gray-300">
+                            <div class="w-16 h-16 border-4 border-white rounded-full absolute inset-0 m-auto flex justify-center items-center text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-caret-right" width="56" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M18 15l-6-6l-6 6h12" transform="rotate(90 12 12)" />
+                                </svg>
+                            </div>
+                            <img src="./assets/images/27.png" alt="" class="h-full w-full object-cover overflow-hidden shadow" />
+                        </div>
+                        <h4 class="text-xl text-center text-gray-800 mt-4">Introduction to Prototyping</h4>
+                        <p class="text-xs text-gray-600 mt-3 mb-8 text-center">3 hours, 30 minutes</p>
+                    </div>
+                    <div class="border-b border-gray-300">
+                        <div class="h-48 w-full relative border-b border-gray-300">
+                            <div class="w-16 h-16 border-4 border-white rounded-full absolute inset-0 m-auto flex justify-center items-center text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-caret-right" width="56" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M18 15l-6-6l-6 6h12" transform="rotate(90 12 12)" />
+                                </svg>
+                            </div>
+                            <img src="./assets/images/28.png" alt="" class="h-full w-full object-cover overflow-hidden shadow" />
+                        </div>
+                        <h4 class="text-xl text-center text-gray-800 mt-4">Introduction to Prototyping</h4>
+                        <p class="text-xs text-gray-600 mt-3 mb-8 text-center">3 hours, 30 minutes</p>
+                    </div>
+                    <div class="border-b border-gray-300">
+                        <div class="h-48 w-full relative border-b border-gray-300">
+                            <div class="w-16 h-16 border-4 border-white rounded-full absolute inset-0 m-auto flex justify-center items-center text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-caret-right" width="56" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M18 15l-6-6l-6 6h12" transform="rotate(90 12 12)" />
+                                </svg>
+                            </div>
+                            <img src="./assets/images/29.png" alt="" class="h-full w-full object-cover overflow-hidden shadow" />
+                        </div>
+                        <h4 class="text-xl text-center text-gray-800 mt-4">Introduction to Prototyping</h4>
+                        <p class="text-xs text-gray-600 mt-3 mb-8 text-center">3 hours, 30 minutes</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Trending videos end -->
+
+            <!-- Blog posts start -->
+            <div class="mx-auto container py-6 sm:py-12 px-4 xl:px-0">
+                <h3 class="text-2xl text-gray-900 mb-8">Blog posts</h3>
+                <div class="container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-16">
+                    <div>
+                        <div class="h-56 w-full relative border-b border-gray-300">
+                            <img src="./assets/images/30.png" alt="" class="h-full w-full object-cover  overflow-hidden shadow" />
+                        </div>
+                        <p class="mt-4 mb-3 text-teal-500 text-sm">Travel</p>
+                        <h4 class="text-2xl text-gray-800">How to get a good nights sleep according to science</h4>
+                        <div class="flex items-center justify-between mt-4 mb-5">
+                            <p class="text-gray-600 text-sm">20th September 2020</p>
+                            <div class="text-gray-600 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M12 20l-7 -7a4 4 0 0 1 6.5 -6a.9 .9 0 0 0 1 0a4 4 0 0 1 6.5 6l-7 7" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 icon icon-tabler icon-tabler-bookmark" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M9 4h6a2 2 0 0 1 2 2v14l-5-3l-5 3v-14a2 2 0 0 1 2 -2" />
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="mb-5 text-gray-600 text-sm">Duis congue mattis odio, a posuere urna feugiat id. Praesent id est tellus. Sed mollis ex at dapibus hendrerit. Curabitur efficitur nulla at finibus suscipit duis efficitur .</p>
+                        <p class="text-gray-600 text-sm">#lifestyle &nbsp; #productivity &nbsp; #rest &nbsp; #sleep</p>
+                    </div>
+                    <div>
+                        <div class="h-56 w-full relative border-b border-gray-300">
+                            <img src="./assets/images/31.png" alt="" class="h-full w-full object-cover overflow-hidden shadow" />
+                        </div>
+                        <p class="mt-4 mb-3 text-teal-500 text-sm">Travel</p>
+                        <h4 class="text-2xl text-gray-800">How to get a good nights sleep according to science</h4>
+                        <div class="flex items-center justify-between mt-4 mb-5">
+                            <p class="text-gray-600 text-sm">20th September 2020</p>
+                            <div class="text-gray-600 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M12 20l-7 -7a4 4 0 0 1 6.5 -6a.9 .9 0 0 0 1 0a4 4 0 0 1 6.5 6l-7 7" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 icon icon-tabler icon-tabler-bookmark" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M9 4h6a2 2 0 0 1 2 2v14l-5-3l-5 3v-14a2 2 0 0 1 2 -2" />
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="mb-5 text-gray-600 text-sm">Duis congue mattis odio, a posuere urna feugiat id. Praesent id est tellus. Sed mollis ex at dapibus hendrerit. Curabitur efficitur nulla at finibus suscipit duis efficitur .</p>
+                        <p class="text-gray-600 text-sm">#lifestyle &nbsp; #productivity &nbsp; #rest &nbsp; #sleep</p>
+                    </div>
+                    <div>
+                        <div class="h-56 w-full relative border-b border-gray-300">
+                            <img src="./assets/images/32.png" alt="" class="h-full w-full object-cover overflow-hidden shadow" />
+                        </div>
+                        <p class="mt-4 mb-3 text-teal-500 text-sm">Travel</p>
+                        <h4 class="text-2xl text-gray-800">How to get a good nights sleep according to science</h4>
+                        <div class="flex items-center justify-between mt-4 mb-5">
+                            <p class="text-gray-600 text-sm">20th September 2020</p>
+                            <div class="text-gray-600 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M12 20l-7 -7a4 4 0 0 1 6.5 -6a.9 .9 0 0 0 1 0a4 4 0 0 1 6.5 6l-7 7" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 icon icon-tabler icon-tabler-bookmark" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M9 4h6a2 2 0 0 1 2 2v14l-5-3l-5 3v-14a2 2 0 0 1 2 -2" />
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="mb-5 text-gray-600 text-sm">Duis congue mattis odio, a posuere urna feugiat id. Praesent id est tellus. Sed mollis ex at dapibus hendrerit. Curabitur efficitur nulla at finibus suscipit duis efficitur .</p>
+                        <p class="text-gray-600 text-sm">#lifestyle &nbsp; #productivity &nbsp; #rest &nbsp; #sleep</p>
+                    </div>
+                    <div>
+                        <div class="h-56 w-full relative border-b border-gray-300">
+                            <img src="./assets/images/33.png" alt="" class="h-full w-full object-cover overflow-hidden shadow" />
+                        </div>
+                        <p class="mt-4 mb-3 text-teal-500 text-sm">Travel</p>
+                        <h4 class="text-2xl text-gray-800">How to get a good nights sleep according to science</h4>
+                        <div class="flex items-center justify-between mt-4 mb-5">
+                            <p class="text-gray-600 text-sm">20th September 2020</p>
+                            <div class="text-gray-600 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M12 20l-7 -7a4 4 0 0 1 6.5 -6a.9 .9 0 0 0 1 0a4 4 0 0 1 6.5 6l-7 7" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 icon icon-tabler icon-tabler-bookmark" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M9 4h6a2 2 0 0 1 2 2v14l-5-3l-5 3v-14a2 2 0 0 1 2 -2" />
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="mb-5 text-gray-600 text-sm">Duis congue mattis odio, a posuere urna feugiat id. Praesent id est tellus. Sed mollis ex at dapibus hendrerit. Curabitur efficitur nulla at finibus suscipit duis efficitur .</p>
+                        <p class="text-gray-600 text-sm">#lifestyle &nbsp; #productivity &nbsp; #rest &nbsp; #sleep</p>
+                    </div>
+                    <div>
+                        <div class="h-56 w-full relative border-b border-gray-300">
+                            <img src="./assets/images/34.png" alt="" class="h-full w-full object-cover overflow-hidden shadow" />
+                        </div>
+                        <p class="mt-4 mb-3 text-teal-500 text-sm">Travel</p>
+                        <h4 class="text-2xl text-gray-800">How to get a good nights sleep according to science</h4>
+                        <div class="flex items-center justify-between mt-4 mb-5">
+                            <p class="text-gray-600 text-sm">20th September 2020</p>
+                            <div class="text-gray-600 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M12 20l-7 -7a4 4 0 0 1 6.5 -6a.9 .9 0 0 0 1 0a4 4 0 0 1 6.5 6l-7 7" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 icon icon-tabler icon-tabler-bookmark" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M9 4h6a2 2 0 0 1 2 2v14l-5-3l-5 3v-14a2 2 0 0 1 2 -2" />
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="mb-5 text-gray-600 text-sm">Duis congue mattis odio, a posuere urna feugiat id. Praesent id est tellus. Sed mollis ex at dapibus hendrerit. Curabitur efficitur nulla at finibus suscipit duis efficitur .</p>
+                        <p class="text-gray-600 text-sm">#lifestyle &nbsp; #productivity &nbsp; #rest &nbsp; #sleep</p>
+                    </div>
+                    <div>
+                        <div class="h-56 w-full relative border-b border-gray-300">
+                            <img src="./assets/images/35.png" alt="" class="h-full w-full object-cover overflow-hidden shadow" />
+                        </div>
+                        <p class="mt-4 mb-3 text-teal-500 text-sm">Travel</p>
+                        <h4 class="text-2xl text-gray-800">How to get a good nights sleep according to science</h4>
+                        <div class="flex items-center justify-between mt-4 mb-5">
+                            <p class="text-gray-600 text-sm">20th September 2020</p>
+                            <div class="text-gray-600 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M12 20l-7 -7a4 4 0 0 1 6.5 -6a.9 .9 0 0 0 1 0a4 4 0 0 1 6.5 6l-7 7" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 icon icon-tabler icon-tabler-bookmark" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M9 4h6a2 2 0 0 1 2 2v14l-5-3l-5 3v-14a2 2 0 0 1 2 -2" />
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="mb-5 text-gray-600 text-sm">Duis congue mattis odio, a posuere urna feugiat id. Praesent id est tellus. Sed mollis ex at dapibus hendrerit. Curabitur efficitur nulla at finibus suscipit duis efficitur .</p>
+                        <p class="text-gray-600 text-sm">#lifestyle &nbsp; #productivity &nbsp; #rest &nbsp; #sleep</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Blog posts end -->
+        </div>
+
+        <div id="tech" class="hidden">
+            <!-- Header starts here -->
+            <div class="container mx-auto px-4 xl:px-0 py-6 sm:py-12">
+                <div class="w-1/2 mt-16">
+                    <h2 class="text-gray-700 text-5xl mb-4">Technology</h2>
+                    <p class="text-sm text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. Check the actions below for more details</p>
+                </div>
+            </div>
+            <!-- Header ends here -->
+
+            <!-- Trending posts start -->
+            <div class="mx-auto container py-6 sm:py-12 px-4 xl:px-0">
+                <h3 class="text-2xl text-gray-900 mb-8">Trending posts</h3>
+                <div class="flex flex-wrap">
+                    <div class="md:w-2/3 w-full pb-6 md:pb-0 md:pr-12">
+                        <div class=" w-full h-96">
+                            <img src="./assets/images/21.png" alt="" class="h-full w-full object-cover overflow-hidden rounded shadow" />
+                        </div>
+                        <p class="mt-6 mb-2 text-sm text-teal-500">Travel</p>
+                        <h2 class="text-4xl text-gray-900 font-light">Crossing the Canadian border on foot. Learn the basics and join me!</h2>
+                        <p class="text-gray-600 text-sm mt-4">12 September 2020</p>
+                    </div>
+                    <div class="md:w-1/3 w-full">
+                        <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8">
+                            <div>
+                                <div class="h-44 w-full">
+                                    <img src="./assets/images/22.png" alt="" class="h-full w-full object-cover overflow-hidden rounded shadow" />
+                                </div>
+                                <h2 class="mt-3 text-gray-900 text-base">10 Tips to design productively amidst the pandemic</h2>
+                                <p class="text-gray-600 text-sm mt-3">12 September 2020</p>
+                            </div>
+                            <div>
+                                <div class="h-44 w-full">
+                                    <img src="./assets/images/23.png" alt="" class="h-full w-full object-cover overflow-hidden rounded shadow" />
+                                </div>
+                                <h2 class="mt-3 text-gray-900 text-base">10 Tips to design productively amidst the pandemic</h2>
+                                <p class="text-gray-600 text-sm mt-3">12 September 2020</p>
+                            </div>
+                            <div>
+                                <div class="h-44 w-full">
+                                    <img src="./assets/images/24.png" alt="" class="h-full w-full object-cover overflow-hidden rounded shadow" />
+                                </div>
+                                <h2 class="mt-3 text-gray-900 text-base">10 Tips to design productively amidst the pandemic</h2>
+                                <p class="text-gray-600 text-sm mt-3">12 September 2020</p>
+                            </div>
+                            <div>
+                                <div class="h-44 w-full">
+                                    <img src="./assets/images/25.png" alt="" class="h-full w-full object-cover overflow-hidden rounded shadow" />
+                                </div>
+                                <h2 class="mt-3 text-gray-900 text-base">10 Tips to design productively amidst the pandemic</h2>
+                                <p class="text-gray-600 text-sm mt-3">12 September 2020</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Trending posts end -->
+
+            <!-- Trending videos start -->
+            <div class="mx-auto container py-6 sm:py-12 px-4 xl:px-0">
+                <h3 class="text-2xl text-gray-900 mb-8">Trending videos</h3>
+                <div class="container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    <div class="border-b border-gray-300">
+                        <div class="h-48 w-full relative border-b border-gray-300">
+                            <div class="w-16 h-16 border-4 border-white rounded-full absolute inset-0 m-auto flex justify-center items-center text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-caret-right" width="56" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M18 15l-6-6l-6 6h12" transform="rotate(90 12 12)" />
+                                </svg>
+                            </div>
+                            <img src="./assets/images/26.png" alt="" class="h-full w-full object-cover overflow-hidden shadow" />
+                        </div>
+                        <h4 class="text-xl text-center text-gray-800 mt-4">Introduction to Prototyping</h4>
+                        <p class="text-xs text-gray-600 mt-3 mb-8 text-center">3 hours, 30 minutes</p>
+                    </div>
+                    <div class="border-b border-gray-300">
+                        <div class="h-48 w-full relative border-b border-gray-300">
+                            <div class="w-16 h-16 border-4 border-white rounded-full absolute inset-0 m-auto flex justify-center items-center text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-caret-right" width="56" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M18 15l-6-6l-6 6h12" transform="rotate(90 12 12)" />
+                                </svg>
+                            </div>
+                            <img src="./assets/images/27.png" alt="" class="h-full w-full object-cover overflow-hidden shadow" />
+                        </div>
+                        <h4 class="text-xl text-center text-gray-800 mt-4">Introduction to Prototyping</h4>
+                        <p class="text-xs text-gray-600 mt-3 mb-8 text-center">3 hours, 30 minutes</p>
+                    </div>
+                    <div class="border-b border-gray-300">
+                        <div class="h-48 w-full relative border-b border-gray-300">
+                            <div class="w-16 h-16 border-4 border-white rounded-full absolute inset-0 m-auto flex justify-center items-center text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-caret-right" width="56" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M18 15l-6-6l-6 6h12" transform="rotate(90 12 12)" />
+                                </svg>
+                            </div>
+                            <img src="./assets/images/28.png" alt="" class="h-full w-full object-cover overflow-hidden shadow" />
+                        </div>
+                        <h4 class="text-xl text-center text-gray-800 mt-4">Introduction to Prototyping</h4>
+                        <p class="text-xs text-gray-600 mt-3 mb-8 text-center">3 hours, 30 minutes</p>
+                    </div>
+                    <div class="border-b border-gray-300">
+                        <div class="h-48 w-full relative border-b border-gray-300">
+                            <div class="w-16 h-16 border-4 border-white rounded-full absolute inset-0 m-auto flex justify-center items-center text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-caret-right" width="56" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M18 15l-6-6l-6 6h12" transform="rotate(90 12 12)" />
+                                </svg>
+                            </div>
+                            <img src="./assets/images/29.png" alt="" class="h-full w-full object-cover overflow-hidden shadow" />
+                        </div>
+                        <h4 class="text-xl text-center text-gray-800 mt-4">Introduction to Prototyping</h4>
+                        <p class="text-xs text-gray-600 mt-3 mb-8 text-center">3 hours, 30 minutes</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Trending videos end -->
+
+            <!-- Blog posts start -->
+            <div class="mx-auto container py-6 sm:py-12 px-4 xl:px-0">
+                <h3 class="text-2xl text-gray-900 mb-8">Blog posts</h3>
+                <div class="container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-16">
+                    <div>
+                        <div class="h-56 w-full relative border-b border-gray-300">
+                            <img src="./assets/images/30.png" alt="" class="h-full w-full object-cover  overflow-hidden shadow" />
+                        </div>
+                        <p class="mt-4 mb-3 text-teal-500 text-sm">Travel</p>
+                        <h4 class="text-2xl text-gray-800">How to get a good nights sleep according to science</h4>
+                        <div class="flex items-center justify-between mt-4 mb-5">
+                            <p class="text-gray-600 text-sm">20th September 2020</p>
+                            <div class="text-gray-600 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M12 20l-7 -7a4 4 0 0 1 6.5 -6a.9 .9 0 0 0 1 0a4 4 0 0 1 6.5 6l-7 7" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 icon icon-tabler icon-tabler-bookmark" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M9 4h6a2 2 0 0 1 2 2v14l-5-3l-5 3v-14a2 2 0 0 1 2 -2" />
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="mb-5 text-gray-600 text-sm">Duis congue mattis odio, a posuere urna feugiat id. Praesent id est tellus. Sed mollis ex at dapibus hendrerit. Curabitur efficitur nulla at finibus suscipit duis efficitur .</p>
+                        <p class="text-gray-600 text-sm">#lifestyle &nbsp; #productivity &nbsp; #rest &nbsp; #sleep</p>
+                    </div>
+                    <div>
+                        <div class="h-56 w-full relative border-b border-gray-300">
+                            <img src="./assets/images/31.png" alt="" class="h-full w-full object-cover overflow-hidden shadow" />
+                        </div>
+                        <p class="mt-4 mb-3 text-teal-500 text-sm">Travel</p>
+                        <h4 class="text-2xl text-gray-800">How to get a good nights sleep according to science</h4>
+                        <div class="flex items-center justify-between mt-4 mb-5">
+                            <p class="text-gray-600 text-sm">20th September 2020</p>
+                            <div class="text-gray-600 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M12 20l-7 -7a4 4 0 0 1 6.5 -6a.9 .9 0 0 0 1 0a4 4 0 0 1 6.5 6l-7 7" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 icon icon-tabler icon-tabler-bookmark" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M9 4h6a2 2 0 0 1 2 2v14l-5-3l-5 3v-14a2 2 0 0 1 2 -2" />
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="mb-5 text-gray-600 text-sm">Duis congue mattis odio, a posuere urna feugiat id. Praesent id est tellus. Sed mollis ex at dapibus hendrerit. Curabitur efficitur nulla at finibus suscipit duis efficitur .</p>
+                        <p class="text-gray-600 text-sm">#lifestyle &nbsp; #productivity &nbsp; #rest &nbsp; #sleep</p>
+                    </div>
+                    <div>
+                        <div class="h-56 w-full relative border-b border-gray-300">
+                            <img src="./assets/images/32.png" alt="" class="h-full w-full object-cover overflow-hidden shadow" />
+                        </div>
+                        <p class="mt-4 mb-3 text-teal-500 text-sm">Travel</p>
+                        <h4 class="text-2xl text-gray-800">How to get a good nights sleep according to science</h4>
+                        <div class="flex items-center justify-between mt-4 mb-5">
+                            <p class="text-gray-600 text-sm">20th September 2020</p>
+                            <div class="text-gray-600 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M12 20l-7 -7a4 4 0 0 1 6.5 -6a.9 .9 0 0 0 1 0a4 4 0 0 1 6.5 6l-7 7" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 icon icon-tabler icon-tabler-bookmark" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M9 4h6a2 2 0 0 1 2 2v14l-5-3l-5 3v-14a2 2 0 0 1 2 -2" />
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="mb-5 text-gray-600 text-sm">Duis congue mattis odio, a posuere urna feugiat id. Praesent id est tellus. Sed mollis ex at dapibus hendrerit. Curabitur efficitur nulla at finibus suscipit duis efficitur .</p>
+                        <p class="text-gray-600 text-sm">#lifestyle &nbsp; #productivity &nbsp; #rest &nbsp; #sleep</p>
+                    </div>
+                    <div>
+                        <div class="h-56 w-full relative border-b border-gray-300">
+                            <img src="./assets/images/33.png" alt="" class="h-full w-full object-cover overflow-hidden shadow" />
+                        </div>
+                        <p class="mt-4 mb-3 text-teal-500 text-sm">Travel</p>
+                        <h4 class="text-2xl text-gray-800">How to get a good nights sleep according to science</h4>
+                        <div class="flex items-center justify-between mt-4 mb-5">
+                            <p class="text-gray-600 text-sm">20th September 2020</p>
+                            <div class="text-gray-600 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M12 20l-7 -7a4 4 0 0 1 6.5 -6a.9 .9 0 0 0 1 0a4 4 0 0 1 6.5 6l-7 7" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 icon icon-tabler icon-tabler-bookmark" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M9 4h6a2 2 0 0 1 2 2v14l-5-3l-5 3v-14a2 2 0 0 1 2 -2" />
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="mb-5 text-gray-600 text-sm">Duis congue mattis odio, a posuere urna feugiat id. Praesent id est tellus. Sed mollis ex at dapibus hendrerit. Curabitur efficitur nulla at finibus suscipit duis efficitur .</p>
+                        <p class="text-gray-600 text-sm">#lifestyle &nbsp; #productivity &nbsp; #rest &nbsp; #sleep</p>
+                    </div>
+                    <div>
+                        <div class="h-56 w-full relative border-b border-gray-300">
+                            <img src="./assets/images/34.png" alt="" class="h-full w-full object-cover overflow-hidden shadow" />
+                        </div>
+                        <p class="mt-4 mb-3 text-teal-500 text-sm">Travel</p>
+                        <h4 class="text-2xl text-gray-800">How to get a good nights sleep according to science</h4>
+                        <div class="flex items-center justify-between mt-4 mb-5">
+                            <p class="text-gray-600 text-sm">20th September 2020</p>
+                            <div class="text-gray-600 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M12 20l-7 -7a4 4 0 0 1 6.5 -6a.9 .9 0 0 0 1 0a4 4 0 0 1 6.5 6l-7 7" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 icon icon-tabler icon-tabler-bookmark" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M9 4h6a2 2 0 0 1 2 2v14l-5-3l-5 3v-14a2 2 0 0 1 2 -2" />
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="mb-5 text-gray-600 text-sm">Duis congue mattis odio, a posuere urna feugiat id. Praesent id est tellus. Sed mollis ex at dapibus hendrerit. Curabitur efficitur nulla at finibus suscipit duis efficitur .</p>
+                        <p class="text-gray-600 text-sm">#lifestyle &nbsp; #productivity &nbsp; #rest &nbsp; #sleep</p>
+                    </div>
+                    <div>
+                        <div class="h-56 w-full relative border-b border-gray-300">
+                            <img src="./assets/images/35.png" alt="" class="h-full w-full object-cover overflow-hidden shadow" />
+                        </div>
+                        <p class="mt-4 mb-3 text-teal-500 text-sm">Travel</p>
+                        <h4 class="text-2xl text-gray-800">How to get a good nights sleep according to science</h4>
+                        <div class="flex items-center justify-between mt-4 mb-5">
+                            <p class="text-gray-600 text-sm">20th September 2020</p>
+                            <div class="text-gray-600 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M12 20l-7 -7a4 4 0 0 1 6.5 -6a.9 .9 0 0 0 1 0a4 4 0 0 1 6.5 6l-7 7" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 icon icon-tabler icon-tabler-bookmark" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M9 4h6a2 2 0 0 1 2 2v14l-5-3l-5 3v-14a2 2 0 0 1 2 -2" />
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="mb-5 text-gray-600 text-sm">Duis congue mattis odio, a posuere urna feugiat id. Praesent id est tellus. Sed mollis ex at dapibus hendrerit. Curabitur efficitur nulla at finibus suscipit duis efficitur .</p>
+                        <p class="text-gray-600 text-sm">#lifestyle &nbsp; #productivity &nbsp; #rest &nbsp; #sleep</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Blog posts end -->
+        </div>
+
+        <div id="lifestyle" class="hidden">
+            <!-- Header starts here -->
+            <div class="container mx-auto px-4 xl:px-0 py-6 sm:py-12">
+                <div class="w-1/2 mt-16">
+                    <h2 class="text-gray-700 text-5xl mb-4">Lifestyle</h2>
+                    <p class="text-sm text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. Check the actions below for more details</p>
+                </div>
+            </div>
+            <!-- Header ends here -->
+
+            <!-- Trending posts start -->
+            <div class="mx-auto container py-6 sm:py-12 px-4 xl:px-0">
+                <h3 class="text-2xl text-gray-900 mb-8">Trending posts</h3>
+                <div class="flex flex-wrap">
+                    <div class="md:w-2/3 w-full pb-6 md:pb-0 md:pr-12">
+                        <div class=" w-full h-96">
+                            <img src="./assets/images/21.png" alt="" class="h-full w-full object-cover overflow-hidden rounded shadow" />
+                        </div>
+                        <p class="mt-6 mb-2 text-sm text-teal-500">Travel</p>
+                        <h2 class="text-4xl text-gray-900 font-light">Crossing the Canadian border on foot. Learn the basics and join me!</h2>
+                        <p class="text-gray-600 text-sm mt-4">12 September 2020</p>
+                    </div>
+                    <div class="md:w-1/3 w-full">
+                        <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8">
+                            <div>
+                                <div class="h-44 w-full">
+                                    <img src="./assets/images/22.png" alt="" class="h-full w-full object-cover overflow-hidden rounded shadow" />
+                                </div>
+                                <h2 class="mt-3 text-gray-900 text-base">10 Tips to design productively amidst the pandemic</h2>
+                                <p class="text-gray-600 text-sm mt-3">12 September 2020</p>
+                            </div>
+                            <div>
+                                <div class="h-44 w-full">
+                                    <img src="./assets/images/23.png" alt="" class="h-full w-full object-cover overflow-hidden rounded shadow" />
+                                </div>
+                                <h2 class="mt-3 text-gray-900 text-base">10 Tips to design productively amidst the pandemic</h2>
+                                <p class="text-gray-600 text-sm mt-3">12 September 2020</p>
+                            </div>
+                            <div>
+                                <div class="h-44 w-full">
+                                    <img src="./assets/images/24.png" alt="" class="h-full w-full object-cover overflow-hidden rounded shadow" />
+                                </div>
+                                <h2 class="mt-3 text-gray-900 text-base">10 Tips to design productively amidst the pandemic</h2>
+                                <p class="text-gray-600 text-sm mt-3">12 September 2020</p>
+                            </div>
+                            <div>
+                                <div class="h-44 w-full">
+                                    <img src="./assets/images/25.png" alt="" class="h-full w-full object-cover overflow-hidden rounded shadow" />
+                                </div>
+                                <h2 class="mt-3 text-gray-900 text-base">10 Tips to design productively amidst the pandemic</h2>
+                                <p class="text-gray-600 text-sm mt-3">12 September 2020</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Trending posts end -->
+
+            <!-- Trending videos start -->
+            <div class="mx-auto container py-6 sm:py-12 px-4 xl:px-0">
+                <h3 class="text-2xl text-gray-900 mb-8">Trending videos</h3>
+                <div class="container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    <div class="border-b border-gray-300">
+                        <div class="h-48 w-full relative border-b border-gray-300">
+                            <div class="w-16 h-16 border-4 border-white rounded-full absolute inset-0 m-auto flex justify-center items-center text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-caret-right" width="56" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M18 15l-6-6l-6 6h12" transform="rotate(90 12 12)" />
+                                </svg>
+                            </div>
+                            <img src="./assets/images/26.png" alt="" class="h-full w-full object-cover overflow-hidden shadow" />
+                        </div>
+                        <h4 class="text-xl text-center text-gray-800 mt-4">Introduction to Prototyping</h4>
+                        <p class="text-xs text-gray-600 mt-3 mb-8 text-center">3 hours, 30 minutes</p>
+                    </div>
+                    <div class="border-b border-gray-300">
+                        <div class="h-48 w-full relative border-b border-gray-300">
+                            <div class="w-16 h-16 border-4 border-white rounded-full absolute inset-0 m-auto flex justify-center items-center text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-caret-right" width="56" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M18 15l-6-6l-6 6h12" transform="rotate(90 12 12)" />
+                                </svg>
+                            </div>
+                            <img src="./assets/images/27.png" alt="" class="h-full w-full object-cover overflow-hidden shadow" />
+                        </div>
+                        <h4 class="text-xl text-center text-gray-800 mt-4">Introduction to Prototyping</h4>
+                        <p class="text-xs text-gray-600 mt-3 mb-8 text-center">3 hours, 30 minutes</p>
+                    </div>
+                    <div class="border-b border-gray-300">
+                        <div class="h-48 w-full relative border-b border-gray-300">
+                            <div class="w-16 h-16 border-4 border-white rounded-full absolute inset-0 m-auto flex justify-center items-center text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-caret-right" width="56" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M18 15l-6-6l-6 6h12" transform="rotate(90 12 12)" />
+                                </svg>
+                            </div>
+                            <img src="./assets/images/28.png" alt="" class="h-full w-full object-cover overflow-hidden shadow" />
+                        </div>
+                        <h4 class="text-xl text-center text-gray-800 mt-4">Introduction to Prototyping</h4>
+                        <p class="text-xs text-gray-600 mt-3 mb-8 text-center">3 hours, 30 minutes</p>
+                    </div>
+                    <div class="border-b border-gray-300">
+                        <div class="h-48 w-full relative border-b border-gray-300">
+                            <div class="w-16 h-16 border-4 border-white rounded-full absolute inset-0 m-auto flex justify-center items-center text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-caret-right" width="56" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M18 15l-6-6l-6 6h12" transform="rotate(90 12 12)" />
+                                </svg>
+                            </div>
+                            <img src="./assets/images/29.png" alt="" class="h-full w-full object-cover overflow-hidden shadow" />
+                        </div>
+                        <h4 class="text-xl text-center text-gray-800 mt-4">Introduction to Prototyping</h4>
+                        <p class="text-xs text-gray-600 mt-3 mb-8 text-center">3 hours, 30 minutes</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Trending videos end -->
+
+            <!-- Blog posts start -->
+            <div class="mx-auto container py-6 sm:py-12 px-4 xl:px-0">
+                <h3 class="text-2xl text-gray-900 mb-8">Blog posts</h3>
+                <div class="container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-16">
+                    <div>
+                        <div class="h-56 w-full relative border-b border-gray-300">
+                            <img src="./assets/images/30.png" alt="" class="h-full w-full object-cover  overflow-hidden shadow" />
+                        </div>
+                        <p class="mt-4 mb-3 text-teal-500 text-sm">Travel</p>
+                        <h4 class="text-2xl text-gray-800">How to get a good nights sleep according to science</h4>
+                        <div class="flex items-center justify-between mt-4 mb-5">
+                            <p class="text-gray-600 text-sm">20th September 2020</p>
+                            <div class="text-gray-600 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M12 20l-7 -7a4 4 0 0 1 6.5 -6a.9 .9 0 0 0 1 0a4 4 0 0 1 6.5 6l-7 7" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 icon icon-tabler icon-tabler-bookmark" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M9 4h6a2 2 0 0 1 2 2v14l-5-3l-5 3v-14a2 2 0 0 1 2 -2" />
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="mb-5 text-gray-600 text-sm">Duis congue mattis odio, a posuere urna feugiat id. Praesent id est tellus. Sed mollis ex at dapibus hendrerit. Curabitur efficitur nulla at finibus suscipit duis efficitur .</p>
+                        <p class="text-gray-600 text-sm">#lifestyle &nbsp; #productivity &nbsp; #rest &nbsp; #sleep</p>
+                    </div>
+                    <div>
+                        <div class="h-56 w-full relative border-b border-gray-300">
+                            <img src="./assets/images/31.png" alt="" class="h-full w-full object-cover overflow-hidden shadow" />
+                        </div>
+                        <p class="mt-4 mb-3 text-teal-500 text-sm">Travel</p>
+                        <h4 class="text-2xl text-gray-800">How to get a good nights sleep according to science</h4>
+                        <div class="flex items-center justify-between mt-4 mb-5">
+                            <p class="text-gray-600 text-sm">20th September 2020</p>
+                            <div class="text-gray-600 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M12 20l-7 -7a4 4 0 0 1 6.5 -6a.9 .9 0 0 0 1 0a4 4 0 0 1 6.5 6l-7 7" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 icon icon-tabler icon-tabler-bookmark" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M9 4h6a2 2 0 0 1 2 2v14l-5-3l-5 3v-14a2 2 0 0 1 2 -2" />
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="mb-5 text-gray-600 text-sm">Duis congue mattis odio, a posuere urna feugiat id. Praesent id est tellus. Sed mollis ex at dapibus hendrerit. Curabitur efficitur nulla at finibus suscipit duis efficitur .</p>
+                        <p class="text-gray-600 text-sm">#lifestyle &nbsp; #productivity &nbsp; #rest &nbsp; #sleep</p>
+                    </div>
+                    <div>
+                        <div class="h-56 w-full relative border-b border-gray-300">
+                            <img src="./assets/images/32.png" alt="" class="h-full w-full object-cover overflow-hidden shadow" />
+                        </div>
+                        <p class="mt-4 mb-3 text-teal-500 text-sm">Travel</p>
+                        <h4 class="text-2xl text-gray-800">How to get a good nights sleep according to science</h4>
+                        <div class="flex items-center justify-between mt-4 mb-5">
+                            <p class="text-gray-600 text-sm">20th September 2020</p>
+                            <div class="text-gray-600 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M12 20l-7 -7a4 4 0 0 1 6.5 -6a.9 .9 0 0 0 1 0a4 4 0 0 1 6.5 6l-7 7" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 icon icon-tabler icon-tabler-bookmark" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M9 4h6a2 2 0 0 1 2 2v14l-5-3l-5 3v-14a2 2 0 0 1 2 -2" />
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="mb-5 text-gray-600 text-sm">Duis congue mattis odio, a posuere urna feugiat id. Praesent id est tellus. Sed mollis ex at dapibus hendrerit. Curabitur efficitur nulla at finibus suscipit duis efficitur .</p>
+                        <p class="text-gray-600 text-sm">#lifestyle &nbsp; #productivity &nbsp; #rest &nbsp; #sleep</p>
+                    </div>
+                    <div>
+                        <div class="h-56 w-full relative border-b border-gray-300">
+                            <img src="./assets/images/33.png" alt="" class="h-full w-full object-cover overflow-hidden shadow" />
+                        </div>
+                        <p class="mt-4 mb-3 text-teal-500 text-sm">Travel</p>
+                        <h4 class="text-2xl text-gray-800">How to get a good nights sleep according to science</h4>
+                        <div class="flex items-center justify-between mt-4 mb-5">
+                            <p class="text-gray-600 text-sm">20th September 2020</p>
+                            <div class="text-gray-600 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M12 20l-7 -7a4 4 0 0 1 6.5 -6a.9 .9 0 0 0 1 0a4 4 0 0 1 6.5 6l-7 7" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 icon icon-tabler icon-tabler-bookmark" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M9 4h6a2 2 0 0 1 2 2v14l-5-3l-5 3v-14a2 2 0 0 1 2 -2" />
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="mb-5 text-gray-600 text-sm">Duis congue mattis odio, a posuere urna feugiat id. Praesent id est tellus. Sed mollis ex at dapibus hendrerit. Curabitur efficitur nulla at finibus suscipit duis efficitur .</p>
+                        <p class="text-gray-600 text-sm">#lifestyle &nbsp; #productivity &nbsp; #rest &nbsp; #sleep</p>
+                    </div>
+                    <div>
+                        <div class="h-56 w-full relative border-b border-gray-300">
+                            <img src="./assets/images/34.png" alt="" class="h-full w-full object-cover overflow-hidden shadow" />
+                        </div>
+                        <p class="mt-4 mb-3 text-teal-500 text-sm">Travel</p>
+                        <h4 class="text-2xl text-gray-800">How to get a good nights sleep according to science</h4>
+                        <div class="flex items-center justify-between mt-4 mb-5">
+                            <p class="text-gray-600 text-sm">20th September 2020</p>
+                            <div class="text-gray-600 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M12 20l-7 -7a4 4 0 0 1 6.5 -6a.9 .9 0 0 0 1 0a4 4 0 0 1 6.5 6l-7 7" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 icon icon-tabler icon-tabler-bookmark" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M9 4h6a2 2 0 0 1 2 2v14l-5-3l-5 3v-14a2 2 0 0 1 2 -2" />
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="mb-5 text-gray-600 text-sm">Duis congue mattis odio, a posuere urna feugiat id. Praesent id est tellus. Sed mollis ex at dapibus hendrerit. Curabitur efficitur nulla at finibus suscipit duis efficitur .</p>
+                        <p class="text-gray-600 text-sm">#lifestyle &nbsp; #productivity &nbsp; #rest &nbsp; #sleep</p>
+                    </div>
+                    <div>
+                        <div class="h-56 w-full relative border-b border-gray-300">
+                            <img src="./assets/images/35.png" alt="" class="h-full w-full object-cover overflow-hidden shadow" />
+                        </div>
+                        <p class="mt-4 mb-3 text-teal-500 text-sm">Travel</p>
+                        <h4 class="text-2xl text-gray-800">How to get a good nights sleep according to science</h4>
+                        <div class="flex items-center justify-between mt-4 mb-5">
+                            <p class="text-gray-600 text-sm">20th September 2020</p>
+                            <div class="text-gray-600 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M12 20l-7 -7a4 4 0 0 1 6.5 -6a.9 .9 0 0 0 1 0a4 4 0 0 1 6.5 6l-7 7" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 icon icon-tabler icon-tabler-bookmark" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M9 4h6a2 2 0 0 1 2 2v14l-5-3l-5 3v-14a2 2 0 0 1 2 -2" />
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="mb-5 text-gray-600 text-sm">Duis congue mattis odio, a posuere urna feugiat id. Praesent id est tellus. Sed mollis ex at dapibus hendrerit. Curabitur efficitur nulla at finibus suscipit duis efficitur .</p>
+                        <p class="text-gray-600 text-sm">#lifestyle &nbsp; #productivity &nbsp; #rest &nbsp; #sleep</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Blog posts end -->
+        </div>
+
+        <script src="./assets/scripts/script.js"></script>
+    </body>
+</html>

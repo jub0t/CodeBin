@@ -1,0 +1,140 @@
+body{
+    font-family: "Source Sans Pro", sans-serif;
+}
+.light-blue {
+    color: #4c51bf;
+}
+.border-light-blue {
+    border-color: #4c51bf;
+}
+.border-dark-blue {
+    border-color: #4c51bf;
+}
+.bg-light-blue {
+    background-color: #4c51bf;
+}
+.dark-blue {
+    color: #434190;
+}
+.URL {
+    color: #4299e1;
+}
+.bg-chat {
+    background-color: #f7fafc;
+}
+.bg-chat-border {
+    border-color: #f7fafc;
+}
+.bg-dark-blue {
+    background-color: #434190;
+}
+.dark-gray {
+    color: #4a5568;
+}
+.light-gray {
+    color: #718096;
+}
+.bg-bg-light-gray {
+    background-color: #718096;
+}
+.bg-light-gray {
+    background-color: #f7fafc;
+}
+.bg-dark-gray {
+    background-color: #edf2f7;
+}
+.dark-yellow {
+    color: #ed8936;
+}
+.light-yellow {
+    background-color: #feebc8;
+}
+.purple {
+    color: #4c51bf;
+}
+.bg-purple {
+    background-color: #4c51bf;
+}
+.border-light-gray {
+    border-color: #e2e8f0;
+}
+.border-dark-gray {
+    border-color: #4a5568;
+}
+.bg-dot-color {
+    color: #e2e8f0;
+}
+.border-inner {
+    border-color: #cbd5e0;
+}
+/* scrollbar */
+/* width */
+#search::-webkit-scrollbar {
+    width: 0px;
+}
+
+/* Navbar */
+.top-100 {
+    animation: slideDown 0.5s ease-in-out;
+}
+@keyframes slideDown {
+    0% {
+        top: -50%;
+    }
+    100% {
+        top: 0;
+    }
+}
+* {
+    outline: none !important;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+}
+.line-height-18{
+    line-height: 18px;
+}
+.line-height14{
+    line-height:14px ;
+}
+.slider {
+    width: 100%;
+    height: 428px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.slide-ana {
+    height: 100%;
+}
+
+.slide-ana > div {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: all 1s;
+}
+
+@media (min-width: 300px) and (max-width: 1023px) {
+    .slider {
+        height: 450px;
+    }
+}
+@media (min-width: 300px) and (max-width: 1023px) {
+    .slider2 {
+        height: 650px;
+    }
+}
+.chat-hover :hover{
+    background-color: #EDF2F7;
+}
+
+.inner-hover :hover{
+    color: #434190;
+    font-weight: 600;
+}
+.inner-hover :focus{
+    color: #434190;
+    font-weight: 600;
+}

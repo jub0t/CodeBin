@@ -1,0 +1,12 @@
+body {
+    font-family: "Lato", sans-serif;
+}
+.checkbox:checked {
+    border: none;
+}
+.checkbox:checked + .check-icon {
+    display: flex;
+}
+.color-blue{
+    color: #0047AB;
+}

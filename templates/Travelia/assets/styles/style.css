@@ -1,0 +1,81 @@
+.f-m-m {
+    font-family: "Montserrat", sans-serif;
+}
+.f-m-w {
+    font-family: "Merriweather", serif;
+}
+.purple {
+    background-color: #4c51bf;
+}
+.text-purple {
+    color: #4c51bf;
+}
+.border-purple {
+    border-color: #4c51bf;
+}
+.border-gray {
+    border-color: #3c3c3c;
+}
+.box-shadow-light {
+    box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.15);
+}
+.h-image {
+    height: 1280px;
+    width: 1170px;
+}
+.h2-image {
+    height: 1000px;
+    width: 1100px;
+}
+.height-1 {
+    height: 400px;
+}
+
+.topbg {
+    top: -300px;
+}
+.top-100 {
+    animation: slideDown 0.5s ease-in-out;
+}
+@keyframes slideDown {
+    0% {
+        top: -50%;
+    }
+    100% {
+        top: 0;
+    }
+}
+* {
+    outline: none !important;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+}
+/* Slider css below */
+.slider {
+    width: 100%;
+    height: 600px;
+    padding-top: 14px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+.slide-ana {
+    height: 100%;
+}
+.slide-ana > div {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: all 1s;
+}
+@media (min-width: 320px) and (max-width: 1023px) {
+    .slider .left {
+        margin-left: 40% !important;
+    }
+    .slider .right {
+        margin-left: 50% !important;
+    }
+    .slider {
+        height: 650px;
+    }
+}

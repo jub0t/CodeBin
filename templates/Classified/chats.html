@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+        <link href="./assets/css/style.css" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.gassets.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet" />
+        <title>Classififeds_serach_results</title>
+    </head>
+
+    <body>
+        <div class="container mx-auto xl:px-0 px-4">
+            <!-- Navigation Start -->
+            <nav class="py-12 hidden lg:block f-s-s-p">
+                <div class="flex items-center justify-between w-full">
+                    <div class="flex items-center">
+                        <div>
+                            <a href="./index.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                    <g id="Logo">
+                                        <circle id="Oval" cx="20" cy="20" r="20" fill="url(#paint0_linear)" />
+                                        <path id="L" d="M26.8838 30L27.1299 24.4355H26.542C25.6807 28.3184 24.4775 29.0156 20.8545 29.1523L18.1064 29.2617V12.7871C18.1064 11.4609 18.3662 11.1191 20.3623 10.9004V10.2578H13.0752V10.9004C14.9072 11.1191 15.1533 11.3926 15.1533 12.6094V27.6484C15.1533 28.8516 14.9072 29.1387 13.0752 29.3574V30H26.8838Z" fill="white" />
+                                    </g>
+                                    <defs>
+                                        <linearGradient id="paint0_linear" x1="0" y1="0" x2="0" y2="40" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#667EEA" />
+                                            <stop offset="1" stop-color="#4C51BF" />
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="flex items-center pl-10 cursor-pointer">
+                            <p class="text-sm dark-blue font-semibold">View all categories</p>
+                            <div class="pl-2 mt-1 dark-blue">
+                                <div data-menu1 class="cursor-pointer">
+                                    <svg xmlns="http://www.w3.org/2000/svg" aria-label="Show" class="icon block icon-tabler icon-tabler-chevron-down" id="andicators2" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#718096" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z"></path>
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" aria-label="Hide" class="icon icon-tabler hidden icon-tabler-chevron-up" id="andicators3" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#718096" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" />
+                                        <polyline points="6 15 12 9 18 15" />
+                                    </svg>
+                                </div>
+                                <ul class="bg-white p-4 shadow-lg hidden duration-300 opacity-100 absolute z-30 -ml-24" id="listHolder1">
+                                    <li class="hover:opacity-75 mt-1">All Category</li>
+                                    <li class="hover:opacity-75 mt-1">Mobile Phone</li>
+                                    <li class="hover:opacity-75 mt-1">Tablets</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <ul class="cursor-pointer flex items-center text-sm light-gray font-semibold">
+                                <li class="hover:opacity-75">Mobile phones</li>
+                                <li class="pl-10 cursor-pointer hover:opacity-75">Houses</li>
+                                <li class="pl-10 cursor-pointer hover:opacity-75">Electronics</li>
+                                <li class="pl-10 cursor-pointer hover:opacity-75">Tablets</li>
+                            </ul>
+                        </div>
+                        <div class="pl-12 flex items-center">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                                    <path d="M31.5 21L27 16.5H16.5C15.6716 16.5 15 15.8284 15 15V6C15 5.17157 15.6716 4.5 16.5 4.5H30C30.8284 4.5 31.5 5.17157 31.5 6V21" stroke="#718096" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M21 22.5V25.5C21 26.3284 20.3284 27 19.5 27H9L4.5 31.5V16.5C4.5 15.6716 5.17157 15 6 15H9" stroke="#718096" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="pl-10 flex items-center">
+                                <div class="flex items-center">
+                                    <div class="w-12 h-12 bg-cover rounded-md mr-3">
+                                        <img src="https://tuk-cdn.s3.amazonaws.com/assets/components/avatars/a_5.png" alt="" class="rounded-full h-full w-full overflow-hidden shadow" />
+                                    </div>
+                                    <div class="flex relative items-center" data-menu3>
+                                        <ul class="cursor-pointer p-2 w-40 border-r bg-white absolute rounded z-40 right-0 shadow mt-10 hidden top-0" id="listHolder3">
+                                            <li class="cursor-pointer text-light-gray text-sm leading-3 tracking-normal py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
+                                                <div class="flex items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path stroke="none" d="M0 0h24v24H0z" />
+                                                        <circle cx="12" cy="7" r="4" />
+                                                        <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                                                    </svg>
+                                                    <span class="ml-2">My Profile</span>
+                                                </div>
+                                            </li>
+                                            <li class="cursor-pointer text-light-gray text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex items-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-help" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                                    <circle cx="12" cy="12" r="9" />
+                                                    <line x1="12" y1="17" x2="12" y2="17.01" />
+                                                    <path d="M12 13.5a1.5 1.5 0 0 1 1 -1.5a2.6 2.6 0 1 0 -3 -4" />
+                                                </svg>
+                                                <span class="ml-2">Help Center</span>
+                                            </li>
+                                            <li class="cursor-pointer text-light-gray text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 flex items-center focus:text-indigo-700 focus:outline-none">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-settings" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                                    <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                                    <circle cx="12" cy="12" r="3" />
+                                                </svg>
+                                                <span class="ml-2">Account Settings</span>
+                                            </li>
+                                        </ul>
+                                        <div class="cursor-pointer text-light-gray">
+                                            <svg id="andicators6" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="18" height="18" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                <path stroke="none" d="M0 0h24v24H0z" />
+                                                <polyline points="6 9 12 15 18 9" />
+                                            </svg>
+                                            <svg id="andicators7" xmlns="http://www.w3.org/2000/svg" class="hidden icon icon-tabler icon-tabler-chevron-up" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                <path stroke="none" d="M0 0h24v24H0z" />
+                                                <polyline points="6 15 12 9 18 15" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pl-10">
+                                <button class="py-3 px-8 bg-purple line-height14 text-white text-sm focus:outline-none hover:opacity-75">Post Ad</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- Mobile Responsive -->
+            <nav class="lg:hidden">
+                <div class="flex py-2 justify-between items-center px-4 py-6">
+                    <a href="./index.html"> <img src="https://cdn.tuk.dev/assets/templates/classified/Logo2.png" /> </a>
+                    <div class="visible flex items-center">
+                        <ul id="list" class="hidden p-2 border-r bg-white absolute rounded top-0 left-0 right-0 shadow mt-20 md:mt-20 z-20">
+                            <li class="flex cursor-pointer light-gray text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
+                                <a href="#">
+                                    <span class="ml-2 font-bold">Mobile Phones</span>
+                                </a>
+                            </li>
+                            <li class="flex flex-col cursor-pointer light-gray text-sm leading-3 tracking-normal py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex justify-center" onclick="dropdownHandler(this)">
+                                <a href="#">
+                                    <span class="ml-2 font-bold">Automobiles</span>
+                                </a>
+                            </li>
+                            <li class="flex cursor-pointer light-gray text-sm leading-3 tracking-normal py-2 hover:text-indigo-700 flex items-center focus:text-indigo-700 focus:outline-none">
+                                <a href="#">
+                                    <span class="ml-2 font-bold">Houses</span>
+                                </a>
+                            </li>
+                            <li class="flex flex-col cursor-pointer light-gray text-sm leading-3 tracking-normal py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex justify-center" onclick="dropdownHandler(this)">
+                                <a href="#">
+                                    <span class="ml-2 font-bold">Electronics</span>
+                                </a>
+                            </li>
+                            <li class="flex flex-col cursor-pointer light-gray text-sm leading-3 tracking-normal pt-2 pb-4 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex justify-center" onclick="dropdownHandler(this)">
+                                <a href="#">
+                                    <span class="ml-2 font-bold">Tablets</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="xl:hidden">
+                            <svg id="open" onclick="MenuHandler(true)" aria-haspopup="true" aria-label="Main Menu" xmlns="http://www.w3.org/2000/svg" class="show-m-menu icon icon-tabler icon-tabler-menu" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z"></path>
+                                <line x1="4" y1="8" x2="20" y2="8"></line>
+                                <line x1="4" y1="16" x2="20" y2="16"></line>
+                            </svg>
+                            <div id="close" class="hidden close-m-menu" onclick="MenuHandler(false)">
+                                <svg aria-label="Close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <line x1="18" y1="6" x2="6" y2="18" />
+                                    <line x1="6" y1="6" x2="18" y2="18" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- Mobile Responsive -->
+            <!-- Navigation End -->
+            <!-- search -->
+            <div class="lg:flex w-full items-center py-2 lg:pt-16 lg:px-0 px-4">
+                <div class="w-full lg:w-1/4">
+                    <div class="relative w-full border-dark-gray border z-0">
+                        <div class="absolute bg-chat border-t border-l border-r -r border-t border-b bg-chat-border cursor-pointer text-gray-700 flex items-center right-0 h-full lg:p-4 p-3" data-menu2>
+                            <svg xmlns="http://www.w3.org/2000/svg" aria-label="Show" class="icon block icon-tabler icon-tabler-chevron-down" id="andicators4" width="24" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#718096" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z"></path>
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" aria-label="Hide" class="icon hidden icon-tabler icon-tabler-chevron-up" id="andicators5" width="24" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#718096" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" />
+                                <polyline points="6 15 12 9 18 15" />
+                            </svg>
+                            <ul class="bg-white p-4 shadow-lg hidden duration-300 opacity-100 mt-28 absolute z-40 -ml-20" id="listHolder2">
+                                <li class="hover:opacity-75 mt-1">All Category</li>
+                            </ul>
+                        </div>
+                        <div class="absolute text-black flex items-center pl-6 h-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 28 28" fill="none">
+                                <circle cx="11.6667" cy="11.6667" r="8.16667" stroke="#4A5568" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M24.5 24.5L17.5 17.5" stroke="#4A5568" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <input id="search" class="w-full text-light-gray focus:outline-none focus:border font-normal pl-16 pr-16 py-3 flex items-center text-sm placeholder-black" placeholder="Search" />
+                    </div>
+                </div>
+                <div class="flex justify-center items-center lg:ml-8 lg:mt-0 mt-4">
+                    <button class="py-3 px-6 bg-purple border border-dark-blue hover:opacity-75 text-white text-sm mr-4 focus:outline-none f-s-s-p">Search</button>
+                    <button class="py-3 px-6 bg-transparent border border-dark-blue purple text-sm focus:outline-none hover:opacity-75 f-s-s-p">Advance Search</button>
+                </div>
+            </div>
+            <!-- search -->
+            <div class="lg:flex xl:px-0 px-4">
+                <div class="lg:w-1/3 hidden lg:block">
+                    <div class="bg-chat mt-6">
+                        <div class="flex items-center justify-between p-5">
+                            <h4 class="text-xl font-semibold dark-gray pt-1.5">Chats</h4>
+                            <div data-menu4 class="cursor-pointer">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots" id="andicators8" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <circle cx="5" cy="12" r="1" />
+                                    <circle cx="12" cy="12" r="1" />
+                                    <circle cx="19" cy="12" r="1" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler hidden icon-tabler-dots" id="andicators9" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <circle cx="5" cy="12" r="1" />
+                                    <circle cx="12" cy="12" r="1" />
+                                    <circle cx="19" cy="12" r="1" />
+                                </svg>
+                                <ul class="bg-white p-4 shadow-lg hidden duration-300 opacity-100 absolute z-30 -ml-24" id="listHolder4">
+                                    <li class="hover:opacity-75 mt-1">All Category</li>
+                                    <li class="hover:opacity-75 mt-1">Mobile Phone</li>
+                                    <li class="hover:opacity-75 mt-1">Tablets</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="w-full">
+                            <div class="relative w-full -z-10">
+                                <div class="absolute -z-10 text-black flex items-center pl-6 h-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 28 28" fill="none">
+                                        <circle cx="11.6667" cy="11.6667" r="8.16667" stroke="#4A5568" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M24.5 24.5L17.5 17.5" stroke="#4A5568" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <input id="search" class="w-full text-light-gray relative -z-10 focus:outline-none font-normal pl-16 pr-16 h-9 flex items-center text-sm bg-dark-gray border-t border-b" placeholder="Search Chats" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:overflow-y-scroll h-screen mb-16 lg:px-0 px-4" id="search">
+                        <a class="cursor-pointer chat-hover">
+                            <div class="p-5 bg-chat border-t border-l border-r border-inner chat-hover">
+                                <div>
+                                    <div class="flex items-center py-5">
+                                        <img src="https://images.unsplash.com/photo-1521132293557-5b908a59d1e1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=64&q=80" class="w-9 h-9 rounded-full" />
+                                        <div class="ml-2 w-full">
+                                            <div class="flex items-center justify-between">
+                                                <h3 class="text-sm dark-gray">Thomas Geller</h3>
+                                                <p class="text-xs light-gray">11:05pm</p>
+                                            </div>
+                                            <div class="flex items-center">
+                                                <p class="text-xs underline URL mr-1">OnePlus 5T for Sale</p>
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-narrow-right" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#4299E1" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                                    <line x1="15" y1="16" x2="19" y2="12" />
+                                                    <line x1="15" y1="8" x2="19" y2="12" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="text-xs leading-snug light-gray">Duis congue mattis odio, a posuere urna feugiat id. Praesent id est tellus. Sed mollis ex at dapibus</p>
+                                </div>
+                            </div>
+                        </a>
+                        <hr />
+                        <a class="cursor-pointer chat-hover ">
+                            <div class="p-5 bg-chat border-t border-l border-r border-inner chat-hover">
+                                <div>
+                                    <div class="flex items-center py-5">
+                                        <img src="https://images.unsplash.com/photo-1521132293557-5b908a59d1e1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=64&q=80" class="w-9 h-9 rounded-full" />
+                                        <div class="ml-2 w-full">
+                                            <div class="flex items-center justify-between">
+                                                <h3 class="text-sm dark-gray">Thomas Geller</h3>
+                                                <p class="text-xs light-gray">11:05pm</p>
+                                            </div>
+                                            <div class="flex items-center">
+                                                <p class="text-xs underline URL mr-1">OnePlus 5T for Sale</p>
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-narrow-right" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#4299E1" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                                    <line x1="15" y1="16" x2="19" y2="12" />
+                                                    <line x1="15" y1="8" x2="19" y2="12" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="text-xs leading-snug light-gray">Duis congue mattis odio, a posuere urna feugiat id. Praesent id est tellus. Sed mollis ex at dapibus</p>
+                                </div>
+                            </div>
+                        </a>
+                        <hr />
+                        <a class="cursor-pointer chat-hover">
+                            <div class="p-5 bg-chat border-t border-l border-r border-inner">
+                                <div>
+                                    <div class="flex items-center py-5">
+                                        <img src="https://images.unsplash.com/photo-1521132293557-5b908a59d1e1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=64&q=80" class="w-9 h-9 rounded-full" />
+                                        <div class="ml-2 w-full">
+                                            <div class="flex items-center justify-between">
+                                                <h3 class="text-sm dark-gray">Thomas Geller</h3>
+                                                <p class="text-xs light-gray">11:05pm</p>
+                                            </div>
+                                            <div class="flex items-center">
+                                                <p class="text-xs underline URL mr-1">OnePlus 5T for Sale</p>
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-narrow-right" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#4299E1" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                                    <line x1="15" y1="16" x2="19" y2="12" />
+                                                    <line x1="15" y1="8" x2="19" y2="12" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="text-xs leading-snug light-gray">Duis congue mattis odio, a posuere urna feugiat id. Praesent id est tellus. Sed mollis ex at dapibus</p>
+                                </div>
+                            </div>
+                        </a>
+                        <hr />
+                        <a class="cursor-pointer chat-hover">
+                            <div class="p-5 bg-chat border-t border-l border-r border-inner chat-hover">
+                                <div>
+                                    <div class="flex items-center py-5">
+                                        <img src="https://images.unsplash.com/photo-1521132293557-5b908a59d1e1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=64&q=80" class="w-9 h-9 rounded-full" />
+                                        <div class="ml-2 w-full">
+                                            <div class="flex items-center justify-between">
+                                                <h3 class="text-sm dark-gray">Thomas Geller</h3>
+                                                <p class="text-xs light-gray">11:05pm</p>
+                                            </div>
+                                            <div class="flex items-center">
+                                                <p class="text-xs underline URL mr-1">OnePlus 5T for Sale</p>
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-narrow-right" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#4299E1" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                                    <line x1="15" y1="16" x2="19" y2="12" />
+                                                    <line x1="15" y1="8" x2="19" y2="12" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="text-xs leading-snug light-gray">Duis congue mattis odio, a posuere urna feugiat id. Praesent id est tellus. Sed mollis ex at dapibus</p>
+                                </div>
+                            </div>
+                        </a>
+                        <hr />
+                        <a class="cursor-pointer chat-hover">
+                            <div class="p-5 bg-chat border-t border-l border-r border-inner chat-hover">
+                                <div>
+                                    <div class="flex items-center py-5">
+                                        <img src="https://images.unsplash.com/photo-1521132293557-5b908a59d1e1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=64&q=80" class="w-9 h-9 rounded-full" />
+                                        <div class="ml-2 w-full">
+                                            <div class="flex items-center justify-between">
+                                                <h3 class="text-sm dark-gray">Thomas Geller</h3>
+                                                <p class="text-xs light-gray">11:05pm</p>
+                                            </div>
+                                            <div class="flex items-center">
+                                                <p class="text-xs underline URL mr-1">OnePlus 5T for Sale</p>
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-narrow-right" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#4299E1" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                                    <line x1="15" y1="16" x2="19" y2="12" />
+                                                    <line x1="15" y1="8" x2="19" y2="12" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="text-xs leading-snug light-gray">Duis congue mattis odio, a posuere urna feugiat id. Praesent id est tellus. Sed mollis ex at dapibus</p>
+                                </div>
+                            </div>
+                        </a>
+                        <hr />
+                        <a class="cursor-pointer chat-hover">
+                            <div class="p-5 bg-chat border-t border-l border-r border-inner chat-hover">
+                                <div>
+                                    <div class="flex items-center py-5">
+                                        <img src="https://images.unsplash.com/photo-1521132293557-5b908a59d1e1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=64&q=80" class="w-9 h-9 rounded-full" />
+                                        <div class="ml-2 w-full">
+                                            <div class="flex items-center justify-between">
+                                                <h3 class="text-sm dark-gray">Thomas Geller</h3>
+                                                <p class="text-xs light-gray">11:05pm</p>
+                                            </div>
+                                            <div class="flex items-center">
+                                                <p class="text-xs underline URL mr-1">OnePlus 5T for Sale</p>
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-narrow-right" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#4299E1" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                                    <line x1="15" y1="16" x2="19" y2="12" />
+                                                    <line x1="15" y1="8" x2="19" y2="12" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="text-xs leading-snug light-gray">Duis congue mattis odio, a posuere urna feugiat id. Praesent id est tellus. Sed mollis ex at dapibus</p>
+                                </div>
+                            </div>
+                        </a>
+                        <hr />
+                        <a class="cursor-pointer chat-hover">
+                            <div class="p-5 bg-chat border-t border-l border-r border-inner chat-hover">
+                                <div>
+                                    <div class="flex items-center py-5">
+                                        <img src="https://images.unsplash.com/photo-1521132293557-5b908a59d1e1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=64&q=80" class="w-9 h-9 rounded-full" />
+                                        <div class="ml-2 w-full">
+                                            <div class="flex items-center justify-between">
+                                                <h3 class="text-sm dark-gray">Thomas Geller</h3>
+                                                <p class="text-xs light-gray">11:05pm</p>
+                                            </div>
+                                            <div class="flex items-center">
+                                                <p class="text-xs underline URL mr-1">OnePlus 5T for Sale</p>
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-narrow-right" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#4299E1" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                                    <line x1="15" y1="16" x2="19" y2="12" />
+                                                    <line x1="15" y1="8" x2="19" y2="12" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="text-xs leading-snug light-gray">Duis congue mattis odio, a posuere urna feugiat id. Praesent id est tellus. Sed mollis ex at dapibus</p>
+                                </div>
+                            </div>
+                        </a>
+                        <hr />
+                    </div>
+                </div>
+                <!-- Mobile -->
+                <a class="cursor-pointer chat-hover lg:hidden block ">
+                    <div class="p-5 bg-chat border mt-8 border-inner chat-hover">
+                        <div>
+                            <div class="flex items-center py-5">
+                                <img src="https://images.unsplash.com/photo-1521132293557-5b908a59d1e1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=64&q=80" class="w-9 h-9 rounded-full" />
+                                <div class="ml-2 w-full">
+                                    <div class="flex items-center justify-between">
+                                        <h3 class="text-sm dark-gray">Thomas Geller</h3>
+                                        <p class="text-xs light-gray">11:05pm</p>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <p class="text-xs underline URL mr-1">OnePlus 5T for Sale</p>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-narrow-right" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#4299E1" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <line x1="5" y1="12" x2="19" y2="12" />
+                                            <line x1="15" y1="16" x2="19" y2="12" />
+                                            <line x1="15" y1="8" x2="19" y2="12" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-xs leading-snug light-gray">Duis congue mattis odio, a posuere urna feugiat id. Praesent id est tellus. Sed mollis ex at dapibus</p>
+                        </div>
+                    </div>
+                </a>
+                <!-- Mobile -->
+                <div class="w-full lg:ml-16 mt-6 h-full border border-inner xl:mb-0 xl:mb-8 lg:block">
+                    <div class="h-full flex flex-col justify-between">
+                        <!-- CHAT -->
+                        <div class="">
+                            <div class="p-6">
+                                <div class="md:flex items-center justify-between">
+                                    <div class="flex items-center py-5">
+                                        <img src="https://images.unsplash.com/photo-1521132293557-5b908a59d1e1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=64&q=80" class="w-12 h-12 rounded-full" />
+                                        <div class="ml-4">
+                                            <h3 class="text-lg dark-gray">Thomas Geller</h3>
+                                            <p class="text-xs light-gray">Joined on 12 September 2020</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex md:items-center items-end">
+                                        <div class="mr-4">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag" width="22" height="22" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                <line x1="5" y1="5" x2="5" y2="21" />
+                                                <line x1="19" y1="5" x2="19" y2="14" />
+                                                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0" />
+                                                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0" />
+                                            </svg>
+                                        </div>
+                                        <div class="mr-4">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message" width="22" height="22" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                <path d="M4 21v-13a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v6a3 3 0 0 1 -3 3h-9l-4 4" />
+                                                <line x1="8" y1="9" x2="16" y2="9" />
+                                                <line x1="8" y1="13" x2="14" y2="13" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-phone-call" width="22" height="22" viewBox="0 0 24 24" stroke-width="1.5" stroke="#4C51BF" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
+                                                <path d="M15 7a2 2 0 0 1 2 2" />
+                                                <path d="M15 3a6 6 0 0 1 6 6" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-light-gray">
+                                <div class="flex items-center p-6">
+                                    <p class="text-xs underline URL mr-1">OnePlus 5T for Sale</p>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-narrow-right" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#4299E1" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <line x1="5" y1="12" x2="19" y2="12" />
+                                        <line x1="15" y1="16" x2="19" y2="12" />
+                                        <line x1="15" y1="8" x2="19" y2="12" />
+                                    </svg>
+                                    <p class="text-base purple font-bold">$350</p>
+                                </div>
+                            </div>
+                            <div class="xl:overflow-y-scroll" id="search">
+                                <div class="p-8 lg:flex">
+                                    <div class="w-16">
+                                        <img src="https://images.unsplash.com/photo-1521132293557-5b908a59d1e1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=64&q=80" class="w-12 h-12 rounded-full" />
+                                    </div>
+                                    <div class="w-full lg:pr-36 lg:mt-0 mt-4 light-gray font-normal">
+                                        <p>Duis congue mattis odio, a posuere urna feugiat id. Praesent id est tellus. Sed mollis ex at dapibus hendrerit. Curabitur efficitur nulla at finibus suscipit. Duis efficitur lobortis diam vitae egestas</p>
+                                    </div>
+                                </div>
+                                <div class="p-8 lg:flex bg-chat">
+                                    <div class="w-16">
+                                        <img src="https://cdn.tuk.dev/assets/templates/classified/13.png" class="w-12 h-12 rounded-full" />
+                                    </div>
+                                    <div class="w-full lg:pr-36 lg:mt-0 mt-4 light-gray font-normal">
+                                        <p>Duis congue mattis odio, a posuere urna feugiat id. Praesent id est tellus. Sed mollis ex at dapibus hendrerit. Curabitur efficitur nulla at finibus suscipit. Duis efficitur lobortis diam vitae egestas</p>
+                                    </div>
+                                </div>
+                                <div class="p-8 lg:flex">
+                                    <div class="w-16">
+                                        <img src="https://images.unsplash.com/photo-1521132293557-5b908a59d1e1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=64&q=80" class="w-12 h-12 rounded-full" />
+                                    </div>
+                                    <div class="w-full lg:pr-36 lg:mt-0 mt-4 light-gray font-normal">
+                                        <p>Duis congue mattis odio, a posuere urna feugiat id. Praesent id est tellus. Sed mollis ex at dapibus hendrerit. Curabitur efficitur nulla at finibus suscipit. Duis efficitur lobortis diam vitae egestas</p>
+                                    </div>
+                                </div>
+                                <div class="p-8 lg:flex bg-chat">
+                                    <div class="w-16">
+                                        <img src="https://cdn.tuk.dev/assets/templates/classified/13.png" class="w-12 h-12 rounded-full" />
+                                    </div>
+                                    <div class="w-full lg:pr-36 lg:mt-0 mt-4 light-gray font-normal">
+                                        <p>Duis congue mattis odio, a posuere urna feugiat id. Praesent id est tellus. Sed mollis ex at dapibus hendrerit. Curabitur efficitur nulla at finibus suscipit. Duis efficitur lobortis diam vitae egestas</p>
+                                        <div class="md:flex items-center mt-5">
+                                            <img src="https://cdn.tuk.dev/assets/templates/classified/Rectangle-copy-8.png" class="mr-3" />
+                                            <img src="https://cdn.tuk.dev/assets/templates/classified/Rectangle-Copy-9.png" class="mr-3" />
+                                            <img src="https://cdn.tuk.dev/assets/templates/classified/Rectangle-Copy-10.png" class="mr-3" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- CHAT -->
+                        <div class="h-16 border-t border-r border-inner">
+                            <div class="flex h-full">
+                                <div class="w-16 h-full flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mood-happy" width="26" height="26" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <circle cx="12" cy="12" r="9" />
+                                        <line x1="9" y1="9" x2="9.01" y2="9" />
+                                        <line x1="15" y1="9" x2="15.01" y2="9" />
+                                        <path d="M8 13a4 4 0 1 0 8 0m0 0h-8" />
+                                    </svg>
+                                </div>
+                                <input class="w-full focus:outline-none dark-gray" placeholder="Type Something here" />
+                                <div class="flex">
+                                    <div class="w-16 h-full flex items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-paperclip" width="26" height="26" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path d="M15 7l-6.5 6.5a1.5 1.5 0 0 0 3 3l6.5 -6.5a3 3 0 0 0 -6 -6l-6.5 6.5a4.5 4.5 0 0 0 9 9l6.5 -6.5" />
+                                        </svg>
+                                    </div>
+                                    <div class="w-16 h-full flex items-center justify-center bg-purple border-r border-inner">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-send" width="26" height="26" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <line x1="10" y1="14" x2="21" y2="3" />
+                                            <path d="M21 3l-6.5 18a0.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a0.55 .55 0 0 1 0 -1l18 -6.5" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="./assets/js/index.js"></script>
+    </body>
+</html>

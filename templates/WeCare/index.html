@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>WeCare</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="./assets/css/style.css" />
+    </head>
+
+    <body>
+        <section class="pb-12">
+            <div class="w-full relative px-6 xl:px-0 pb-6 lg:pb-12 bg-dark-header b-b-l-r-16">
+                <nav class="lg:hidden relative z-40">
+                    <div class="flex py-6 justify-between items-center px-4">
+                        <div>
+                            <img class="w-24" src="https://i.ibb.co/ccT0XZC/white-logo-nav.png" alt="" />
+                        </div>
+                        <div class="flex items-center">
+                            <ul id="list" class="hidden p-2 border-r bg-blue-700 absolute rounded top-0 left-0 right-0 shadow mt-16 md:mt-16">
+                                <li class="flex cursor-pointer text-white text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-200 focus:text-indigo-200 focus:outline-none">
+                                    <a href="#">
+                                        <span class="ml-2 font-bold">Products</span>
+                                    </a>
+                                </li>
+                                <li class="flex flex-col cursor-pointer text-white text-sm leading-3 tracking-normal py-2 hover:text-indigo-200 focus:text-indigo-200 focus:outline-none flex justify-center" onclick="dropdownHandler(this)">
+                                    <a href="#">
+                                        <span class="ml-2 font-bold">Claims</span>
+                                    </a>
+                                </li>
+                                <li class="flex cursor-pointer text-white text-sm leading-3 tracking-normal py-2 flex items-center hover:text-indigo-200 focus:text-indigo-200 focus:outline-none">
+                                    <a href="#">
+                                        <span class="ml-2 font-bold">Renewals</span>
+                                    </a>
+                                </li>
+                                <li class="flex flex-col cursor-pointer text-white text-sm leading-3 tracking-normal py-2 focus:text-indigo-700 hover:text-indigo-200 focus:text-indigo-200 flex justify-center" onclick="dropdownHandler(this)">
+                                    <a href="#">
+                                        <span class="ml-2 font-bold">Reports</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="xl:hidden text-white">
+                                <svg id="open" onclick="MenuHandler(true)" aria-haspopup="true" aria-label="Main Menu" xmlns="http://www.w3.org/2000/svg" class="show-m-menu icon icon-tabler icon-tabler-menu" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z"></path>
+                                    <line x1="4" y1="8" x2="20" y2="8"></line>
+                                    <line x1="4" y1="16" x2="20" y2="16"></line>
+                                </svg>
+                                <div id="close" class="hidden close-m-menu" onclick="MenuHandler(false)">
+                                    <svg aria-label="Close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" />
+                                        <line x1="18" y1="6" x2="6" y2="18" />
+                                        <line x1="6" y1="6" x2="18" y2="18" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                <nav class="container mx-auto hidden relative z-10 w-full lg:flex justify-between items-center py-20">
+                    <div class="w-1/6">
+                        <a href="#">
+                            <img class="" src="https://i.ibb.co/ccT0XZC/white-logo-nav.png" />
+                        </a>
+                    </div>
+                    <div class="w-5/6">
+                        <div class="flex items-center justify-end">
+                            <ul class="text-white flex items-center leading-none">
+                                <li><a class="hover:text-blue-500 focus:text-blue-500" href="#">Products</a></li>
+                                <li class="ml-8 hover:text-blue-500 focus:text-blue-500"><a href="#">Claims</a></li>
+                                <li class="ml-8 hover:text-blue-500 focus:text-blue-500"><a href="#">Renewal</a></li>
+                                <li class="ml-8 hover:text-blue-500 focus:text-blue-500"><a href="#">Support</a></li>
+                            </ul>
+                             <div class="pl-40">
+                                <button class="font-semibold text-white hover:text-blue-600 pl-6 py-2.5 rounded focus:outline-none">Live Chat</button>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                <div class="pb-8 lg:pb-32 pt-20 lg:flex flex-row-reverse items-center relative z-10 container mx-auto">
+                    <div class="w-full lg:w-1/2 h-full lg:pr-10 xl:pr-0">
+                        <img class="ml-auto" src="https://i.ibb.co/hyPpwww/right-hero-image.png" />
+                    </div>
+                    <div class="w-full lg:w-1/2 h-full mt-8 lg:mt-0">
+                        <p class="text-white uppercase text-2xl mb-4">Qusique Tincidun sapien</p>
+                        <h1 class="font-bold text-white text-80px mb-8">All Natural Ingredients</h1>
+                        <p class="text-white text-lg font-regular mb-8">Vestibulum placerat scelerisque turpis, ut laoreet erat varius ut. Phasellus eleifend vitae augue a accumsan. Sed eu semper lorem. Nullam sodales lorem libero, ut viverra diam suscipit et. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam ac posuere nunc.</p>
+                        <button class="leading-4 bg-white hover:bg-blue-200 py-3 lg:py-6 px-6 lg:px-12 font-semibold clr-dark-blue lg:text-2xl rounded">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 xl:px-0">
+            <div class="container mx-auto py-20">
+                <div class="flex flex-col items-center justify-center w-full py-10">
+                    <h1 class="font-semibold custom-gray-800 text-40px">Our Services</h1>
+                    <hr class="w-24 h-1 bg-gold rounded-full" />
+                </div>
+
+                <div class="lg:flex items-center justify-between lg:-mx-5">
+                    <div class="lg:w-1/3 px-5">
+                        <div class="bg-white flex justify-center items-center flex-col border-gray rounded-md p-8">
+                            <img class="mb-4" src="https://cdn.tuk.dev/assets/templates/weCare/pill.png" />
+                            <h2 class="text-2xl font-bold mb-6 clr-dark-blue text-center lg:text-left">Medical facility</h2>
+                            <p class="lg:w-2/3 mb-6 text-center">Vestibulum placerat scelerisque turpis, ut laoreet erat varius ut.</p>
+                            <a class="clr-dark-blue underline cursor-pointer">View more</a>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/3 px-5 py-8 lg:py-0">
+                        <div class="bg-gold shadow-lg text-white flex justify-center items-center flex-col border-gray rounded-md p-8">
+                            <img class="mb-4" src="https://cdn.tuk.dev/assets/templates/weCare/heart.png" />
+                            <h2 class="text-2xl font-bold mb-6 text-white text-center lg:text-left">HealthCare</h2>
+                            <p class="lg:w-2/3 mb-6 text-center text-white">Vestibulum placerat scelerisque turpis, ut laoreet erat varius ut.</p>
+                            <a class="text-white underline cursor-pointer">View more</a>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/3 px-5">
+                        <div class="bg-white flex justify-center items-center flex-col border-gray rounded-md p-8">
+                            <img class="mb-4" src="https://cdn.tuk.dev/assets/templates/weCare/ambulance.png" />
+                            <h2 class="text-2xl font-bold mb-6 clr-dark-blue text-center lg:text-left">24 hours Service</h2>
+                            <p class="lg:w-2/3 mb-6 text-center">Vestibulum placerat scelerisque turpis, ut laoreet erat varius ut.</p>
+                            <a class="clr-dark-blue underline cursor-pointer">View more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="lg:hidden px-6 xl:px-0">
+                <div class="container mx-auto pt-16 lg:pt-40">
+                    <div class="flex flex-col lg:items-center justify-center w-full py-10">
+                        <h1 class="font-semibold custom-gray-800 text-40px">Health Tips and Tricks</h1>
+                        <p class="mt-2.5 text-2xl">A Collection of guides, tips, suggestions and tricks to improve your Health</p>
+                    </div>
+                    <div class="w-full flex flex-col items-end justify-center">
+                        <p class="text-lg clr-gold"><span id="current" class="font-semibold" >01</span><span class="font-light text-base custom-gray-800">/03</span></p>
+                        <div class="my-4 flex items-center">
+                            <div id="prev" class="cursor-pointer mr-4 border border-gray-300 p-2 flex items-center justify-center rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-narrow-left" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                    <line x1="5" y1="12" x2="9" y2="16" />
+                                    <line x1="5" y1="12" x2="9" y2="8" />
+                                </svg>
+                            </div>
+                            <div id="next" class="cursor-pointer mr-4 border p-2 flex border-gold clr-gold items-center justify-center rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-narrow-right" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                    <line x1="15" y1="16" x2="19" y2="12" />
+                                    <line x1="15" y1="8" x2="19" y2="12" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between -mx-5">
+                        <div class="slider">
+                            <div class="slide-ana">
+                                <div class="w-full px-5">
+                                    <div class="bg-white w-full flex justify-center items-center flex-col border-gray rounded-md pb-5">
+                                        <div class="rounded w-full h-64 relative">
+                                            <img class="rounded h-full w-full absolute inset-0 object-cover object-center" src="https://cdn.tuk.dev/assets/templates/weCare/health_1.png" />
+                                        </div>
+                                        <h2 class="text-2xl mt-4 font-semibold mb-6 clr-dark-blue text-center px-6">Qualitative research in nursing and healthcare</h2>
+                                        <div class="w-8/12 flex mt-3 items-center justify-between text-base custom-gray-800">
+                                            <p class="cursor-pointer">05 min read</p>
+                                            <p class="cursor-pointer">Healthcare</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-full px-5">
+                                    <div class="bg-white w-full flex justify-center items-center flex-col border-gray rounded-md pb-5">
+                                        <div class="rounded w-full h-64 relative">
+                                            <img class="rounded h-full w-full absolute inset-0 object-cover object-center" src="https://cdn.tuk.dev/assets/templates/weCare/health_2.png" />
+                                        </div>
+                                        <h2 class="text-2xl mt-4 font-semibold mb-6 clr-dark-blue w-8/12 text-center">Journal of the healthcare management</h2>
+                                        <div class="w-8/12 flex mt-3 items-center justify-between text-base custom-gray-800">
+                                            <p class="cursor-pointer">03 min read</p>
+                                            <p class="cursor-pointer">Management</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-full px-5">
+                                    <div class="bg-white w-full flex justify-center items-center flex-col border-gray rounded-md pb-5">
+                                        <div class="rounded w-full h-64 relative">
+                                            <img class="rounded h-full w-full absolute inset-0 object-cover object-center" src="https://cdn.tuk.dev/assets/templates/weCare/health_3.png" />
+                                        </div>
+                                        <h2 class="text-2xl mt-4 font-semibold mb-6 clr-dark-blue w-8/12 text-center">Solving covid pandemic’s health crisis</h2>
+                                        <div class="w-8/12 flex mt-3 items-center justify-between text-base custom-gray-800">
+                                            <p class="cursor-pointer">02 min read</p>
+                                            <p class="cursor-pointer">Corona Virus</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-12 w-full flex items-center justify-center">
+                    <button class="text-white lg:text-2xl font-semibold bg-gold-btn px-6 lg:px-12 py-3 lg:py-6 rounded">Read More</button>
+                </div>
+            </div>
+            <div class="hidden lg:block px-6 xl:px-0">
+                <div class="container mx-auto pt-16 lg:pt-40">
+                    <div class="flex flex-col items-center justify-center w-full py-10">
+                        <h1 class="font-semibold custom-gray-800 text-40px">Health Tips and Tricks</h1>
+                        <p class="mt-2.5 lg:w-2/5 text-center text-2xl">A Collection of guides, tips, suggestions and tricks to improve your Health</p>
+                    </div>
+                    <div class="w-full flex flex-col items-end justify-end pr-24">
+                        <p class="text-lg clr-gold"><span class="font-semibold" id="current3">01</span><span class="custom-gray-800 font-light text-base">/03</span></p>
+                        <div class="my-4 flex items-center">
+                            <div id="prev3" class="cursor-pointer mr-4 border border-gray-300 p-2 flex items-center justify-center rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-narrow-left" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                    <line x1="5" y1="12" x2="9" y2="16" />
+                                    <line x1="5" y1="12" x2="9" y2="8" />
+                                </svg>
+                            </div>
+                            <div id="next3" class="cursor-pointer border p-2 flex border-gold clr-gold items-center justify-center rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-narrow-right" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                    <line x1="15" y1="16" x2="19" y2="12" />
+                                    <line x1="15" y1="8" x2="19" y2="12" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slider3">
+                        <div class="slide-ana3">
+                            <div class="flex justify-between -mx-5">
+                                <div class="w-1/3 px-5">
+                                    <div class="bg-white w-full flex justify-center items-center flex-col border-gray rounded-md pb-5">
+                                        <div class="rounded w-full h-64 relative">
+                                            <img class="rounded h-full w-full absolute inset-0 object-cover object-center" src="https://cdn.tuk.dev/assets/templates/weCare/health_1.png" />
+                                        </div>
+                                        <h2 class="text-2xl mt-4 font-semibold mb-6 clr-dark-blue w-8/12 text-center">Qualitative research in nursing and healthcare</h2>
+                                        <div class="w-8/12 flex mt-12 items-center justify-between text-base custom-gray-800">
+                                            <p class="cursor-pointer">05 min read</p>
+                                            <p class="cursor-pointer">Healthcare</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-1/3 px-5">
+                                    <div class="bg-white w-full flex justify-center items-center flex-col border-gray rounded-md pb-5">
+                                        <div class="rounded w-full h-64 relative">
+                                            <img class="rounded h-full w-full absolute inset-0 object-cover object-center" src="https://cdn.tuk.dev/assets/templates/weCare/health_2.png" />
+                                        </div>
+                                        <h2 class="text-2xl mt-4 font-semibold mb-6 clr-dark-blue w-8/12 text-center">Journal of the healthcare management</h2>
+                                        <div class="w-8/12 flex mt-12 items-center justify-between text-base custom-gray-800">
+                                            <p class="cursor-pointer">03 min read</p>
+                                            <p class="cursor-pointer">Management</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-1/3 px-5">
+                                    <div class="bg-white w-full flex justify-center items-center flex-col border-gray rounded-md pb-5">
+                                        <div class="rounded w-full h-64 relative">
+                                            <img class="rounded h-full w-full absolute inset-0 object-cover object-center" src="https://cdn.tuk.dev/assets/templates/weCare/health_3.png" />
+                                        </div>
+                                        <h2 class="text-2xl mt-4 font-semibold mb-6 clr-dark-blue w-8/12 text-center">Solving covid pandemic’s mental health crisis</h2>
+                                        <div class="w-8/12 flex mt-12 items-center justify-between text-base custom-gray-800">
+                                            <p class="cursor-pointer">02 min read</p>
+                                            <p class="cursor-pointer">Corona Virus</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex justify-between -mx-5">
+                                <div class="w-1/3 px-5">
+                                    <div class="bg-white w-full flex justify-center items-center flex-col border-gray rounded-md pb-5">
+                                        <div class="rounded w-full h-64 relative">
+                                            <img class="rounded h-full w-full absolute inset-0 object-cover object-center" src="https://cdn.tuk.dev/assets/templates/weCare/health_1.png" />
+                                        </div>
+                                        <h2 class="text-2xl mt-4 font-semibold mb-6 clr-dark-blue w-8/12 text-center">Qualitative research in nursing and healthcare</h2>
+                                        <div class="w-8/12 flex mt-12 items-center justify-between text-base custom-gray-800">
+                                            <p class="cursor-pointer">05 min read</p>
+                                            <p class="cursor-pointer">Healthcare</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-1/3 px-5">
+                                    <div class="bg-white w-full flex justify-center items-center flex-col border-gray rounded-md pb-5">
+                                        <div class="rounded w-full h-64 relative">
+                                            <img class="rounded h-full w-full absolute inset-0 object-cover object-center" src="https://cdn.tuk.dev/assets/templates/weCare/health_2.png" />
+                                        </div>
+                                        <h2 class="text-2xl mt-4 font-semibold mb-6 clr-dark-blue w-8/12 text-center">Journal of the healthcare management</h2>
+                                        <div class="w-8/12 flex mt-12 items-center justify-between text-base custom-gray-800">
+                                            <p class="cursor-pointer">03 min read</p>
+                                            <p class="cursor-pointer">Management</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-1/3 px-5">
+                                    <div class="bg-white w-full flex justify-center items-center flex-col border-gray rounded-md pb-5">
+                                        <div class="rounded w-full h-64 relative">
+                                            <img class="rounded h-full w-full absolute inset-0 object-cover object-center" src="https://cdn.tuk.dev/assets/templates/weCare/health_3.png" />
+                                        </div>
+                                        <h2 class="text-2xl mt-4 font-semibold mb-6 clr-dark-blue w-8/12 text-center">Solving covid pandemic’s mental health crisis</h2>
+                                        <div class="w-8/12 flex mt-12 items-center justify-between text-base custom-gray-800">
+                                            <p class="cursor-pointer">02 min read</p>
+                                            <p class="cursor-pointer">Corona Virus</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex justify-between -mx-5">
+                                <div class="w-1/3 px-5">
+                                    <div class="bg-white w-full flex justify-center items-center flex-col border-gray rounded-md pb-5">
+                                        <div class="rounded w-full h-64 relative">
+                                            <img class="rounded h-full w-full absolute inset-0 object-cover object-center" src="https://cdn.tuk.dev/assets/templates/weCare/health_1.png" />
+                                        </div>
+                                        <h2 class="text-2xl mt-4 font-semibold mb-6 clr-dark-blue w-8/12 text-center">Qualitative research in nursing and healthcare</h2>
+                                        <div class="w-8/12 flex mt-12 items-center justify-between text-base custom-gray-800">
+                                            <p class="cursor-pointer">05 min read</p>
+                                            <p class="cursor-pointer">Healthcare</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-1/3 px-5">
+                                    <div class="bg-white w-full flex justify-center items-center flex-col border-gray rounded-md pb-5">
+                                        <div class="rounded w-full h-64 relative">
+                                            <img class="rounded h-full w-full absolute inset-0 object-cover object-center" src="https://cdn.tuk.dev/assets/templates/weCare/health_2.png" />
+                                        </div>
+                                        <h2 class="text-2xl mt-4 font-semibold mb-6 clr-dark-blue w-8/12 text-center">Journal of the healthcare management</h2>
+                                        <div class="w-8/12 flex mt-12 items-center justify-between text-base custom-gray-800">
+                                            <p class="cursor-pointer">03 min read</p>
+                                            <p class="cursor-pointer">Management</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-1/3 px-5">
+                                    <div class="bg-white w-full flex justify-center items-center flex-col border-gray rounded-md pb-5">
+                                        <div class="rounded w-full h-64 relative">
+                                            <img class="rounded h-full w-full absolute inset-0 object-cover object-center" src="https://cdn.tuk.dev/assets/templates/weCare/health_3.png" />
+                                        </div>
+                                        <h2 class="text-2xl mt-4 font-semibold mb-6 clr-dark-blue w-8/12 text-center">Solving covid pandemic’s mental health crisis</h2>
+                                        <div class="w-8/12 flex mt-12 items-center justify-between text-base custom-gray-800">
+                                            <p class="cursor-pointer">02 min read</p>
+                                            <p class="cursor-pointer">Corona Virus</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-24 w-full flex items-center justify-center">
+                    <button class="text-white lg:text-2xl font-semibold bg-gold-btn px-6 lg:px-12 py-3 lg:py-6 rounded">Read More</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 xl:px-0">
+            <div class="mx-auto container mt-20 lg:mt-52">
+                <div class="flex flex-col items-center justify-center w-full py-10">
+                    <h1 class="font-semibold custom-gray-800 text-40px">Our Talented Team</h1>
+                    <hr class="w-24 h-1 bg-gold rounded-full" />
+                </div>
+                <div class="flex items-center justify-center w-full">
+                    <div class="w-10/12">
+                        <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                            <div class="flex flex-col items-center justify-center">
+                                <img class="-ml-4" src="https://cdn.tuk.dev/assets/templates/weCare/team_1.png" alt="team 1" />
+                                <h2 class="text-2xl font-medium mt-6">Richard Bell</h2>
+                                <h3 class="text-lg">Richard.bell@gmail.com</h3>
+                            </div>
+                            <div class="flex flex-col items-center justify-center">
+                                <img class="-ml-4" src="https://cdn.tuk.dev/assets/templates/weCare/team_2.png" alt="team 1" />
+                                <h2 class="text-2xl font-medium mt-6">Richard Bell</h2>
+                                <h3 class="text-lg">Richard.bell@gmail.com</h3>
+                            </div>
+                            <div class="flex flex-col items-center justify-center">
+                                <img class="-ml-4" src="https://cdn.tuk.dev/assets/templates/weCare/team_3.png" alt="team 1" />
+                                <h2 class="text-2xl font-medium mt-6">Richard Bell</h2>
+                                <h3 class="text-lg">Richard.bell@gmail.com</h3>
+                            </div>
+                            <div class="flex flex-col items-center justify-center">
+                                <img class="-ml-4" src="https://cdn.tuk.dev/assets/templates/weCare/team_4.png" alt="team 1" />
+                                <h2 class="text-2xl font-medium mt-6">Richard Bell</h2>
+                                <h3 class="text-lg">Richard.bell@gmail.com</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-24 w-full flex items-center justify-center">
+                    <button class="text-white lg:text-2xl font-semibold bg-gold-btn px-6 lg:px-12 py-3 lg:py-6 rounded">View All</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 xl:px-0">
+            <div class="mt-16 lg:mt-44 mx-auto container">
+                <div class="flex flex-col lg:items-center justify-center w-full py-10">
+                    <h1 class="font-semibold custom-gray-800 text-40px">User Reviews</h1>
+                    <p class="mt-2.5 lg:w-2/5 lg:text-center text-2xl custom-gray-800">More than 1000 users are satisfied with our services and want to share their experience with you</p>
+                </div>
+                <div class="mt-24 flex items-center justify-center w-full">
+                    <div class="w-10/12">
+                        <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
+                            <div class="flex flex-col items-center justify-center">
+                                <img src="https://cdn.tuk.dev/assets/templates/weCare/review_1.png" alt="" />
+                                <p class="text-base custom-gray-800 leading-7 mt-5 text-center w-8/12">We have reached more than 1.1 million users around the globe</p>
+                            </div>
+                            <div class="flex flex-col items-center justify-center">
+                                <img src="https://cdn.tuk.dev/assets/templates/weCare/review_2.png" alt="" />
+                                <p class="text-base custom-gray-800 leading-7 mt-5 text-center w-8/12">We have reached more than 1.1 million users around the globe</p>
+                            </div>
+                            <div class="flex flex-col items-center justify-center">
+                                <img src="https://cdn.tuk.dev/assets/templates/weCare/review_3.png" alt="" />
+                                <p class="text-base custom-gray-800 leading-7 mt-5 text-center w-8/12">We have reached more than 1.1 million users around the globe</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 xl:px-0">
+            <div class="my-16 lg:my-52 mx-auto container">
+                <div class="flex flex-col items-center justify-center w-full py-5 lg:py-10">
+                    <h1 class="font-semibold custom-gray-800 text-40px">Testimonials</h1>
+                    <hr class="w-24 h-1 bg-gold rounded-full" />
+                </div>
+                <div class="flex items-center justify-center w-full mt-10 lg:mt-28">
+                    <div class="w-full lg:w-10/12 relative">
+                        <div class="slider2">
+                            <div class="slide-ana2">
+                                <div>
+                                    <div class="flex lg:items-center justify-center w-full">
+                                        <div class="flex items-start">
+                                            <img class="w-8 lg:w-auto" src="https://cdn.tuk.dev/assets/templates/weCare/quotation.png" alt="quotation" />
+                                            <p class="custom-gray-800 text-lg leading-8 ml-7 lg:mt-12">Vestibulum placerat scelerisque turpis, ut laoreet erat varius ut. Phasellus eleifend vitae augue a accumsan. Sed eu semper lorem. Nullam sodales lorem libero, ut viverra diam suscipit et. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam ac posuere nunc.</p>
+                                        </div>
+                                    </div>
+                                    <div class="w-full flex justify-end mb-12 lg:mb-0 mt-6 lg:mt-24">
+                                        <div class="mt-4 lg:mt-0">
+                                            <hr class="line mb-2 lg:mb-5 w-16" />
+                                            <h3 class="font-semibold leading-6 custom-gray-800 leading-4 text-xl lg:text-4xl uppercase tracking-tight">Martin Reich</h3>
+                                            <h4 class="mt-1 lg:mt-3 lg:text-2xl tracking-tight">Physical Therapist</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex lg:items-center justify-center w-full">
+                                        <div class="flex items-start">
+                                            <img class="w-8 lg:w-auto" src="https://cdn.tuk.dev/assets/templates/weCare/quotation.png" alt="quotation" />
+                                            <p class="custom-gray-800 text-lg leading-8 ml-7 lg:mt-12">Vestibulum placerat scelerisque turpis, ut laoreet erat varius ut. Phasellus eleifend vitae augue a accumsan. Sed eu semper lorem. Nullam sodales lorem libero, ut viverra diam suscipit et. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam ac posuere nunc.</p>
+                                        </div>
+                                    </div>
+                                    <div class="w-full flex justify-end mb-12 lg:mb-0 mt-6 lg:mt-24">
+                                        <div class="mt-4 lg:mt-0">
+                                            <hr class="line mb-2 lg:mb-5 w-16" />
+                                            <h3 class="font-semibold leading-6 custom-gray-800 leading-4 text-xl lg:text-4xl uppercase tracking-tight">Martin Reich</h3>
+                                            <h4 class="mt-1 lg:mt-3 lg:text-2xl tracking-tight">Physical Therapist</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex lg:items-center justify-center w-full">
+                                        <div class="flex items-start">
+                                            <img class="w-8 lg:w-auto" src="https://cdn.tuk.dev/assets/templates/weCare/quotation.png" alt="quotation" />
+                                            <p class="custom-gray-800 text-lg leading-8 ml-7 lg:mt-12">Vestibulum placerat scelerisque turpis, ut laoreet erat varius ut. Phasellus eleifend vitae augue a accumsan. Sed eu semper lorem. Nullam sodales lorem libero, ut viverra diam suscipit et. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam ac posuere nunc.</p>
+                                        </div>
+                                    </div>
+                                    <div class="w-full flex justify-end mb-12 lg:mb-0 mt-6 lg:mt-24">
+                                        <div class="mt-4 lg:mt-0">
+                                            <hr class="line mb-2 lg:mb-5 w-16" />
+                                            <h3 class="font-semibold leading-6 custom-gray-800 leading-4 text-xl lg:text-4xl uppercase tracking-tight">Martin Reich</h3>
+                                            <h4 class="mt-1 lg:mt-3 lg:text-2xl tracking-tight">Physical Therapist</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-full lg:w-auto justify-center lg:justify-start flex absolute items-center bottom-0">
+                            <img class="hidden lg:block opacity-0" src="https://cdn.tuk.dev/assets/templates/weCare/quotation.png" alt="quotation" />
+                            <img id="prev2" class="cursor-pointer ml-7 mr-10" src="https://cdn.tuk.dev/assets/templates/weCare/test-arrow-left.png" />
+                            <img id="next2" class="cursor-pointer" src="https://cdn.tuk.dev/assets/templates/weCare/test-arrow-right.png" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 xl:px-0">
+            <div class="mt-52 mx-auto container">
+                <div class="flex flex-col lg:items-center justify-center w-full">
+                    <h1 class="font-semibold custom-gray-800 text-40px">The Right Plan for your business</h1>
+                    <p class="mt-2.5 lg:w-1/2 lg:text-center text-2xl custom-gray-800">We have several plans to showcase your Business. Get everything you need</p>
+                </div>
+                <div class="flex items-center justify-center w-full">
+                    <div class="pt-14">
+                        <div class="container mx-auto">
+                            <div class="xl:w-4/5 w-11/12 mx-auto mb-28">
+                                <div class="flex justify-center items-center" role="button">
+                                    <p class="mr-3 text-lg custom-gray-800 font-bold">Bill Monthly</p>
+                                    <div class="cursor-pointer w-12 h-6 rounded-full relative shadow-sm">
+                                        <input checked type="checkbox" name="toggle" id="toggle2" class="focus:outline-none checkbox w-4 h-4 rounded-full bg-gold transition duration-150 ease-in-out absolute m-1 shadow-sm appearance-none cursor-pointer" />
+                                        <label for="toggle2" class="toggle-label block w-12 h-6 overflow-hidden rounded-full border-gold cursor-pointer"></label>
+                                    </div>
+                                    <p class="ml-3 text-lg font-normal custom-gray-800">Bill Anually</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap mb-12 justify-between sm:justify-center -mx-6">
+                                <div class="w-full xl:w-1/3 lg:w-1/3 md:w-1/2 sm:w-1/2 mb-4 px-6">
+                                    <div class="py-5 px-4 bg-white border-gray shadow rounded-lg text-left">
+                                        <h4 class="text-2xl clr-dark-blue font-semibold pb-8">Basic</h4>
+                                        <ul class="flex flex-col mb-6">
+                                            <li class="flex items-center mb-2.5">
+                                                <img src="https://cdn.tuk.dev/assets/templates/weCare/checkMark.png" class="mr-4" alt="check-mark" />
+                                                <p class="custom-gray-800 text-base font-normal">24/7 access</p>
+                                            </li>
+                                            <li class="flex items-center mb-2.5">
+                                                <img src="https://cdn.tuk.dev/assets/templates/weCare/checkMark.png" class="mr-4" alt="check-mark" />
+                                                <p class="custom-gray-800 text-base font-normal">Order labs + Results</p>
+                                            </li>
+                                            <li class="flex items-center mb-2.5">
+                                                <img src="https://cdn.tuk.dev/assets/templates/weCare/checkMark.png" class="opacity-0 mr-4" alt="check-mark" />
+                                                <p class="clr-lite-grey text-base font-normal">Radiology tests + Results</p>
+                                            </li>
+                                            <li class="flex items-center mb-2.5">
+                                                <img src="https://cdn.tuk.dev/assets/templates/weCare/checkMark.png" class="opacity-0 mr-4" alt="check-mark" />
+                                                <p class="clr-lite-grey text-base font-normal">Partnership + Discounts</p>
+                                            </li>
+                                            <li class="flex items-center mb-2.5">
+                                                <img src="https://cdn.tuk.dev/assets/templates/weCare/checkMark.png" class="opacity-0 mr-4" alt="check-mark" />
+                                                <p class="clr-lite-grey text-base font-normal">Direct doctor phone number</p>
+                                            </li>
+                                            <li class="flex items-center mb-2.5">
+                                                <img src="https://cdn.tuk.dev/assets/templates/weCare/checkMark.png" class="opacity-0 mr-4" alt="check-mark" />
+                                                <p class="clr-lite-grey text-base font-normal">Specialists appoinments</p>
+                                            </li>
+                                        </ul>
+                                        <p class="text-base clr-dark-blue relative pl-3">
+                                            <span class="font-light text-lg">$</span>
+                                            <span class="text-2xl font-semibold">20</span>
+                                            <span class="font-light text-lg">/month</span>
+                                        </p>
+                                        <button class="mt-5 w-full bg-light-btn focus:outline-none transition duration-150 ease-in-out rounded clr-dark-blue px-8 py-3 text-base font-semibold py-3">Choose</button>
+                                    </div>
+                                </div>
+                                <div class="w-full xl:w-1/3 lg:w-1/3 md:w-1/2 sm:w-1/2 mb-4 px-6">
+                                    <div class="py-5 px-4 bg-gold border-gray shadow rounded-lg text-left">
+                                        <h4 class="text-2xl text-white font-semibold pb-8">Pro</h4>
+                                        <ul class="flex flex-col mb-6">
+                                            <li class="flex items-center mb-2.5">
+                                                <img src="https://cdn.tuk.dev/assets/templates/weCare/checkMarkWhite.png" class="mr-4" alt="check-mark" />
+                                                <p class="text-white text-base font-normal">24/7 access</p>
+                                            </li>
+                                            <li class="flex items-center mb-2.5">
+                                                <img src="https://cdn.tuk.dev/assets/templates/weCare/checkMarkWhite.png" class="mr-4" alt="check-mark" />
+                                                <p class="text-white text-base font-normal">Order labs + Results</p>
+                                            </li>
+                                            <li class="flex items-center mb-2.5">
+                                                <img src="https://cdn.tuk.dev/assets/templates/weCare/checkMarkWhite.png" class="mr-4" alt="check-mark" />
+                                                <p class="text-white text-base font-normal">Radiology tests + Results</p>
+                                            </li>
+                                            <li class="flex items-center mb-2.5">
+                                                <img src="https://cdn.tuk.dev/assets/templates/weCare/checkMarkWhite.png" class="mr-4" alt="check-mark" />
+                                                <p class="text-white text-base font-normal">Partnership + Discounts</p>
+                                            </li>
+                                            <li class="flex items-center mb-2.5">
+                                                <img src="https://cdn.tuk.dev/assets/templates/weCare/checkMark.png" class="mr-4 opacity-0" alt="check-mark" />
+                                                <p class="clr-dark-blue text-base font-normal">Direct doctor phone number</p>
+                                            </li>
+                                            <li class="flex items-center mb-2.5">
+                                                <img src="https://cdn.tuk.dev/assets/templates/weCare/checkMark.png" class="mr-4 opacity-0" alt="check-mark" />
+                                                <p class="clr-dark-blue text-base font-normal">Specialists appoinments</p>
+                                            </li>
+                                        </ul>
+                                        <p class="text-base text-white relative pl-3">
+                                            <span class="font-light text-lg">$</span>
+                                            <span class="text-2xl font-semibold">100</span>
+                                            <span class="font-light text-lg">/month</span>
+                                        </p>
+                                        <button class="mt-5 w-full text-white focus:outline-none transition duration-150 ease-in-out rounded bg-dark-blue px-8 py-3 text-base font-semibold py-3">Try</button>
+                                    </div>
+                                </div>
+                                <div class="w-full xl:w-1/3 lg:w-1/3 md:w-1/2 sm:w-1/2 mb-4 px-6">
+                                    <div class="py-5 px-4 bg-white border-gray shadow rounded-lg text-left">
+                                        <h4 class="text-2xl clr-dark-blue font-semibold pb-8">Enterprise</h4>
+                                        <ul class="flex flex-col mb-6">
+                                            <li class="flex items-center mb-2.5">
+                                                <img src="https://cdn.tuk.dev/assets/templates/weCare/checkMark.png" class="mr-4" alt="check-mark" />
+                                                <p class="custom-gray-800 text-base font-normal">24/7 access</p>
+                                            </li>
+                                            <li class="flex items-center mb-2.5">
+                                                <img src="https://cdn.tuk.dev/assets/templates/weCare/checkMark.png" class="mr-4" alt="check-mark" />
+                                                <p class="custom-gray-800 text-base font-normal">Order labs + Results</p>
+                                            </li>
+                                            <li class="flex items-center mb-2.5">
+                                                <img src="https://cdn.tuk.dev/assets/templates/weCare/checkMark.png" class="mr-4" alt="check-mark" />
+                                                <p class="custom-gray-800 text-base font-normal">Radiology tests + Results</p>
+                                            </li>
+                                            <li class="flex items-center mb-2.5">
+                                                <img src="https://cdn.tuk.dev/assets/templates/weCare/checkMark.png" class="mr-4" alt="check-mark" />
+                                                <p class="custom-gray-800 text-base font-normal">Partnership + Discounts</p>
+                                            </li>
+                                            <li class="flex items-center mb-2.5">
+                                                <img src="https://cdn.tuk.dev/assets/templates/weCare/checkMark.png" class="mr-4" alt="check-mark" />
+                                                <p class="custom-gray-800 text-base font-normal">Direct doctor phone number</p>
+                                            </li>
+                                            <li class="flex items-center mb-2.5">
+                                                <img src="https://cdn.tuk.dev/assets/templates/weCare/checkMark.png" class="mr-4" alt="check-mark" />
+                                                <p class="custom-gray-800 text-base font-normal">Specialists appoinments</p>
+                                            </li>
+                                        </ul>
+                                        <p class="text-base clr-dark-blue relative pl-3">
+                                            <span class="font-light text-lg">$</span>
+                                            <span class="text-2xl font-semibold">200</span>
+                                            <span class="font-light text-lg">/month</span>
+                                        </p>
+                                        <button class="mt-5 w-full bg-light-btn focus:outline-none transition duration-150 ease-in-out rounded clr-dark-blue px-8 py-3 text-base font-semibold py-3">Choose</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <style></style>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="mt-24 max-w-4xl mx-auto relative px-10 py-10 cus-border bg-shape shadow-lg">
+                <img class="absolute inset-0 m-auto ml-12 z-10 -mt-4" src="https://cdn.tuk.dev/assets/templates/weCare/ball-small.png" />
+                <div class="lg:flex items-center z-10">
+                    <div class="lg:w-1/2 mr-12">
+                        <h2 class="text-2xl xl:text-3xl text-white font-bold mb-4">Still undecided?</h2>
+                        <p class="text-lg xl:text-2xl text-white font-normal leading-7">Get access to one month free membership on our platform</p>
+                    </div>
+                    <div class="lg:w-1/2 lg:flex justify-end pr-10 lg:pr-0 mt-6 xl:mt-0">
+                        <button class="bg-dark-blue p-2 xl:p-4 focus:outline-none text-white rounded-md mr-2.5">Get access</button>
+                        <button class="border border-white p-2 xl:p-4 hover:border-blue-800 focus:outline-none hover:bg-blue-800 text-white rounded-md mr-2.5">View Plan</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="mt-12 relative pt-6">
+                <img class="w-8 lg:w-auto absolute inset-0 m-auto mr-12 z-10 -mt-4 lg:-mt-8" src="https://cdn.tuk.dev/assets/templates/weCare/ball-large.png" />
+                <img src="https://i.ibb.co/fC8BBxt/footer-bg-wecare.png" class="absolute inset-0 w-full h-full object-cover object-center" />
+                <div class="container relative z-10 mx-auto lg:flex justify-between px-6 pt-8 lg:pt-32 pb-6 lg:pb-28">
+                    <div class="lg:w-1/4 pb-12 lg:pb-0">
+                        <img class="mb-8" src="https://cdn.tuk.dev/assets/templates/weCare/logo-white.png" alt="logo" />
+                        <p class="text-white text-xl">4140 Parker Rd. Allentown, New Mexico 31134</p>
+                    </div>
+                    <div class="lg:w-1/2 sm:flex justify-between lg:justify-end">
+                        <div class="lg:pr-24 pb-12 lg:pb-0">
+                            <h3 class="mb-6 text-lg text-white font-bold">Links</h3>
+                            <ul class="text-white">
+                                <li class="mb-3"><a href="#">Products</a></li>
+                                <li class="mb-3"><a href="#">Claims</a></li>
+                                <li class="mb-3"><a href="#">Renewals</a></li>
+                                <li><a href="#">Support</a></li>
+                            </ul>
+                        </div>
+                        <div class="lg:pr-24 pb-12 lg:pb-0">
+                            <h3 class="mb-6 text-lg text-white font-bold">Services</h3>
+                            <ul class="text-white">
+                                <li class="mb-3"><a href="#">Products</a></li>
+                                <li class="mb-3"><a href="#">Claims</a></li>
+                                <li class="mb-3"><a href="#">Renewals</a></li>
+                                <li><a href="#">Support</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="mb-6 text-lg text-white font-bold">About</h3>
+                            <ul class="text-white">
+                                <li class="mb-3"><a href="#">Products</a></li>
+                                <li class="mb-3"><a href="#">Claims</a></li>
+                                <li class="mb-3"><a href="#">Renewals</a></li>
+                                <li><a href="#">Support</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/4 flex lg:justify-end items-end mt-12 lg:mt-0">
+                        <div class="bg-white p-2 rounded-full mr-2.5">
+                            <img src="https://cdn.tuk.dev/assets/templates/weCare/fb.png" />
+                        </div>
+                        <div class="bg-white p-2 rounded-full mr-2.5">
+                            <img src="https://cdn.tuk.dev/assets/templates/weCare/twitter.png" />
+                        </div>
+                        <div class="bg-white p-2 rounded-full mr-2.5">
+                            <img src="https://cdn.tuk.dev/assets/templates/weCare/yt.png" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="./assets/js/script.js"></script>
+    </body>
+</html>

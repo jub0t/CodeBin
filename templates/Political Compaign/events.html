@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="./assets/css/index.css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+        <title>Events</title>
+    </head>
+
+    <body class="f-f-p">
+        <!--Header start here-->
+        <div class="mx-auto container relative">
+            <nav class="lg:hidden">
+                <div class="flex py-2 justify-between items-center px-4">
+                    <a href="./index.html">
+                        <div>
+                            <img src="./assets/images/logo.png" alt="" />
+                        </div>
+                    </a>
+                    <div class="visible flex items-center">
+                        <ul id="list" class="hidden p-2 border-r bg-white absolute rounded top-0 left-0 right-0 shadow mt-16 md:mt-16">
+                            <li class="flex cursor-pointer text-gray-600 text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
+                                <a href="./index.html">
+                                    <span class="ml-2 font-bold">Home</span>
+                                </a>
+                            </li>
+                            <li class="flex flex-col cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex justify-center" onclick="dropdownHandler(this)">
+                                <a href="./compaign_donations.html">
+                                    <span class="ml-2 font-bold">Donations</span>
+                                </a>
+                            </li>
+                            <li class="flex cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-2 hover:text-indigo-700 flex items-center focus:text-indigo-700 focus:outline-none">
+                                <a href="./events.html">
+                                    <span class="ml-2 font-bold">Events</span>
+                                </a>
+                            </li>
+                            <li class="flex flex-col cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex justify-center" onclick="dropdownHandler(this)">
+                                <a href="./blog.html">
+                                    <span class="ml-2 font-bold">Blog</span>
+                                </a>
+                            </li>
+                            <li class="flex flex-col cursor-pointer text-gray-600 text-sm leading-3 tracking-normal pt-2 pb-4 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex justify-center" onclick="dropdownHandler(this)">
+                                <a href="./aboutUs.html">
+                                    <span class="ml-2 font-bold">About Us</span>
+                                </a>
+                            </li>
+                            <input class="ml-2 mb-4 border-b border-gray-300 focus:outline-none w-1/3 text-gray-800 text-sm" placeholder="Search"/>
+                        </ul>
+                        <div class="xl:hidden">
+                            <svg id="open" onclick="MenuHandler(true)" aria-haspopup="true" aria-label="Main Menu" xmlns="http://www.w3.org/2000/svg" class="show-m-menu icon icon-tabler icon-tabler-menu" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z"></path>
+                                <line x1="4" y1="8" x2="20" y2="8"></line>
+                                <line x1="4" y1="16" x2="20" y2="16"></line>
+                            </svg>
+                            <div id="close" class="hidden close-m-menu" onclick="MenuHandler(false)">
+                                <svg aria-label="Close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <line x1="18" y1="6" x2="6" y2="18" />
+                                    <line x1="6" y1="6" x2="18" y2="18" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <div class="flex justify-center w-full">
+                <h1 class="hidden xl:block vote_text -mt-6">VOTE GELLER</h1>
+            </div>
+            <div class="bg-indigo-800 flex items-center px-6 py-10 lg:py-20 lg:px-8 justify-between w-full xl:-mt-6">
+                <div class="lg::w-3/5">
+                    <h1 class="text-2xl lg:text-4xl font-bold text-white tracking-wider leading-relaxed lg:w-11/12">The latest updates from our upcoming events</h1>
+                    <div class="py-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="2" viewBox="0 0 60 2" fill="none">
+                            <rect width="60" height="2" fill="#E53E3E" />
+                        </svg>
+                    </div>
+                    <p class="text-sm font-normal text-white leading-7 lg:w-9/12">Lorem Ipsum. Proin gravida nibh vel velit amet auctor aliquet. Aenean sollicitudin, lorem quis bibendum nisi elit consequat ipsum, nec ipsu sagittis sebh id elit. Duis sed odio sit amet nibh vulputatrsus a sit amet mauris morbi ipsum.</p>
+                </div>
+            </div>
+            <nav>
+                <div class="px-4 xl:px-0 hidden lg:flex items-center justify-between w-full py-5 border-b border-gray-200">
+                    <div class="flex items-center">
+                        <div>
+                            <img src="./assets/images/logo.png" alt="" />
+                        </div>
+                        <div class="flex items-center pl-6">
+                            <div class="text-sm font-medium cursor-pointer text-indigo-900"><a href="./index.html">Home</a></div>
+                            <div class="text-sm font-normal cursor-pointer text-indigo-900 pl-8"><a href="./compaign_donations.html">Donations</a></div>
+                            <div class="text-sm font-normal cursor-pointer text-red-600 pl-8"><a href="./events.html">Events</a></div>
+                            <div class="text-sm font-normal cursor-pointer text-indigo-900 pl-8"><a href="./blog.html">Blog</a></div>
+                            <div class="text-sm font-normal cursor-pointer text-indigo-900 pl-8"><a href="./aboutUs.html">About Us</a></div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between w-1/5 xl:w-1/6">
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                                <circle cx="11.6667" cy="11.6667" r="8.16667" stroke="#3C366B" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M24.5 24.5L17.5 17.5" stroke="#3C366B" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div>
+                            <button class="py-3 px-4 bg-red-600 text-sm uppercase text-white focus:outline-none">Donate Now</button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <div class="px-6 xl:px-0 py-10">
+                <div class="lg:w-3/5">
+                    <h1 class="text-2xl lg:text-4xl font-bold text-indigo-900 tracking-normal lg:w-11/12">Upcoming Events to Attend</h1>
+                    <div class="py-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="2" viewBox="0 0 60 2" fill="none">
+                            <rect width="60" height="2" fill="#E53E3E" />
+                        </svg>
+                    </div>
+                    <p class="font-normal text-gray-700 leading-7 w-9/12">Lorem Ipsum. Proin gravida nibh vel velit amet auctor aliquet. Aenean sollicitudin, lorem quis bibendum nisi elit consequat ipsum, nec ipsu sagittis sebh id elit. Duis sed odio sit amet nibh vulputatrsus a sit amet mauris morbi ipsum.</p>
+                </div>
+            </div>
+            <div class="px-6 xl:px-0 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 pt-6 gap-8">
+                <div>
+                    <div class="relative event-custom-height">
+                        <img class="absolute inset-0 object-cover object-center w-full h-full" src="./assets/images/eventsection1.png" alt="Caucas Session" />
+                    </div>
+                    <div class="py-6 border-b border-gray-200">
+                        <h1 class="text-2xl text-indigo-900 font-bold">Caucas Session</h1>
+                        <p class="py-3 text-sm text-gray-700 leading-8">Lorem Ipsum. Proin gravida nibh vel velit amet auctor aliquet. Aenean sollicitudin, lorem quis bibendum nisi elit consequat ipsum nec ipsu.</p>
+                        <p class="text-sm text-red-600">Tuesday, 12th August, 2020</p>
+                        <div class="pt-6">
+                            <div class="flex justify-between w-full items-center text-gray-600 text-sm">
+                                <div class="flex items-center">
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                            <circle cx="9" cy="9" r="7.5" stroke="#718096" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M9 4.8335V9.00016L11.5 11.5002" stroke="#718096" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <p class="pl-1">4:00pm to 6:00pm</p>
+                                </div>
+                                <div class="flex items-center pl-2">
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" viewBox="0 0 16 18" fill="none">
+                                            <circle cx="8" cy="8.1665" r="2.5" stroke="#718096" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7141 12.8806L9.17831 16.4164C8.86602 16.729 8.44227 16.9047 8.0004 16.9047C7.55852 16.9047 7.13478 16.729 6.82248 16.4164L3.28581 12.8806C0.682416 10.2771 0.682489 6.05602 3.28597 3.45258C5.88946 0.84914 10.1105 0.84914 12.714 3.45258C15.3175 6.05602 15.3175 10.2771 12.7141 12.8806Z" stroke="#718096" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <p class="pl-1">Manhattan, NY</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="relative event-custom-height">
+                        <img class="absolute inset-0 object-cover object-center w-full h-full" src="./assets/images/Auditorium_session.png" alt="Oregon Rally 2020" />
+                    </div>
+                    <div class="py-6 border-b border-gray-200">
+                        <h1 class="text-2xl text-indigo-900 font-bold">Oregon Rally 2020</h1>
+                        <p class="py-3 text-sm text-gray-700 leading-8">Lorem Ipsum. Proin gravida nibh vel velit amet auctor aliquet. Aenean sollicitudin, lorem quis bibendum nisi elit consequat ipsum nec ipsu.</p>
+                        <p class="text-sm text-red-600">Tuesday, 12th August, 2020</p>
+                        <div class="pt-6">
+                            <div class="flex justify-between w-full items-center text-gray-600 text-sm">
+                                <div class="flex items-center">
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                            <circle cx="9" cy="9" r="7.5" stroke="#718096" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M9 4.8335V9.00016L11.5 11.5002" stroke="#718096" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <p class="pl-1">4:00pm to 6:00pm</p>
+                                </div>
+                                <div class="flex items-center pl-2">
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" viewBox="0 0 16 18" fill="none">
+                                            <circle cx="8" cy="8.1665" r="2.5" stroke="#718096" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7141 12.8806L9.17831 16.4164C8.86602 16.729 8.44227 16.9047 8.0004 16.9047C7.55852 16.9047 7.13478 16.729 6.82248 16.4164L3.28581 12.8806C0.682416 10.2771 0.682489 6.05602 3.28597 3.45258C5.88946 0.84914 10.1105 0.84914 12.714 3.45258C15.3175 6.05602 15.3175 10.2771 12.7141 12.8806Z" stroke="#718096" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <p class="pl-1">Manhattan, NY</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="relative event-custom-height">
+                        <img class="absolute inset-0 object-cover object-center w-full h-full" src="./assets/images/political_convention.png" alt="Political Convention" />
+                    </div>
+                    <div class="py-6 border-b border-gray-200">
+                        <h1 class="text-2xl text-indigo-900 font-bold">Political Convention</h1>
+                        <p class="py-3 text-sm text-gray-700 leading-8">Lorem Ipsum. Proin gravida nibh vel velit amet auctor aliquet. Aenean sollicitudin, lorem quis bibendum nisi elit consequat ipsum nec ipsu.</p>
+                        <p class="text-sm text-red-600">Tuesday, 12th August, 2020</p>
+                        <div class="pt-6">
+                            <div class="flex justify-between w-full items-center text-gray-600 text-sm">
+                                <div class="flex items-center">
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                            <circle cx="9" cy="9" r="7.5" stroke="#718096" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M9 4.8335V9.00016L11.5 11.5002" stroke="#718096" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <p class="pl-1">4:00pm to 6:00pm</p>
+                                </div>
+                                <div class="flex items-center pl-2">
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" viewBox="0 0 16 18" fill="none">
+                                            <circle cx="8" cy="8.1665" r="2.5" stroke="#718096" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7141 12.8806L9.17831 16.4164C8.86602 16.729 8.44227 16.9047 8.0004 16.9047C7.55852 16.9047 7.13478 16.729 6.82248 16.4164L3.28581 12.8806C0.682416 10.2771 0.682489 6.05602 3.28597 3.45258C5.88946 0.84914 10.1105 0.84914 12.714 3.45258C15.3175 6.05602 15.3175 10.2771 12.7141 12.8806Z" stroke="#718096" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <p class="pl-1">Manhattan, NY</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="relative event-custom-height">
+                        <img class="absolute inset-0 object-cover object-center w-full h-full" src="./assets/images/White_formal_dinner.png" alt="formal_dinner" />
+                    </div>
+                    <div class="py-6 border-b border-gray-200">
+                        <h1 class="text-2xl text-indigo-900 font-bold">White Formal Dinner</h1>
+                        <p class="py-3 text-sm text-gray-700 leading-8">Lorem Ipsum. Proin gravida nibh vel velit amet auctor aliquet. Aenean sollicitudin, lorem quis bibendum nisi elit consequat ipsum nec ipsu.</p>
+                        <p class="text-sm text-red-600">Tuesday, 12th August, 2020</p>
+                        <div class="pt-6">
+                            <div class="flex justify-between w-full items-center text-gray-600 text-sm">
+                                <div class="flex items-center">
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                            <circle cx="9" cy="9" r="7.5" stroke="#718096" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M9 4.8335V9.00016L11.5 11.5002" stroke="#718096" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <p class="pl-1">4:00pm to 6:00pm</p>
+                                </div>
+                                <div class="flex items-center pl-2">
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" viewBox="0 0 16 18" fill="none">
+                                            <circle cx="8" cy="8.1665" r="2.5" stroke="#718096" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7141 12.8806L9.17831 16.4164C8.86602 16.729 8.44227 16.9047 8.0004 16.9047C7.55852 16.9047 7.13478 16.729 6.82248 16.4164L3.28581 12.8806C0.682416 10.2771 0.682489 6.05602 3.28597 3.45258C5.88946 0.84914 10.1105 0.84914 12.714 3.45258C15.3175 6.05602 15.3175 10.2771 12.7141 12.8806Z" stroke="#718096" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <p class="pl-1">Manhattan, NY</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="relative event-custom-height">
+                        <img class="absolute inset-0 object-cover object-center w-full h-full" src="./assets/images/Auditorium_session.png" alt="Auditorium session" />
+                    </div>
+                    <div class="py-6 border-b border-gray-200">
+                        <h1 class="text-2xl text-indigo-900 font-bold">Auditorium Session</h1>
+                        <p class="py-3 text-sm text-gray-700 leading-8">Lorem Ipsum. Proin gravida nibh vel velit amet auctor aliquet. Aenean sollicitudin, lorem quis bibendum nisi elit consequat ipsum nec ipsu.</p>
+                        <p class="text-sm text-red-600">Tuesday, 12th August, 2020</p>
+                        <div class="pt-6">
+                            <div class="flex justify-between w-full items-center text-gray-600 text-sm">
+                                <div class="flex items-center">
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                            <circle cx="9" cy="9" r="7.5" stroke="#718096" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M9 4.8335V9.00016L11.5 11.5002" stroke="#718096" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <p class="pl-1">4:00pm to 6:00pm</p>
+                                </div>
+                                <div class="flex items-center pl-2">
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" viewBox="0 0 16 18" fill="none">
+                                            <circle cx="8" cy="8.1665" r="2.5" stroke="#718096" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7141 12.8806L9.17831 16.4164C8.86602 16.729 8.44227 16.9047 8.0004 16.9047C7.55852 16.9047 7.13478 16.729 6.82248 16.4164L3.28581 12.8806C0.682416 10.2771 0.682489 6.05602 3.28597 3.45258C5.88946 0.84914 10.1105 0.84914 12.714 3.45258C15.3175 6.05602 15.3175 10.2771 12.7141 12.8806Z" stroke="#718096" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <p class="pl-1">Manhattan, NY</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="relative event-custom-height">
+                        <img class="absolute inset-0 object-cover object-center w-full h-full" src="./assets/images/meeting-2020.png" alt="meeting-2020" />
+                    </div>
+                    <div class="py-6 border-b border-gray-200">
+                        <h1 class="text-2xl text-indigo-900 font-bold">Meeting 2020</h1>
+                        <p class="py-3 text-sm text-gray-700 leading-8">Lorem Ipsum. Proin gravida nibh vel velit amet auctor aliquet. Aenean sollicitudin, lorem quis bibendum nisi elit consequat ipsum nec ipsu.</p>
+                        <p class="text-sm text-red-600">Tuesday, 12th August, 2020</p>
+                        <div class="pt-6">
+                            <div class="flex justify-between w-full items-center text-gray-600 text-sm">
+                                <div class="flex items-center">
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                            <circle cx="9" cy="9" r="7.5" stroke="#718096" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M9 4.8335V9.00016L11.5 11.5002" stroke="#718096" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <p class="pl-1">4:00pm to 6:00pm</p>
+                                </div>
+                                <div class="flex items-center pl-2">
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" viewBox="0 0 16 18" fill="none">
+                                            <circle cx="8" cy="8.1665" r="2.5" stroke="#718096" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7141 12.8806L9.17831 16.4164C8.86602 16.729 8.44227 16.9047 8.0004 16.9047C7.55852 16.9047 7.13478 16.729 6.82248 16.4164L3.28581 12.8806C0.682416 10.2771 0.682489 6.05602 3.28597 3.45258C5.88946 0.84914 10.1105 0.84914 12.714 3.45258C15.3175 6.05602 15.3175 10.2771 12.7141 12.8806Z" stroke="#718096" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <p class="pl-1">Manhattan, NY</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="px-6 xl:px-0 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 pt-14 gap-8"></div>
+        </div>
+        <!--Header ends here-->
+
+        <!--Donation section start here --->
+        <div class="px-6 xl:px-0 donation-background mt-16 py-16">
+            <div class="mx-auto container">
+                <div class="flex lg:flex-row flex-col lg:justify-between w-full items-center">
+                    <div class="flex items-center flex-col text-white">
+                        <h1 class="uppercase text-4xl font-semibold">DONATE</h1>
+                        <div class="flex items-center">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="30" viewBox="0 0 25 24" fill="none">
+                                    <path d="M25 9.16672L15.9161 8.57113L12.495 0L9.07397 8.57113L0 9.16672L6.95967 15.0601L4.67588 24L12.495 19.071L20.3142 24L18.0304 15.0601L25 9.16672Z" fill="white" />
+                                </svg>
+                            </div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="30" viewBox="0 0 25 24" fill="none">
+                                    <path d="M25 9.16672L15.9161 8.57113L12.495 0L9.07397 8.57113L0 9.16672L6.95967 15.0601L4.67588 24L12.495 19.071L20.3142 24L18.0304 15.0601L25 9.16672Z" fill="white" />
+                                </svg>
+                            </div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="30" viewBox="0 0 25 24" fill="none">
+                                    <path d="M25 9.16672L15.9161 8.57113L12.495 0L9.07397 8.57113L0 9.16672L6.95967 15.0601L4.67588 24L12.495 19.071L20.3142 24L18.0304 15.0601L25 9.16672Z" fill="white" />
+                                </svg>
+                            </div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="30" viewBox="0 0 25 24" fill="none">
+                                    <path d="M25 9.16672L15.9161 8.57113L12.495 0L9.07397 8.57113L0 9.16672L6.95967 15.0601L4.67588 24L12.495 19.071L20.3142 24L18.0304 15.0601L25 9.16672Z" fill="white" />
+                                </svg>
+                            </div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="30" viewBox="0 0 25 24" fill="none">
+                                    <path d="M25 9.16672L15.9161 8.57113L12.495 0L9.07397 8.57113L0 9.16672L6.95967 15.0601L4.67588 24L12.495 19.071L20.3142 24L18.0304 15.0601L25 9.16672Z" fill="white" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 lg:mt-0 flex lg:flex-row flex-col lg:items-center">
+                        <input class="h-12 bg-white pl-4 placeholder-gray-600 text-gray-700 focus:outline-none text-lg mr-8" placeholder="Email" type="email" name="" id="email" />
+                        <input class="mt-4 lg:mt-0 h-12 w-32 bg-white pl-4 placeholder-gray-600 text-gray-700 focus:outline-none text-lg mr-8" placeholder="Zip Code" type="text" name="" id="zip" />
+                        <button class="mt-4 lg:mt-0 w-24 lg:w-full py-3 px-4 bg-white text-lg leading-6 uppercase text-gray-700 focus:outline-none">Donate</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Donation now ends start here --->
+
+        <!--Footer section starts  here --->
+        <div class="bg-gray-900 px-6 xl:px-0 py-16">
+            <div class="mx-auto container">
+                <div class="container pt-6 mx-auto">
+                    <div class="flex flex-wrap xl:-mx-6">
+                        <div class="lg:w-2/5 w-full pb-6 text-white xl:px-6">
+                            <h1 class="text-3xl font-bold">About Us</h1>
+                            <p class="py-4 text-sm leading-7">Lorem Ipsum. Proin gravida nibh vel velit amet auctor aliquet. Aenean sollicitudin, lorem quis bibendum nisi elit consequat ipsum, nec ipsu sagittis sebh id elit. Duis sed odio sit amet nibh vulputatrsus a sit amet mauris morbi ipsum.</p>
+                            <p class="text-sm">Call us at <span class="text-red-600">0035 244 58 265</span></p>
+                            <p class="pt-8 text-sm">Visit us at 546A Manhattan, New York, NY 87463</p>
+                            <div class="pt-12">
+                                <p class="text-xl font-bold tracking-wider">Links</p>
+                                <div class="pt-5">
+                                    <div class="flex items-center">
+                                        <div class="w-2 h-2 rounded-full bg-red-600 mr-2"></div>
+                                        <p class="text-sm text-white font-medium cursor-pointer">Partnerships</p>
+                                    </div>
+                                    <div class="flex items-center py-5">
+                                        <div class="w-2 h-2 rounded-full bg-red-600 mr-2"></div>
+                                        <p class="text-sm text-white font-medium cursor-pointer">Linkages</p>
+                                    </div>
+                                    <div class="flex items-center pb-5">
+                                        <div class="w-2 h-2 rounded-full bg-red-600 mr-2"></div>
+                                        <p class="text-sm text-white font-medium cursor-pointer">News</p>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="w-2 h-2 rounded-full bg-red-600 mr-2"></div>
+                                        <p class="text-sm text-white font-medium cursor-pointer">Events</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:w-3/5 w-full text-white xl:px-6">
+                            <h1 class="text-3xl font-bold">Instagram</h1>
+                            <h2 class="text-sm italic py-4">Follow Jessica’s campaign on Instagram</h2>
+                            <div class="mt-8">
+                                <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
+                                    <div class="relative">
+                                        <img class="object-cover object-center w-full h-44" src="./assets/images/americanflag.png" alt="americanflag" />
+                                    </div>
+                                    <div class="relative">
+                                        <img class="object-cover object-center w-full h-44" src="./assets/images/badges.png" alt="badges" />
+                                    </div>
+                                    <div class="relative">
+                                        <img class="object-cover object-center w-full h-44" src="./assets/images/compaign.png" alt="compaign" />
+                                    </div>
+                                    <div class="relative">
+                                        <img class="object-cover object-center w-full h-44" src="./assets/images/votingDay.png" alt="voting Day" />
+                                    </div>
+                                    <div class="relative">
+                                        <img class="object-cover object-center w-full h-44" src="./assets/images/worker.png" alt="worker" />
+                                    </div>
+                                    <div class="relative">
+                                        <img class="object-cover object-center w-full h-44" src="./assets/images/poster.png" alt="poster" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Footer section ends here --->
+        <script src="./assets/js/script.js"></script>
+    </body>
+</html>
